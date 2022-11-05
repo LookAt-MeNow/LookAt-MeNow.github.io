@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-27T09:47:47.042Z</updated>
+  <updated>2022-11-05T11:11:50.906Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,84 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>STL标准模板库</title>
+    <link href="http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/"/>
+    <id>http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/</id>
+    <published>2022-10-27T10:07:52.000Z</published>
+    <updated>2022-11-05T11:11:50.906Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有时间写&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>XTDrone仿真平台</title>
+    <link href="http://example.com/2022/10/27/xtdrone-fang-zhen-ping-tai/"/>
+    <id>http://example.com/2022/10/27/xtdrone-fang-zhen-ping-tai/</id>
+    <published>2022-10-27T10:06:22.000Z</published>
+    <updated>2022-11-05T11:12:02.903Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有时间写&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vscode+cmake+多文件编译</title>
+    <link href="http://example.com/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/"/>
+    <id>http://example.com/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/</id>
+    <published>2022-10-27T08:25:00.000Z</published>
+    <updated>2022-11-05T11:14:21.856Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;​	   </summary>
+        
+      
+    
+    
+    
+    <category term="vscode" scheme="http://example.com/categories/vscode/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="vscode" scheme="http://example.com/tags/vscode/"/>
+    
+    <category term="cmake" scheme="http://example.com/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据结构学习</title>
     <link href="http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/"/>
     <id>http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/</id>
     <published>2022-10-19T08:25:00.000Z</published>
-    <updated>2022-10-27T09:47:47.042Z</updated>
+    <updated>2022-11-05T11:12:12.267Z</updated>
     
     
       

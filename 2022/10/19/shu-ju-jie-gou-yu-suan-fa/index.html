@@ -572,7 +572,105 @@ inline void list::onlist(int len){
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1666690310554.png" alt="优缺点"></p>
-<h2 id="2-链式储存结构"><a href="#2-链式储存结构" class="headerlink" title="2.链式储存结构"></a>2.链式储存结构</h2>
+<h2 id="2-链式储存结构"><a href="#2-链式储存结构" class="headerlink" title="2.链式储存结构"></a>2.链式储存结构</h2><p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667204968016.png" alt="头指针与头节点"></p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667205223108.png"></p>
+<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><h4 id="（1）初始化赋值"><a href="#（1）初始化赋值" class="headerlink" title="（1）初始化赋值"></a>（1）初始化赋值</h4><p>头插法：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+typedef struct Node{
+    int date;
+    struct Node* next;
+}Node,*PNode;//Node 相当于struct Node , *PNode 相当于struct Node*
+
+PNode ListNodeInit(){
+    Node* L;
+    L=(Node* )malloc(sizeof(Node));//申请头节点空间
+    L-&gt;next=NULL;
+    int a;
+    cout&lt;&lt;"请输入节点数字"&lt;&lt;endl;
+    cin&gt;&gt;a;
+    for(int i=0;i&lt;a;i++){
+        int t;
+        cin&gt;&gt;t;
+        Node* p;//创建节点
+        p=(Node* )malloc(sizeof(Node));
+        p-&gt;date=t;
+        p-&gt;next=L-&gt;next;
+        L-&gt;next=p;
+        int m;
+    }
+    return L;
+}
+void ListPrint(){
+    Node* O;
+    Node* Y=ListNodeInit();
+    O=Y-&gt;next;
+    while(O){
+        cout&lt;&lt;O-&gt;date&lt;&lt;" ";
+        O=O-&gt;next;
+    }
+}
+
+int main(){
+    ListPrint();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>用头插法的遍历输出是逆序输出的，头插法是把每一个节点放在第一位，所以后面放在第一位的就会把之前的第一位挤到后面去</p>
+<p>通过调试数据可以看出链表结构如下</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667293723164.png" alt="L链表"></p>
+<p>输出结果如下</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667293885302.png"></p>
+<p>尾插法：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+typedef struct Node{
+    int date;
+    struct Node* next;
+}Node,*PNode;//Node 相当于struct Node , *PNode 相当于struct Node*
+
+PNode ListNodeInit(){
+    Node* L;
+    Node* r;//定义尾指针
+    L=(Node* )malloc(sizeof(Node));//申请头节点空间
+    L-&gt;next=NULL;
+    r=L;//尾指针指向头节点
+    int a;
+    cout&lt;&lt;"请输入节点数"&lt;&lt;endl;
+    cin&gt;&gt;a;
+    for(int i=0;i&lt;a;i++){
+        int t;
+        cin&gt;&gt;t;
+        Node* p;//创建节点
+        p=(Node* )malloc(sizeof(Node));
+        p-&gt;date=t;
+        r-&gt;next=p;//把新节点插入到r节点之后
+        r=p;//尾指针指向下一个节点
+    }
+    r-&gt;next=NULL;
+    return L;
+}
+void ListPrint(){
+    Node* O;
+    Node* Y=ListNodeInit();
+    O=Y-&gt;next;
+    while(O){
+        cout&lt;&lt;O-&gt;date&lt;&lt;" ";
+        O=O-&gt;next;
+    }
+}
+
+int main(){
+    ListPrint();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667305383631.png" alt="图解"></p>
+<p>尾插的聊表结构如下：</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667305845976.png"></p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667305870232.png" alt="输出结果"></p>
+<h4 id="（2）插入与删除"><a href="#（2）插入与删除" class="headerlink" title="（2）插入与删除"></a>（2）插入与删除</h4><p>有时间写</p>
+
                 
             </div>
             <hr/>
@@ -742,43 +840,41 @@ inline void list::onlist(int len){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/">
+                <a href="/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpeg" class="responsive-img" alt="数据结构学习">
+                        <img src="/medias/featureimages/qingchun.jpeg" class="responsive-img" alt="vscode+cmake+多文件编译">
                         
-                        <span class="card-title">数据结构学习</span>
+                        <span class="card-title">vscode+cmake+多文件编译</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录哈免得忘记
+                            ....
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/vscode/" class="post-category">
+                                    vscode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -786,8 +882,12 @@ inline void list::onlist(int len){
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
+                    </a>
+                    
+                    <a href="/tags/cmake/">
+                        <span class="chip bg-color">cmake</span>
                     </a>
                     
                 </div>
