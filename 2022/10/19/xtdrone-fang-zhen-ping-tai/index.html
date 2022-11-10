@@ -61,9 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
 </head>
 
 
@@ -451,7 +451,7 @@ python multirotor_keyboard_control.py solo <span class="token number">1</span> v
 <p>然后按i把z速度加到0.3以上，在按b切换到offboard模式，再按t解锁起飞飞到合适位置按s实现悬停</p>
 <p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667718809610.png"></p>
 <p>然后打开地面站设置导航点即可运行</p>
-<h3 id="3-PX4飞控EKF配置"><a href="#3-PX4飞控EKF配置" class="headerlink" title="3.PX4飞控EKF配置"></a>3.PX4飞控EKF配置</h3><p>PX4默认使用的EKF配置为融合GPS的水平位置与气压计高度。如果我们想使用视觉定位就需要修改配置文件，我们这里使用的是ORBSLAM2</p>
+<h2 id="三、PX4飞控EKF配置"><a href="#三、PX4飞控EKF配置" class="headerlink" title="三、PX4飞控EKF配置"></a>三、PX4飞控EKF配置</h2><p>PX4默认使用的EKF配置为融合GPS的水平位置与气压计高度。如果我们想使用视觉定位就需要修改配置文件，我们这里使用的是ORBSLAM2</p>
 <p><em><strong>注意，此修改意味着EKF融合来自mavros/vision_pose/pose的数据，并不是修改完无人机就可以视觉定位了，需要相关程序提供mavros/vision_pose/pose的数据，相关程序包括视觉SLAM、激光SLAM和获取Gazebo真值等。如果没有额外的视觉数据，想要飞行必须改回基于GPS和气压计的定位。</strong></em></p>
 <p>先打开相应文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gedit ~/PX4_Firmware/ROMFS/px4fmu_common/init.d-posix/rcS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -471,7 +471,7 @@ param set EKF2_HGT_MODE 3<span aria-hidden="true" class="line-numbers-rows"><spa
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> ~/.ros/eeprom/parameters*
 <span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.ros/sitl*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h3 id="4-ORBSLAM视觉仿真"><a href="#4-ORBSLAM视觉仿真" class="headerlink" title="4.ORBSLAM视觉仿真"></a>4.ORBSLAM视觉仿真</h3><p>首先是编译两种方式的ORB文件SLAM</p>
+<h2 id="四、ORBSLAM视觉仿真"><a href="#四、ORBSLAM视觉仿真" class="headerlink" title="四、ORBSLAM视觉仿真"></a>四、ORBSLAM视觉仿真</h2><p>首先是编译两种方式的ORB文件SLAM</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> <span class="token parameter variable">-r</span> ~/XTDrone/sensing/slam/vslam/ORB_SLAM2/ ~/catkin_ws/src/
 <span class="token function">mkdir</span> ~/catkin_ws/scripts/
 <span class="token function">cp</span> ~/catkin_ws/src/ORB_SLAM2/xtdrone* ~/catkin_ws/scripts/
@@ -510,6 +510,82 @@ python multirotor_communication.py iris <span class="token number">0</span><span
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
 python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<h2 id="五、HectorSLAM建图"><a href="#五、HectorSLAM建图" class="headerlink" title="五、HectorSLAM建图"></a>五、HectorSLAM建图</h2><h3 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h3><p>安装HectorSLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-hector-slam*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装map server保存地图</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-map-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>复制相关文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscd hector_slam_launch
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/hector_slam_xtdrone.launch launch/
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/mapping_xtdrone.rviz rviz_cfg/mapping_xtdrone.rviz
+roscd hector_imu_attitude_to_tf/
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/hector_imu_xtdrone.launch launch/
+roscd hector_mapping/
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/hector_mapping_xtdrone.launch launch/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><p>启动仿真环境，这里用的是indoor3.launch，然后要把这个文件里的sdf改成iris_2d_lidar</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch px4 indoor3.launch <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动HectorSLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch hector_slam_launch hector_slam_xtdrone.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668064035807.png"></p>
+<p>如果你运行不出来可以看看当前的tf_tree</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosrun rqt_tf_tree rqt_tf_tree<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668064336216.png" alt="tf_tree"></p>
+<p>启动通信脚本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication/
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>同样的这里的iris要是别的机型也要换成相应的</p>
+<p>将HectorSLAM输出的2D位姿和高度值（由1D激光测距仪获得），转换为mavros话题</p>
+<pre class="line-numbers language-bsah" data-language="bsah"><code class="language-bsah">cd ~/XTDrone/sensing/slam/laser_slam/script/
+python laser_transfer.py iris 0 hector<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>启动键盘控制脚本，控制无人机飞行，注意不能飞太高，导致激光雷达扫不到围墙。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard/
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>绕着场地飞行保存地图，用于后面路径规划</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosrun map_server map_saver <span class="token parameter variable">-f</span> ~/XTDrone/motion_planning/2d/map/indoor3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668066273306.png"></p>
+<p>这里要慢慢飞不然画的地图就很奇怪</p>
+<h2 id="五、Cartographer建图"><a href="#五、Cartographer建图" class="headerlink" title="五、Cartographer建图"></a>五、Cartographer建图</h2><h3 id="1-安装依赖-1"><a href="#1-安装依赖-1" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h3><p>安装Cartographer</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-cartographer-ros
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-cartographer-rviz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>从XTD复制相关文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscd cartographer_ros
+<span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span>  ~/XTDrone/sensing/slam/laser_slam/cartographer/* ./<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="2-使用-1"><a href="#2-使用-1" class="headerlink" title="2.使用"></a>2.使用</h3><p>启动indoor3.launch，这里还是和上面一样要改sdf</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch px4 indoor3.launch <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动Cartographer</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch cartographer_ros xtdrone_2d.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668066751060.png"></p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668066840356.png" alt="tf_tree"></p>
+<p>启动通信脚本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication/
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>将cartographer输出的2D位姿和高度值（由1D激光测距仪获得），转换为mavros话题</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/sensing/slam/laser_slam/script/
+python laser_transfer.py iris <span class="token number">0</span> cartographer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>启动键盘控制脚本，控制无人机飞行，注意不能飞太高，导致激光雷达扫不到围墙</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard/
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后再保存地图</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosrun map_server map_saver <span class="token parameter variable">-f</span> ~/XTDrone/motion_planning/2d/map/indoor3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>总的来说就是跟上面的HectorSLAM差不多只不过是不同的SLAM算法</p>
 
                 
             </div>
@@ -744,8 +820,7 @@ python multirotor_keyboard_control.py iris <span class="token number">1</span> v
                 <a href="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/7.jpeg" class="responsive-img" alt="数据结构学习">
+                        <img src="https://pica.zhimg.com/v2-534091777919c3d549e271740f286881_r.jpg" class="responsive-img" alt="数据结构学习">
                         
                         <span class="card-title">数据结构学习</span>
                     </div>
