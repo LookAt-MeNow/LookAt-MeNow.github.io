@@ -4,9 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="STL标准模板库, 园崎魅音">
-    <meta name="description" content="有时间写
-">
+    <meta name="keywords" content="XTDrone仿真平台, 园崎魅音">
+    <meta name="description" content="仿真">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>STL标准模板库 | 园崎魅音</title>
+    <title>XTDrone仿真平台 | 园崎魅音</title>
     <link rel="icon" type="image/jpeg" href="/888.jpeg">
     
     <style>
@@ -325,12 +324,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">STL标准模板库</h1>
+                    <h1 class="description center-align post-title">XTDrone仿真平台</h1>
                 </div>
             </div>
         </div>
@@ -352,12 +351,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ros/">
+                                <span class="chip bg-color">ros</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F/">
+                                <span class="chip bg-color">无人机仿真</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ros/" class="post-category">
+                                ros
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -366,7 +382,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-27
+                    2022-10-19
                 </div>
                 
 
@@ -390,7 +406,110 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>有时间写</p>
+                <p>首先是必要的安装，ROS+gazebo+PX4+MAVROS+QGroundControl+XTDrone(这一部分可以参考我在无人机仿真环境搭建查看)，本篇是基本XTDrone官方的文档所学习的，主要记录仿真环境的运行以及自己在过程中遇到的坑。</p>
+<p>官方文档链接:<a target="_blank" rel="noopener" href="https://www.yuque.com/xtdrone/manual_cn">https://www.yuque.com/xtdrone/manual_cn</a></p>
+<h2 id="一、键盘控制无人机飞行"><a href="#一、键盘控制无人机飞行" class="headerlink" title="一、键盘控制无人机飞行"></a>一、键盘控制无人机飞行</h2><p>正确安装完成上面的必要依赖就可以先测试一下无人机是否可以通过键盘控制起飞</p>
+<p>打开一个终端运行启动gazebo，这里的indoor1就是px4自带的一个仿真环境可以改成别的，比如indoor2.launch</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/PX4_Firmware
+roslaunch px4 indoor1.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这里启动后由于是在虚拟机运行的因此可能有很大的卡顿，可以点左上角的Camera然后勾选Orthographic可以很大的优化</p>
+<p>gazebo启动后再运行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication/
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>与0号iris建立通信，然后再启动键盘控制</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>起飞流程</p>
+<p>按住i把速度加到0.3以上—–&gt;按b切换offboard模式—–&gt;按b解锁起飞</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667716834278.png" alt="效果图"></p>
+<h2 id="二、配置控制多旋翼无人机"><a href="#二、配置控制多旋翼无人机" class="headerlink" title="二、配置控制多旋翼无人机"></a>二、配置控制多旋翼无人机</h2><h3 id="1-配置方法"><a href="#1-配置方法" class="headerlink" title="1.配置方法"></a>1.配置方法</h3><p>在单机仿真中，indoor和outdoor开头的launch文件都是仿真启动的文件，不同的文件代表在不同的场景下进行仿真，上面已经说过了，这里以outdoor3.launch为例，配置多旋翼无人机</p>
+<p>打开这个文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/PX4_Firmware/launch/
+gedit outdoor3.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>默认的是车辆的仿真，搜索rover，只需对应改成需要的机型就可以了。然后就是sdf文件，因为同一种机型可能配备不同的传感器，所以sdf文件的命名也会随之不同，可以在~/PX4_Firmware/Tools/sitl_gazebo/models/ 目录下寻找所需要的sdf文件</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667717533413.png" alt="没改的小车仿真"></p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667717610118.png" alt="改过的多旋翼无人机"></p>
+<h3 id="2-控制方法"><a href="#2-控制方法" class="headerlink" title="2.控制方法"></a>2.控制方法</h3><p>多旋翼无人机相应的机型是solo，这里由于里地面高度较高，需要把launch文件中初始位置z设置为1，不然无人机就在地面以下了</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>z<span class="token punctuation">"</span></span> <span class="token attr-name">default</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后启动仿真程序，这里要是用的别的场景也是设置launch文件的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/PX4_Firmware
+roslaunch px4 outdoor3.launch <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后启动通信脚本,solo代表机型，0代表飞机编号</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication
+python multirotor_communication.py solo <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后在启动键盘控制，1代表的是飞机个数，vel代表速度控制</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py solo <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后按i把z速度加到0.3以上，在按b切换到offboard模式，再按t解锁起飞飞到合适位置按s实现悬停</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667718809610.png"></p>
+<p>然后打开地面站设置导航点即可运行</p>
+<h3 id="3-PX4飞控EKF配置"><a href="#3-PX4飞控EKF配置" class="headerlink" title="3.PX4飞控EKF配置"></a>3.PX4飞控EKF配置</h3><p>PX4默认使用的EKF配置为融合GPS的水平位置与气压计高度。如果我们想使用视觉定位就需要修改配置文件，我们这里使用的是ORBSLAM2</p>
+<p><em><strong>注意，此修改意味着EKF融合来自mavros/vision_pose/pose的数据，并不是修改完无人机就可以视觉定位了，需要相关程序提供mavros/vision_pose/pose的数据，相关程序包括视觉SLAM、激光SLAM和获取Gazebo真值等。如果没有额外的视觉数据，想要飞行必须改回基于GPS和气压计的定位。</strong></em></p>
+<p>先打开相应文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gedit ~/PX4_Firmware/ROMFS/px4fmu_common/init.d-posix/rcS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># GPS used
+#param set EKF2_AID_MASK 1
+# Vision used and GPS denied
+param set EKF2_AID_MASK 24
+
+# Barometer used for hight measurement
+#param set EKF2_HGT_MODE 0
+# Barometer denied and vision used for hight measurement
+param set EKF2_HGT_MODE 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667720317892.png"></p>
+<p>重启仿真之前要先删除上一次记录在虚拟eeprom中的参数文件，否则仿真程序就会读取参数文件导致本次rcS的修改不能生效</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> ~/.ros/eeprom/parameters*
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.ros/sitl*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="4-ORBSLAM视觉仿真"><a href="#4-ORBSLAM视觉仿真" class="headerlink" title="4.ORBSLAM视觉仿真"></a>4.ORBSLAM视觉仿真</h3><p>首先是编译两种方式的ORB文件SLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> <span class="token parameter variable">-r</span> ~/XTDrone/sensing/slam/vslam/ORB_SLAM2/ ~/catkin_ws/src/
+<span class="token function">mkdir</span> ~/catkin_ws/scripts/
+<span class="token function">cp</span> ~/catkin_ws/src/ORB_SLAM2/xtdrone* ~/catkin_ws/scripts/
+<span class="token builtin class-name">cd</span> ~/catkin_ws/src/ORB_SLAM2
+<span class="token function">chmod</span> +x build.sh
+./build.sh
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">ROS_PACKAGE_PATH</span><span class="token operator">=</span><span class="token variable">$ROS_PACKAGE_PATH</span>:~/catkin_ws/src/ORB_SLAM2/Examples/ROS <span class="token comment">#将这句放到~/.bashrc中，以后使用更方便</span>
+<span class="token function">chmod</span> +x build_ros.sh
+./build_ros.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>XTDnore官方的方法也可以参考<a target="_blank" rel="noopener" href="https://gitee.com/robin_shaun/XTDrone/tree/master/sensing/slam/vslam/ORB_SLAM2#2-prerequisites">https://gitee.com/robin_shaun/XTDrone/tree/master/sensing/slam/vslam/ORB_SLAM2#2-prerequisites</a></p>
+<p>在运行到./build.sh可能会报错，运行崩溃</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667727928350.png"></p>
+<p>这里进去./build.sh文件把最后的make -j改成make -j4就可以了，ros版本同理</p>
+<p>这里ORB就已经编译好了。理论上就已经可以跑SLAM仿真了</p>
+<p>1.先启动PX4仿真</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> PX4_Firmware
+roslaunch px4 indoor1.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2.启动ORNBSLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/catkin_ws/scripts/
+<span class="token function">sh</span> xtdrone_run_stereo.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这里没有运行成功，我自己运行没有反应无论是编译官方的ORB包还是XTD给出的ORB暂时还没有找出问题所在</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667728340573.png" alt="官方成功示例"></p>
+<p>成功可以在终端看到</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">23860000</span>: reset position to ev position
+INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">23860000</span>: commencing external vision position fusion
+INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">23860000</span>: commencing external vision yaw fusion<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>3.建立通信</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>4.启动键盘控制</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -407,7 +526,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">园崎魅音</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhang</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -417,7 +536,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/">http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/</a>
+                    <a href="http://example.com/2022/10/19/xtdrone-fang-zhen-ping-tai/">http://example.com/2022/10/19/xtdrone-fang-zhen-ping-tai/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -430,7 +549,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">园崎魅音</a>
+                    <a href="/about" target="_blank">zhang</a>
                     !
                 </span>
             </div>
@@ -454,7 +573,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/ros/">
+                                    <span class="chip bg-color">ros</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F/">
+                                    <span class="chip bg-color">无人机仿真</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -553,74 +680,35 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2022/10/27/stl-biao-zhun-mo-ban-ku/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpeg" class="responsive-img" alt="STL标准模板库">
-                        
-                        <span class="card-title">STL标准模板库</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            园崎魅音
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/">
+                <a href="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/qingchun.jpeg" class="responsive-img" alt="vscode+cmake+多文件编译">
+                        <img src="/medias/featureimages/7.jpeg" class="responsive-img" alt="数据结构学习">
                         
-                        <span class="card-title">vscode+cmake+多文件编译</span>
+                        <span class="card-title">数据结构学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ....
+                            记录哈免得忘记
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vscode/" class="post-category">
-                                    vscode
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -634,12 +722,65 @@
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
-                    <a href="/tags/cmake/">
-                        <span class="chip bg-color">cmake</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpeg" class="responsive-img" alt="无人机仿真搭建">
+                        
+                        <span class="card-title">无人机仿真搭建</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            有时间慢慢写
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ros%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                    ros仿真
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/ros/">
+                        <span class="chip bg-color">ros</span>
+                    </a>
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
