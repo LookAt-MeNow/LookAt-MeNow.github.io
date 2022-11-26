@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-18T09:59:03.653Z</updated>
+  <updated>2022-11-22T14:18:57.131Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,15 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>QT学习</title>
-    <link href="http://example.com/2022/11/18/qt-xue-xi/"/>
-    <id>http://example.com/2022/11/18/qt-xue-xi/</id>
-    <published>2022-11-18T09:59:03.000Z</published>
-    <updated>2022-11-18T09:59:03.653Z</updated>
+    <title>namespace</title>
+    <link href="http://example.com/2022/11/22/c-zhong-namespace-shi-yong/"/>
+    <id>http://example.com/2022/11/22/c-zhong-namespace-shi-yong/</id>
+    <published>2022-11-22T10:38:00.000Z</published>
+    <updated>2022-11-22T14:18:57.131Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在学习QT的过程中遇到一句&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-C++&quot;</summary>
+        
+      
     
     
     
+    <category term="c++" scheme="http://example.com/categories/c/"/>
     
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="QT" scheme="http://example.com/tags/QT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QT基础学习</title>
+    <link href="http://example.com/2022/11/21/qt-xue-xi/"/>
+    <id>http://example.com/2022/11/21/qt-xue-xi/</id>
+    <published>2022-11-21T12:12:00.000Z</published>
+    <updated>2022-11-26T09:47:48.334Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="QT" scheme="http://example.com/categories/QT/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="QT" scheme="http://example.com/tags/QT/"/>
     
   </entry>
   
@@ -34,7 +76,7 @@
     <link href="http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/"/>
     <id>http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/</id>
     <published>2022-10-27T10:07:52.000Z</published>
-    <updated>2022-11-10T06:40:53.836Z</updated>
+    <updated>2022-11-22T14:19:59.130Z</updated>
     
     
       
@@ -52,11 +94,11 @@
   </entry>
   
   <entry>
-    <title>vscode+cmake+多文件编译</title>
+    <title>vscode+CMake+多文件编译</title>
     <link href="http://example.com/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/"/>
     <id>http://example.com/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/</id>
     <published>2022-10-27T08:25:00.000Z</published>
-    <updated>2022-11-10T06:36:51.427Z</updated>
+    <updated>2022-11-21T12:18:09.431Z</updated>
     
     
       
@@ -76,7 +118,7 @@
     
     <category term="vscode" scheme="http://example.com/tags/vscode/"/>
     
-    <category term="cmake" scheme="http://example.com/tags/cmake/"/>
+    <category term="CMake" scheme="http://example.com/tags/CMake/"/>
     
   </entry>
   
@@ -113,7 +155,7 @@
     <link href="http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/"/>
     <id>http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/</id>
     <published>2022-10-19T08:25:00.000Z</published>
-    <updated>2022-11-17T08:42:24.746Z</updated>
+    <updated>2022-11-21T12:21:42.220Z</updated>
     
     
       
