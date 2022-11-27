@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="namespace, 园崎魅音">
+    <meta name="keywords" content="C++小知识点, 园崎魅音">
     <meta name="description" content="简单理解一下">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>namespace | 园崎魅音</title>
+    <title>C++小知识点 | 园崎魅音</title>
     <link rel="icon" type="image/jpeg" href="/888.jpeg">
     
     <style>
@@ -329,7 +329,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">namespace</h1>
+                    <h1 class="description center-align post-title">C++小知识点</h1>
                 </div>
             </div>
         </div>
@@ -406,11 +406,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在学习QT的过程中遇到一句</p>
+                <h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="一、namespace"><a href="#一、namespace" class="headerlink" title="一、namespace"></a>一、namespace</h2><p>在学习QT的过程中遇到一句</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">namespace Ui { class Widget; }<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>没能很理解是什么意思啊，为什么在QT中要这么定义一句命名空间，毕竟在一般的学习过程中基本都不怎么使用namespace的，所以对这一块的知识可能不是很了解，然后就是再学一下了。</p>
-<h2 id="一、单文件的命名空间使用"><a href="#一、单文件的命名空间使用" class="headerlink" title="一、单文件的命名空间使用"></a>一、单文件的命名空间使用</h2><p>先写一段代码</p>
+<h3 id="一、单文件的命名空间使用"><a href="#一、单文件的命名空间使用" class="headerlink" title="一、单文件的命名空间使用"></a>一、单文件的命名空间使用</h3><p>先写一段代码</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
 
 using namespace std;
@@ -432,10 +432,10 @@ int main(int argc,char** argv){
     return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="/2022/11/22/c-zhong-namespace-shi-yong/image-20221122185755382.png" alt="运行结果"></p>
+<p><img src="/2022/11/22/c-xiao-zhi-shi-dian/image-20221122185755382.png" alt="运行结果"></p>
 <p>命名空间其中之一的功能就是帮我们解决命名冲突的问题，这里有两个add()函数但是都可以正常的运行使用，不过这么看的话总感觉有种脱裤子放屁的感觉，但是啊这就是在单文件中的使用，如果要实际做项目的话肯定不可能是单文件的，就像做QT应用程序，再简单也会分出很多文件出来，这个时候命名空间的作用显现出来了，那么这东西到底是干什么的，专业术语的解释是命名空间是对作用域的一种抽象，举个例子，假如A班有个人叫张三，B班也有个人叫张三，不过这不会互相影响，因为你知道他们不是一个班的，如果要找A班的张三那么就不会去找B班的张三了。</p>
 <p>在实际的项目当中，会出现成千上万的标识符，命名空间提供隐藏区域标识符的机制。通过将逻辑上相关的标识符构成响应的命名空间，可以使整个系统更加的模块化。</p>
-<h2 id="二、多文件的命名空间使用"><a href="#二、多文件的命名空间使用" class="headerlink" title="二、多文件的命名空间使用"></a>二、多文件的命名空间使用</h2><p>分别编写test.h test.cpp main.cpp</p>
+<h3 id="二、多文件的命名空间使用"><a href="#二、多文件的命名空间使用" class="headerlink" title="二、多文件的命名空间使用"></a>二、多文件的命名空间使用</h3><p>分别编写test.h test.cpp main.cpp</p>
 <p>test.h</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#ifndef _TEST_H
 #define _TSTE_H
@@ -476,19 +476,19 @@ int main(){
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>编译运行</p>
-<p><img src="/2022/11/22/c-zhong-namespace-shi-yong/image-20221122194610346.png"></p>
+<p><img src="/2022/11/22/c-xiao-zhi-shi-dian/image-20221122194610346.png"></p>
 <p>成功运行了嗷</p>
-<h2 id="三、在多文件下命名空间写函数"><a href="#三、在多文件下命名空间写函数" class="headerlink" title="三、在多文件下命名空间写函数"></a>三、在多文件下命名空间写函数</h2><p>在单文件中我们在命名函数中写了一个add函数，多文件操作有点不同，例如</p>
-<p><img src="/2022/11/22/c-zhong-namespace-shi-yong/image-20221122195054067.png" alt="直接把函数放在头文件按中"></p>
+<h3 id="三、在多文件下命名空间写函数"><a href="#三、在多文件下命名空间写函数" class="headerlink" title="三、在多文件下命名空间写函数"></a>三、在多文件下命名空间写函数</h3><p>在单文件中我们在命名函数中写了一个add函数，多文件操作有点不同，例如</p>
+<p><img src="/2022/11/22/c-xiao-zhi-shi-dian/image-20221122195054067.png" alt="直接把函数放在头文件按中"></p>
 <p>并没有报错编译一下</p>
-<p><img src="/2022/11/22/c-zhong-namespace-shi-yong/image-20221122195200992.png" alt="编译器报错"></p>
+<p><img src="/2022/11/22/c-xiao-zhi-shi-dian/image-20221122195200992.png" alt="编译器报错"></p>
 <p>具体原因我也不是很清楚，这里应该现在test只声明add()函数，在test.cpp实现add()函数</p>
-<p><img src="/2022/11/22/c-zhong-namespace-shi-yong/image-20221122195942178.png" alt="这样改了就可以正常编译了"></p>
+<p><img src="/2022/11/22/c-xiao-zhi-shi-dian/image-20221122195942178.png" alt="这样改了就可以正常编译了"></p>
 <p>还有一点值得注意的就是<strong>同一项目的不同文件中可以定义相同的命名空间</strong>我这里就只定义了一个头文件，也就是如果我定义了两个头文件，在另一个头文件中同样可以使用namespace my{}<strong>分散在不同文件中的同名命名空间会合并为一个</strong>，所以这同时也说明了就算不是在一个文件下，<strong>但是只要共用一个命名空间就保证命名空间中成员互不相同</strong>，否则就会报错出重复定义的错误，就相当于在你的main函数下同一作用域下写了两个int a;</p>
-<h2 id="四、using使用"><a href="#四、using使用" class="headerlink" title="四、using使用"></a>四、using使用</h2><p>在我们刚开始写c++代码的时候就都用过using namespace std这一句，没有这一句就不能使用，当然了也可以用std::cout这样指定作用域使用</p>
+<h3 id="四、using使用"><a href="#四、using使用" class="headerlink" title="四、using使用"></a>四、using使用</h3><p>在我们刚开始写c++代码的时候就都用过using namespace std这一句，没有这一句就不能使用，当然了也可以用std::cout这样指定作用域使用</p>
 <p>只引入函数</p>
 <p>在没有引入函数的时候我们直接在主函数使用add()函数是会报错的，如图</p>
-<p><img src="/2022/11/22/c-zhong-namespace-shi-yong/image-20221122213723275.png"></p>
+<p><img src="/2022/11/22/c-xiao-zhi-shi-dian/image-20221122213723275.png"></p>
 <p>编译器报错未定义标识符，这个时候就可以从命名空间引入add()函数</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
 #include "test.h"
@@ -538,7 +538,7 @@ int main(){
     return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="五、QT头文件中的namespace-Ui-class-Widget"><a href="#五、QT头文件中的namespace-Ui-class-Widget" class="headerlink" title="五、QT头文件中的namespace Ui { class Widget; }"></a>五、QT头文件中的namespace Ui { class Widget; }</h2><p>class Widget 里面有个声明 Ui::Widget *ui，这个 ui 是使用 namespace Ui 里的 Widget 类声明的，该类只是简单的继承了 ui_widget.h 里的 Ui_Widget 类（没有添加任何成员）。现在就很清楚了，这两个看起来名字一样的 Widget 其实是两个类，一个是 namespace Ui 里的，另一个是 namespace Ui 之外的 Widget 类，namespace 声明的类其实就是个空壳，它的基类功能是将此窗口上的所有控件的声明、实例化、初始化。声明的原因就是为了使 ui 布局控制和其他的控制代码分离。</p>
+<h3 id="五、QT头文件中的namespace-Ui-class-Widget"><a href="#五、QT头文件中的namespace-Ui-class-Widget" class="headerlink" title="五、QT头文件中的namespace Ui { class Widget; }"></a>五、QT头文件中的namespace Ui { class Widget; }</h3><p>class Widget 里面有个声明 Ui::Widget *ui，这个 ui 是使用 namespace Ui 里的 Widget 类声明的，该类只是简单的继承了 ui_widget.h 里的 Ui_Widget 类（没有添加任何成员）。现在就很清楚了，这两个看起来名字一样的 Widget 其实是两个类，一个是 namespace Ui 里的，另一个是 namespace Ui 之外的 Widget 类，namespace 声明的类其实就是个空壳，它的基类功能是将此窗口上的所有控件的声明、实例化、初始化。声明的原因就是为了使 ui 布局控制和其他的控制代码分离。</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#ifndef WIDGET_H
 #define WIDGET_H
 
@@ -623,7 +623,7 @@ void Widget::on_pushButton_clicked()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/11/22/c-zhong-namespace-shi-yong/">http://example.com/2022/11/22/c-zhong-namespace-shi-yong/</a>
+                    <a href="http://example.com/2022/11/22/c-xiao-zhi-shi-dian/">http://example.com/2022/11/22/c-xiao-zhi-shi-dian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -772,12 +772,12 @@ void Widget::on_pushButton_clicked()
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/11/22/c-zhong-namespace-shi-yong/">
+                <a href="/2022/11/22/c-xiao-zhi-shi-dian/">
                     <div class="card-image">
                         
-                        <img src="https://pic.rmb.bdstatic.com/0b1a908690bc8c7ac08025756bd6c294.jpeg" class="responsive-img" alt="namespace">
+                        <img src="https://pic.rmb.bdstatic.com/0b1a908690bc8c7ac08025756bd6c294.jpeg" class="responsive-img" alt="C++小知识点">
                         
-                        <span class="card-title">namespace</span>
+                        <span class="card-title">C++小知识点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
