@@ -61,9 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
 </head>
 
 
@@ -1000,8 +1000,7 @@ setCentralWidget(edi1);<span aria-hidden="true" class="line-numbers-rows"><span>
 
 <p><img src="/2022/11/21/qt-xue-xi/image-20221127171549948.png" alt="这时铆接部件就显示在下方的"></p>
 <p>这一节中有的控件是只能添加一个的，有的可以设置多个，可以根据使用对应的函数记忆，用set创建的就只能有一个，用add创建的就可以有多个</p>
-<p>完整代码</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "mainwindow.h"
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "mainwindow.h"
 #include &lt;QMenuBar&gt;
 #include &lt;QMenu&gt;
 #include &lt;QToolBar&gt;
@@ -1077,6 +1076,204 @@ MainWindow::~MainWindow()
 ui-&gt;actiondel-&gt;setIcon(QIcon(":/Image/Frame.jpg"));//这两句要放在ui-&gt;setupUi(this);的下面，不然运行不了的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><img src="/2022/11/21/qt-xue-xi/image-20221127180459061.png" alt="运行结果"></p>
+<h2 id="七、对话框"><a href="#七、对话框" class="headerlink" title="七、对话框"></a>七、对话框</h2><p>新建一个项目My_QDig,先用图形界面创建以下界面</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128161122443.png"></p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128181921311.png" alt="参数"></p>
+<h3 id="模态对话框"><a href="#模态对话框" class="headerlink" title="模态对话框"></a>模态对话框</h3><p>模态对话框：弹出后就不可以对其他窗口做操作</p>
+<p>实现功能：点击tool，弹出一个模态对话框</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiontool,&amp;QAction::triggered,[=](){//建立连接，当触发tool弹出窗口
+//模态对话框------------------------------------------
+QDialog dia1(this);//创建一个窗口
+dia1.resize(520,300);//设置弹出的窗口大小
+dia1.exec();//显示模态对话框
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>connect第二个参数是QAction里的信号</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128162306164.png"></p>
+<h3 id="非模态对话框"><a href="#非模态对话框" class="headerlink" title="非模态对话框"></a>非模态对话框</h3><p>非模态对话框：弹出后可以对其他的窗口操作</p>
+<p>实现功能：点击tool2弹出一个非模态对话框</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">    connect(ui-&gt;actiontool2,&amp;QAction::triggered,[=](){//建立连接，当触发tool2弹出窗口
+    //非模态对话框----------------------------------------
+    //QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过
+    QDialog *dia2 = new QDialog(this);//创建一个窗口，
+    dia2-&gt;resize(520,300);
+    dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+    dia2-&gt;show();//显示非模态对话框
+    });
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过，所以应该创建在堆区，由于模态对话框会有一个堵塞的特性，不会退出connect函数所以可以直接创建</strong></p>
+<p> <strong>dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); ，由于创建在堆区，所以如果要是一直创建非模态对话框，在程序还在运行时内存是不会释放的，有可能引起内存泄漏，使用这句保证在每次创建的非模态对话框删除时清理内存</strong></p>
+<h3 id="消息对话框"><a href="#消息对话框" class="headerlink" title="消息对话框"></a>消息对话框</h3><p>根据上述方法分别在菜单项的编辑添加模态对话框，删除添加非模态对话框</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionedit,&amp;QAction::triggered,[=](){//建立连接，当触发编辑弹出窗口
+//模态对话框------------------------------------------
+QDialog dia3(this);//创建一个窗口
+dia3.resize(520,300);//设置弹出的窗口大小
+dia3.exec();//显示模态对话框
+});
+connect(ui-&gt;actiondel,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+//非模态对话框----------------------------------------
+QDialog *dia4 = new QDialog(this);//创建一个窗口，
+dia4-&gt;resize(520,300);
+dia4-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+dia4-&gt;show();//显示非模态对话框
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>实现功能：点击tool弹出错误消息，点击tool2弹出对话消息，点击编辑弹出提问消息，点击删除弹出警告信息</p>
+<h4 id="点击tool弹出错误消息："><a href="#点击tool弹出错误消息：" class="headerlink" title="点击tool弹出错误消息："></a>点击tool弹出错误消息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiontool,&amp;QAction::triggered,[=](){//建立连接，当触发tool弹出窗口
+//模态对话框------------------------------------------
+//QDialog dia1(this);//创建一个窗口
+//dia1.resize(520,300);//设置弹出的窗口大小
+//dia1.exec();//显示模态对话框
+QMessageBox::critical(this,"error","错误");//点击弹出错误信息
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="点击tool2弹出对话信息："><a href="#点击tool2弹出对话信息：" class="headerlink" title="点击tool2弹出对话信息："></a>点击tool2弹出对话信息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiontool2,&amp;QAction::triggered,[=](){//建立连接，当触发tool2弹出窗口
+   //非模态对话框----------------------------------------
+   //QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过
+   //QDialog *dia2 = new QDialog(this);//创建一个窗口，
+   //dia2-&gt;resize(520,300);
+   //dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+   //dia2-&gt;show();//显示非模态对话框
+   QMessageBox::information(this,"info","Hello World");//点击弹出消息信息
+   });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="点击编辑弹出提问消息："><a href="#点击编辑弹出提问消息：" class="headerlink" title="点击编辑弹出提问消息："></a>点击编辑弹出提问消息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionedit,&amp;QAction::triggered,[=](){//建立连接，当触发编辑弹出窗口
+//模态对话框------------------------------------------
+//QDialog dia3(this);//创建一个窗口
+//dia3.resize(520,300);//设置弹出的窗口大小
+//dia3.exec();//显示模态对话框
+    if(QMessageBox::Yes == QMessageBox::question(this,"edit","是否编辑",QMessageBox::Yes | QMessageBox::Yes,QMessageBox::No)){
+        qDebug()&lt;&lt;"开始编辑";QMessageBox::No
+    }else{
+        qDebug()&lt;&lt;"退出编辑";
+    }
+
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128172336598.png"></p>
+<p>点击yes弹出开始编辑消息，点击no弹出退出编辑消息</p>
+<h4 id="点击删除弹出警告信息："><a href="#点击删除弹出警告信息：" class="headerlink" title="点击删除弹出警告信息："></a>点击删除弹出警告信息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiondel,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+//非模态对话框----------------------------------------
+//QDialog *dia4 = new QDialog(this);//创建一个窗口，
+//dia4-&gt;resize(520,300);
+//dia4-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+//dia4-&gt;show();//显示非模态对话框
+  QMessageBox::warning(this,"warning","可能没有成功删除");
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="/2022/11/21/qt-xue-xi/image-20221128172928176.png" alt="使用函数的参数"></p>
+<p>QWidget* parent：指定父类</p>
+<p>const QString &amp;title：窗口标题</p>
+<p>const QString &amp;text:   窗口内容</p>
+<p>StandardButton buttons：选择使用的按钮，这里只有question使用了这个</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128173250715.png" alt="所有按钮"></p>
+<p>StandardButton <em>defaultButton</em> = NoButton：设置第四个窗口使用的默认值，比如上面的 question例子，默认值是</p>
+<p>QMessageBox::No，也是就说如果不做选择直接回车会默认选择no运行</p>
+<h3 id="颜色对话框"><a href="#颜色对话框" class="headerlink" title="颜色对话框"></a>颜色对话框</h3><p>实现功能：点击选择颜色，弹出颜色选择栏，选择后并输出调试信息</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actioncolor,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+    //返回值是QColor而不是QcolorDialog
+    //QColor 参数一：red 参数二：green 参数三：blue 参数四：透明度
+    QColor color1 = QColorDialog::getColor(QColor(255,0,0,255));
+    qDebug() &lt;&lt;"r="&lt;&lt;color1.red()&lt;&lt;"g="&lt;&lt;color1.green()&lt;&lt;"b="&lt;&lt;color1.blue();
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件对话框"><a href="#文件对话框" class="headerlink" title="文件对话框"></a>文件对话框</h3><p>实现功能：点击选择文件，弹出指定的文件目录，并再选择文件后输出文件路径</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionfile,&amp;QAction::triggered,[=](){
+    //返回值string,是打开文件的路径
+    //getOpenFileName 参数一：指定父亲 参数二：窗口名称 参数三：打开路径 参数四：筛选文件类型
+    QString cwd = QFileDialog::getOpenFileName(this,"打开桌面txt文件","E:/资源/桌面","*.txt");
+    qDebug() &lt;&lt;cwd;
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="字体对话框"><a href="#字体对话框" class="headerlink" title="字体对话框"></a>字体对话框</h3><p>实现功能：点击选择字体，弹出字体选择对话框，并输出选择后的字体信息</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionfont,&amp;QAction::triggered,[=](){
+    bool flag;
+    //返回值是QFont而不是QFontDialog
+    //QFont 参数一：默认的字体 参数二：默认的大小
+    QFont font = QFontDialog::getFont(&amp;flag,QFont("宋体",36));
+    qDebug()&lt;&lt;"字体："&lt;&lt;font.family()&lt;&lt;"字号："&lt;&lt;font.pointSize()&lt;&lt;"是否加粗"&lt;&lt;font.bold()&lt;&lt;"是否斜体"&lt;&lt;font.italic();
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include &lt;QDialog&gt;
+#include &lt;QMessageBox&gt;
+#include &lt;QDebug&gt;
+#include &lt;QColorDialog&gt;
+#include &lt;QFileDialog&gt;
+#include &lt;QFontDialog&gt;
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui-&gt;setupUi(this);
+    resize(640,400);//设置主窗口大小
+    connect(ui-&gt;actiontool,&amp;QAction::triggered,[=](){//建立连接，当触发tool弹出窗口
+    //模态对话框------------------------------------------
+    //QDialog dia1(this);//创建一个窗口
+    //dia1.resize(520,300);//设置弹出的窗口大小
+    //dia1.exec();//显示模态对话框
+    QMessageBox::critical(this,"error","错误");//点击弹出错误信息==============================消息对话框
+    });
+    connect(ui-&gt;actiontool2,&amp;QAction::triggered,[=](){//建立连接，当触发tool2弹出窗口
+    //非模态对话框----------------------------------------
+    //QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过
+    //QDialog *dia2 = new QDialog(this);//创建一个窗口，
+    //dia2-&gt;resize(520,300);
+    //dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+    //dia2-&gt;show();//显示非模态对话框
+    QMessageBox::information(this,"info","Hello World");//点击弹出消息信息====================消息对话框
+    });
+    connect(ui-&gt;actionedit,&amp;QAction::triggered,[=](){//建立连接，当触发编辑弹出窗口
+    //模态对话框------------------------------------------
+    //QDialog dia3(this);//创建一个窗口
+    //dia3.resize(520,300);//设置弹出的窗口大小
+    //dia3.exec();//显示模态对话框
+        if(QMessageBox::Yes == QMessageBox::question(this,"edit","是否编辑",QMessageBox::Yes | QMessageBox::Yes,QMessageBox::No)){
+            qDebug()&lt;&lt;"开始编辑";
+        }else{
+            qDebug()&lt;&lt;"退出编辑";
+        }//=================================================================================消息对话框
+    });
+    connect(ui-&gt;actiondel,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+    //非模态对话框----------------------------------------
+//    QDialog *dia4 = new QDialog(this);//创建一个窗口，
+//    dia4-&gt;resize(520,300);
+//    dia4-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+//    dia4-&gt;show();//显示非模态对话框
+      QMessageBox::warning(this,"warning","可能没有成功删除");//===============================消息对话框
+    });
+
+    //颜色对话框----------------------------------------------------------------------------
+    connect(ui-&gt;actioncolor,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+        //返回值是QColor而不是QcolorDialog
+        //QColor 参数一：red 参数二：green 参数三：blue 参数四：透明度 填参数是选择打开后的默认颜色
+        QColor color1 = QColorDialog::getColor(QColor(255,0,0,255));
+        qDebug() &lt;&lt;"r="&lt;&lt;color1.red()&lt;&lt;"g="&lt;&lt;color1.green()&lt;&lt;"b="&lt;&lt;color1.blue();
+    });
+    //文件对话框----------------------------------------------------------------------------
+    connect(ui-&gt;actionfile,&amp;QAction::triggered,[=](){
+        QString cwd = QFileDialog::getOpenFileName(this,"打开桌面txt文件","E:/资源/桌面","*.txt");
+        qDebug() &lt;&lt;cwd;
+    });
+    //字体对话框----------------------------------------------------------------------------
+    connect(ui-&gt;actionfont,&amp;QAction::triggered,[=](){
+        bool flag;
+        QFont font = QFontDialog::getFont(&amp;flag,QFont("宋体",36));
+        qDebug()&lt;&lt;"字体："&lt;&lt;font.family()&lt;&lt;"字号："&lt;&lt;font.pointSize()&lt;&lt;"是否加粗"&lt;&lt;font.bold()&lt;&lt;"是否斜体"&lt;&lt;font.italic();
+    });
+
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="七、自定义控件"><a href="#七、自定义控件" class="headerlink" title="七、自定义控件"></a>七、自定义控件</h2><p>QT里的各种已有的控件使用方法推荐观看视频</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g4411H78N?p=24&amp;vd_source=f342719b375d872cded85ce2655fee5d">控件P24-P28</a></p>
 
                 
             </div>
