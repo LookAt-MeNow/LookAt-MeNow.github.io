@@ -597,6 +597,15 @@ void Widget::on_pushButton_clicked()
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="const-指针"><a href="#const-指针" class="headerlink" title="const 指针"></a>const 指针</h2><h3 id="常量指针-const修饰指针"><a href="#常量指针-const修饰指针" class="headerlink" title="常量指针 const修饰指针"></a>常量指针 const修饰指针</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">const int *p=&amp;a;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>特点：指针的指向可以修改，（此时指针指向变量a），指针指向的值不可修改（此时指针指向的值为变量a内存空间中的10）。</strong></p>
+<h2 id="指针常量-const修饰常量"><a href="#指针常量-const修饰常量" class="headerlink" title="指针常量 const修饰常量"></a>指针常量 const修饰常量</h2><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int *const p=&amp;a;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>特点：指针的指向不可以修改，（此时指针指向变量a），指针指向的值可修改（此时指针指向的值为变量a内存空间中的10）。</strong></p>
+<h2 id="const既修饰指针，又修饰常量"><a href="#const既修饰指针，又修饰常量" class="headerlink" title="const既修饰指针，又修饰常量"></a>const既修饰指针，又修饰常量</h2><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">const int *const p=&amp;a;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>特点：两者都不可以改。</strong></p>
 
                 
             </div>
