@@ -680,6 +680,217 @@
 <p>在linux中每个用户的id分为两种用户 ID（User ID，简称 UID）和组 ID（Group ID，简称 GID）</p>
 <p><img src="/2022/12/11/linux-xue-xi/image-20221211164851886.png"></p>
 <p>每个文件都有自己的拥有者 ID 和群组 ID，当显示文件属性时，系统会根据 /etc/passwd 和 /etc/group 文件中的内容，分别找到 UID 和 GID 对应的用户名和群组名，然后显示出来。</p>
+<h3 id="x2F-etc-x2F-passwd"><a href="#x2F-etc-x2F-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h3><p>/etc/passwd 文件，是系统用户配置文件，存储了系统中所有用户的基本信息，并且所有用户都可以对此文件执行读操作。</p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221211170657462.png"></p>
+<p>每一行对应了一个用户，这里显示了很多用户，这些用户很多都是系统和服务运行必须的用户，称为系统用户</p>
+<p><strong>系统用户不能登录，也不能删除</strong></p>
+<p>每行用户的含义</p>
+<pre class="line-numbers language-none"><code class="language-none">用户名：密码：UID（用户ID）：GID（组ID）：描述性信息：主目录：默认Shell<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>root用户</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">root:x:0:0:root:/root:/bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>我自己的用户</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">zhang:x:1000:1000:23,,,:/home/zhang:/bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="用户名"><a href="#用户名" class="headerlink" title="用户名"></a>用户名</h4><p>用户名，就是一串代表用户身份的字符串，用户名仅是为了方便用户记忆，Linux 系统是通过 UID 来识别用户身份，分配用户权限的。/etc/passwd 文件中就定义了用户名和 UID 之间的对应关系。</p>
+<h4 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h4><p>“x” 表示此用户设有密码，但不是真正的密码，真正的密码保存在 /etc/shadow 文件中，此文件只有 root 用户可以浏览和操作，这样就最大限度地保证了密码的安全。</p>
+<h4 id="UID"><a href="#UID" class="headerlink" title="UID"></a>UID</h4><p>UID，也就是用户 ID。每个用户都有唯一的一个 UID，Linux 系统通过 UID 来识别不同的用户。</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>超级用户。UID 为 0 就代表这个账号是管理员账号。在 Linux 中，如何把普通用户升级成管理员呢？只需把其他用户的 UID 修改为 0 就可以了，这一点和 Windows 是不同的。不过不建议建立多个管理员账号。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1~499</strong></td>
+<td><strong>系统用户（伪用户）。也就是说，此范围的 UID 保留给系统使用。其中，1<del>99 用于系统自行创建的账号；100</del>499 分配给有系统账号需求的用户。  其实，除了 0 之外，其他的 UID 并无不同，这里只是默认 500 以下的数字给系统作为保留账户，只是一个公认的习惯而已。</strong></td>
+</tr>
+<tr>
+<td><strong>500~65535</strong></td>
+<td><strong>普通用户。通常这些 UID 已经足够用户使用了。但不够用也没关系，2.6.x 内核之后的 Linux 系统已经可以支持 232 个 UID 了。</strong></td>
+</tr>
+</tbody></table>
+<h4 id="GID"><a href="#GID" class="headerlink" title="GID"></a>GID</h4><p>表示用户初始组的组 ID 号</p>
+<p>初始组和附加组的含义并不相同</p>
+<p><strong>比如现在创建用户chen 就会自动创建一个组chen，这个组就是初始组，如果在把用户chen加到 zhang组里，用户chen就同时有chen和zhang组里的权限</strong>	</p>
+<p><strong>这里看到的ID号是初始组的ID</strong></p>
+<h4 id="描述性信息"><a href="#描述性信息" class="headerlink" title="描述性信息"></a>描述性信息</h4><p>基本没什么用</p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221211171932974.png"></p>
+<p>我这里显示的23，在登录图形界面的时候显示的就是23</p>
+<h4 id="主目录"><a href="#主目录" class="headerlink" title="主目录"></a>主目录</h4><p>用户登录后有操作权限的访问目录，通常称为用户的主目录。</p>
+<h4 id="默认的shell"><a href="#默认的shell" class="headerlink" title="默认的shell"></a>默认的shell</h4><p>Shell 就是 Linux 的命令解释器，是用户和 Linux 内核之间沟通的桥梁。</p>
+<p>shell有不同种类，可以参考<a href="">shell</a></p>
+<h3 id="x2F-etc-x2F-shadow"><a href="#x2F-etc-x2F-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h3><p>用于存储 Linux 系统中用户的密码信息，又称为“影子文件”</p>
+<p> /etc/passwd 文件，由于该文件允许所有用户读取，易导致用户密码泄露，因此 Linux 系统将用户的密码信息从 /etc/passwd 文件中分离出来，并单独放到了此文件中。</p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221211172731075.png" alt="这个文件只能由root用户访问"></p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221211172836385.png"></p>
+<p>文件中每行代表一个用户，同样使用 “:” 作为分隔符，不同之处在于，每行用户信息被划分为 9 个字段。</p>
+<pre class="line-numbers language-none"><code class="language-none">用户名：加密密码：最后一次修改时间：最小修改时间间隔：密码有效期：密码需要变更前的警告天数：密码过期后的宽限时间：账号失效时间：保留字段<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="用户名-1"><a href="#用户名-1" class="headerlink" title="用户名"></a>用户名</h4><p>与etc/passwd一致</p>
+<h4 id="加密密码"><a href="#加密密码" class="headerlink" title="加密密码"></a>加密密码</h4><p>保存了真正的密码</p>
+<p>目前 Linux 的密码采用的是 SHA512 散列加密算法，原来采用的是 MD5 或 DES 加密算法。SHA512 散列加密算法的加密等级更高，也更加安全。</p>
+<p>所有伪用户的密码都是 “!!” 或 “*”，代表没有密码是不能登录的。当然，新创建的用户如果不设定密码，那么它的密码项也是 “!!”，代表这个用户没有密码，不能登录。</p>
+<h4 id="最后一次修改时间"><a href="#最后一次修改时间" class="headerlink" title="最后一次修改时间"></a>最后一次修改时间</h4><p>这里root显示的修改时间是19275，Linux 计算日期的时间是以 1970 年 1 月 1 日作为 1 不断累加得到的时间，到 1971 年 1 月 1 日，则为 366 天。这里显示 19275 天，也就是说，此 root 账号在 1970 年 1 月 1 日之后的第 19275 天修改的 root 用户密码。</p>
+<p>使用这个命名可以查看修改时间</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"1970-01-01 19275 days"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/12/11/linux-xue-xi/image-20221211173703757.png"></p>
+<h4 id="最小修改时间间隔"><a href="#最小修改时间间隔" class="headerlink" title="最小修改时间间隔"></a>最小修改时间间隔</h4><p>最小修改间隔时间，也就是说，该字段规定了从第 3 字段（最后一次修改密码的日期）起，多长时间之内不能修改密码。如果是 0，则密码可以随时修改；如果是 10，则代表密码修改后 10 天之内不能再次修改密码。</p>
+<h4 id="密码有效期"><a href="#密码有效期" class="headerlink" title="密码有效期"></a>密码有效期</h4><p>经常变更密码是个好习惯，为了强制要求用户变更密码，这个字段可以指定距离第 3 字段（最后一次更改密码）多长时间内需要再次变更密码，否则该账户密码进行过期阶段。<br>该字段的默认值为 99999，也就是 273 年，可认为是永久生效。如果改为 90，则表示密码被修改 90 天之后必须再次修改，否则该用户即将过期。管理服务器时，通过这个字段强制用户定期修改密码。</p>
+<h4 id="密码需要变更前的警告天数"><a href="#密码需要变更前的警告天数" class="headerlink" title="密码需要变更前的警告天数"></a>密码需要变更前的警告天数</h4><p>与第 5 字段相比较，当账户密码有效期快到时，系统会发出警告信息给此账户，提醒用户 “再过 n 天你的密码就要过期了，请尽快重新设置你的密码！”。</p>
+<p>该字段的默认值是 7，也就是说，距离密码有效期的第 7 天开始，每次登录系统都会向该账户发出 “修改密码” 的警告信息。</p>
+<h4 id="密码过期后宽限天数"><a href="#密码过期后宽限天数" class="headerlink" title="密码过期后宽限天数"></a>密码过期后宽限天数</h4><p>也称为“口令失效日”，简单理解就是，在密码过期后，用户如果还是没有修改密码，则在此字段规定的宽限天数内，用户还是可以登录系统的；如果过了宽限天数，系统将不再让此账户登陆，也不会提示账户过期，是完全禁用。</p>
+<p>比如说，此字段规定的宽限天数是 10，则代表密码过期 10 天后失效；如果是 0，则代表密码过期后立即失效；如果是 -1，则代表密码永远不会失效。</p>
+<h4 id="账号失效时间"><a href="#账号失效时间" class="headerlink" title="账号失效时间"></a>账号失效时间</h4><p>使用自 1970 年 1 月 1 日以来的总天数作为账户的失效时间。该字段表示，账号在此字段规定的时间之外，不论你的密码是否过期，都将无法使用！</p>
+<p>该字段通常被使用在具有收费服务的系统中。</p>
+<h4 id="保留字段"><a href="#保留字段" class="headerlink" title="保留字段"></a>保留字段</h4><p>目前没有什么功能</p>
+<h3 id="x2F-etc-x2F-group"><a href="#x2F-etc-x2F-group" class="headerlink" title="/etc/group"></a>/etc/group</h3><p>/ect/group 文件是用户组配置文件，即用户组的所有信息都存放在此文件中。</p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221211174753627.png"></p>
+<p>每一行代表了一个组，分为 4 个字段，每个字段对应的含义为</p>
+<pre class="line-numbers language-none"><code class="language-none">组名：密码：GID：该用户组中的用户列表<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="组名"><a href="#组名" class="headerlink" title="组名"></a>组名</h4><p>用户组的名称，有字母或数字构成。同 /etc/passwd 中的用户名一样，组名也不能重复。</p>
+<h4 id="密码-1"><a href="#密码-1" class="headerlink" title="密码"></a>密码</h4><p>和 /etc/passwd 文件一样，这里的 “x” 仅仅是密码标识，真正加密后的组密码默认保存在 /etc/gshadow 文件中。</p>
+<p>不过，用户设置密码是为了验证用户的身份，那用户组设置密码是用来做什么的呢？用户组密码主要是用来指定组管理员的，由于系统中的账号可能会非常多，root 用户可能没有时间进行用户的组调整，这时可以给用户组指定组管理员，如果有用户需要加入或退出某用户组，可以由该组的组管理员替代 root 进行管理。但是这项功能目前很少使用，我们也很少设置组密码。如果需要赋予某用户调整某个用户组的权限，则可以使用 sudo 命令代替。</p>
+<h4 id="GID-1"><a href="#GID-1" class="headerlink" title="GID"></a>GID</h4><p>就是群组的 ID 号，Linux 系统就是通过 GID 来区分用户组的，同用户名一样，组名也只是为了便于管理员记忆。</p>
+<p>这里的组 GID 与 /etc/passwd 文件中第 4 个字段的 GID 相对应，实际上，/etc/passwd 文件中使用 GID 对应的群组名，就是通过此文件对应得到的。</p>
+<h4 id="用户列表"><a href="#用户列表" class="headerlink" title="用户列表"></a>用户列表</h4><p>此字段列出每个群组包含的所有用户。需要注意的是，如果该用户组是这个用户的初始组，则该用户不会写入这个字段，可以这么理解，该字段显示的用户都是这个用户组的附加用户。</p>
+<p>比如root用户没有附加组，只属于自己的初始组，参数就是空</p>
+<p>每个用户都可以加入多个附加组，但是只能属于一个初始组。所以我们在实际工作中，如果需要把用户加入其他组，则需要以附加组的形式添加。</p>
+<p><strong>这三个文件之间的关系可以这样理解，即先在 /etc/group 文件中查询用户组的 GID 和组名；然后在 /etc/passwd 文件中查找该 GID 是哪个用户的初始组，同时提取这个用户的用户名和 UID；最后通过 UID 到 /etc/shadow 文件中提取和这个用户相匹配的密码。</strong></p>
+<h3 id="新用户添加删除"><a href="#新用户添加删除" class="headerlink" title="新用户添加删除"></a>新用户添加删除</h3><p>使用useradd添加用户</p>
+<p>当使用 useradd 命令不加参数选项，后面直接跟所添加的用户名时，系统首先会读取配置 文件/etc/login.defs 和/etc/default/useradd 文件中所配置的信息建立用户的家目录，并 复制/etc/skel 中的所有文件（包括隐藏的环境配置文件）到新用户的家目录中。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">useradd</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>-m 新用户名 </li>
+<li>-c 添加备注信息 </li>
+<li>-d 指定有效家目录 </li>
+<li>-g 指定用户组 </li>
+<li>-G 指定附加组 </li>
+<li>-n 取消以用户为名的组 </li>
+<li>-s 指定登录 shell </li>
+<li>-u 指定用户 ID</li>
+</ul>
+<p>使用userdel删除用户</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">userdel</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>删除用户会把该用户的记录从系统文件etc/passwd中删除掉，同时删除掉相应的家目录</p>
+<ul>
+<li>-r 同时删除主目录</li>
+</ul>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221217151042739.png"></p>
+<p>创建用户后可以在etc/passwd文件中查看</p>
+<h3 id="更改用户信息"><a href="#更改用户信息" class="headerlink" title="更改用户信息"></a>更改用户信息</h3><p>可以更改的用户信息包括用户的有关属性，如用户号、主目录、用户组、登录 Shell 等</p>
+<p>修改已有用户的信息使用 usermod 命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">usermod</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>显示当前用户的信息：</p>
+<ul>
+<li>who 查询当前在线用户 </li>
+<li>w 查询当前在线用户的详细信息</li>
+<li>groups 查询用户所属的组 </li>
+<li>id 显示用户 ID 信息</li>
+</ul>
+<h3 id="密码管理"><a href="#密码管理" class="headerlink" title="密码管理"></a>密码管理</h3><p>我们在创建新的用户的时候是没有设定密码的，因此还不能用来登录系统</p>
+<p>passwd语法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">passwd</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>-S：查询用户密码的状态，也就是 /etc/shadow 文件中此用户密码的内容。仅 root 用户可用；</li>
+<li>-l：暂时锁定用户，该选项会在 /etc/shadow 文件中指定用户的加密密码串前添加 “!”，使密码失效。仅 root 用户可用；</li>
+<li>-u：解锁用户，和 -l 选项相对应，也是只能 root 用户使用；</li>
+<li>–stdin：可以将通过管道符输出的数据作为用户的密码。主要在批量添加用户时使用；</li>
+<li>-n 天数：设置该用户修改密码后，多长时间不能再次修改密码，也就是修改 /etc/shadow 文件中各行密码的第 4 个字段；</li>
+<li>-x 天数：设置该用户的密码有效期，对应 /etc/shadow 文件中各行密码的第 5 个字段；</li>
+<li>-w 天数：设置用户密码过期前的警告天数，对于 /etc/shadow 文件中各行密码的第 6 个字段；</li>
+<li>-i 日期：设置用户密码失效日期，对应 /etc/shadow 文件中各行密码的第 7 个字段</li>
+</ul>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221217152354201.png" alt="给刚新建的用户设置密码"></p>
+<h3 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h3><h4 id="添加用户组"><a href="#添加用户组" class="headerlink" title="添加用户组"></a>添加用户组</h4><p>groupadd语法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupadd</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>用户组<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>-g GID：指定组 ID</li>
+</ul>
+<p>例子：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupadd</span> <span class="token parameter variable">-g</span> <span class="token number">1010</span> group1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>创建一个新组，标识号是1010</p>
+<h4 id="gpasswd管理组"><a href="#gpasswd管理组" class="headerlink" title="gpasswd管理组"></a>gpasswd管理组</h4><p>为了避免系统管理员（root）太忙碌，无法及时管理群组，我们可以使用 gpasswd 命令给群组设置一个群组管理员，代替 root 完成将用户加入或移出群组的操作。</p>
+<p>gpasswd语法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpasswd <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>组名<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>-A 定义组管理员列表 </li>
+<li>-a 添加组成员，每次只能加一个 </li>
+<li>-d 删除组成员，每次只能删一个 </li>
+<li>-M 定义组成员列表，可设置多个，用“，”分开——定义的组成员必须是已存在 用户的 </li>
+<li>-r 移除密码</li>
+</ul>
+<p>例子：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpasswd <span class="token parameter variable">-a</span> ubuntu group1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>新建一个ubuntu用户，并将这个用户添加到group1组中</p>
+<h4 id="删除用户组"><a href="#删除用户组" class="headerlink" title="删除用户组"></a>删除用户组</h4><p>groupdel语法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupdel</span> <span class="token punctuation">[</span>用户组<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>例子：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupdel</span> group1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>删除group1组</p>
+<h4 id="修改用户组属性"><a href="#修改用户组属性" class="headerlink" title="修改用户组属性"></a>修改用户组属性</h4><p>groupmod语法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupmod</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>用户组<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>-g GID 为用户组指定新的组标识号。 </li>
+<li>-o 与-g 选项同时使用，用户组的新 GID 可以与系统已有用户组的 GID 相同。 </li>
+<li>-n 新用户组 将用户组的名字改为新名字</li>
+</ul>
+<p>例子：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupmod</span> <span class="token parameter variable">-g</span> <span class="token number">1020</span> <span class="token parameter variable">-n</span> group2 group1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>把用户组group1的标识符改为1020，并把名字更改为group2</p>
+<h3 id="文件属性与权限"><a href="#文件属性与权限" class="headerlink" title="文件属性与权限"></a>文件属性与权限</h3><h4 id="文件类型查看"><a href="#文件类型查看" class="headerlink" title="文件类型查看"></a>文件类型查看</h4><p>使用命令ls -l时会罗列出每个文件的详细信息</p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221217154835172.png"></p>
+<p>分别代表的意思：</p>
+<p>文件类型、文件权限、硬连接数、文件属主、文件属组、文件大小、更动时间、文件名</p>
+<p>开头的字母代表的时文件类型：</p>
+<ul>
+<li>-：表示一般文件 </li>
+<li>d：表示目录 </li>
+<li>l：表示软链接 </li>
+<li>p：进程间相互通信的文件，Linux 拥有一些机制来允许进程间的互相通信，这些 机制称为进程间通信机制，管道（pipe）、命名管道（FIFO）、共享缓冲区、信号量、sockets 信号等都是进程间常用通信机制，pipe 是用于父进程和子进程之间通信。FIFO 是一个文件， 允许运行在同一台计算机的进程间进行通信。</li>
+<li>s：表示 socket 通信套接字文件（通常用于网络数据连接） </li>
+<li>c：表示字符设备文件（如：键盘、鼠标、终端等，通常放在/dev 下） </li>
+<li>b：表示块设备文件（存储数据设备文件，如：硬盘）</li>
+</ul>
+<h4 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h4><p>读权限 r：允许查看文件内容，使用 4 表示 </p>
+<p>写权限 w：允许修改文件内容，使用 2 表示 </p>
+<p>可执行 x：允许运行程序，使用 1 表示 </p>
+<p>无权限 -：使用 0 表示</p>
+<p>由于这 9 个字符分属 3 类用户，因此每种用户身份包含 3 个权限（r、w、x），通过将 3 个权限对应的数字累加，最终得到的值即可作为每种用户所具有的权限。</p>
+<p>drwxrw-r-x</p>
+<p>所有者 = rwx = 4+2+1 = 7<br>所属组 = rw- = 4+2 = 6<br>其他人 = r-x = 4+1 = 5</p>
+<p>所以这个权限就是765</p>
+<p>drwxr-xr-x 意思是一个权限为 755 的目录      -rw-r–r– 意思是一个权限为 644 的文件</p>
+<p>文件属主-&gt;属于的用户账号</p>
+<p>文件属组-&gt;属于的用户组</p>
+<p><strong>修改文件权限</strong></p>
+<p>chmod语法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">chmod</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> <span class="token punctuation">[</span>ugoa<span class="token punctuation">]</span> <span class="token punctuation">[</span>+-<span class="token operator">=</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>rwx<span class="token punctuation">]</span> 参数<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>-R（注意是大写）选项表示连同子目录中的所有文件，也都修改设定的权限。</li>
+<li>u 属主 g 属组 o 其他人 a 所有人 </li>
+<li>+添加 - 删除 = 重置</li>
+</ul>
+<p>文件的基本权限就是 3 种用户身份（所有者、所属组和其他人）搭配 3 种权限（rwx），chmod 命令中用 u、g、o 分别代表 3 种身份，还用 a 表示全部的身份（all 的缩写）。另外，chmod 命令仍使用 r、w、x 分别表示读、写、执行权限。</p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221217160943599.png"></p>
+<p><img src="/2022/12/11/linux-xue-xi/image-20221217161313902.png" alt="实例"></p>
 
                 
             </div>
