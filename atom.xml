@@ -101,20 +101,25 @@
     <link href="http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/"/>
     <id>http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/</id>
     <published>2022-10-27T10:07:52.000Z</published>
-    <updated>2022-11-22T14:19:59.130Z</updated>
+    <updated>2022-12-21T10:05:14.403Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;有时间写&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="STL" scheme="http://example.com/tags/STL/"/>
     
   </entry>
   

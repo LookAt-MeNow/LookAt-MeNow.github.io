@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="STL标准模板库, 园崎魅音">
-    <meta name="description" content="有时间写
-">
+    <meta name="description" content="基础类操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -325,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fstatic.missevan.com%2Fboardimgs%2F2015%2F07%2F28%2F14380493872298.png&refer=http%3A%2F%2Fstatic.missevan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1674194314&t=e8a0cada2c6af4a7713171cbce96f92e')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -352,12 +351,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/STL/">
+                                <span class="chip bg-color">STL</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C/" class="post-category">
+                                C++
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -390,7 +406,554 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>有时间写</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>长久以来，软件界一直希望建立一种可重复利用的东西，以及一种得以制造出”可重复运用的东西”的方法，从函数(functions)，类别(classes),函数库(function libraries),类别库(class libraries)、各种组件，从模块化设计，到面向对象(object oriented )，为的就是复用性的提升。</p>
+<p>复用性必须建立在某种标准之上。但是在许多环境下，就连软件开发最基本的数据结构(data structures) 和算法(algorithm)都未能有一套标准。大量程序员被迫从事大量重复的工作，竟然是为了完成前人已经完成而自己手上并未拥有的程序代码，这不仅是人力资源的浪费，也是挫折与痛苦的来源。</p>
+<p>为了建立数据结构和算法的一套标准，并且降低他们之间的耦合关系，以提升各自的独立性、弹性、交互操作性(相互合作性,interoperability),诞生了STL。</p>
+<p>STL(Standard Template Library,标准模板库)，是惠普实验室开发的一系列软件的统称。现在主要出现在 c++中，但是在引入 c++之前该技术已经存在很长时间了。</p>
+<p>STL 从广义上分为: 容器(container) 算法(algorithm) 迭代器(iterator)。</p>
+<p>容器和算法之间通过迭代器进行无缝连接。STL 几乎所有的代码都采用了模板类或者模板函数，这相比传统的由函数和类组成的库来说提供了更好的代码重用机会。</p>
+<p>STL(Standard Template Library)标准模板库,在我们 c++标准程序库中隶属于 STL 的占到了 80%以上。</p>
+<h2 id="STL六大组件"><a href="#STL六大组件" class="headerlink" title="STL六大组件"></a>STL六大组件</h2><ul>
+<li>STL大体分为六大组件，分别是:容器、算法、迭代器、仿函数、适配器（配接器）、空间配置器</li>
+<li>容器：各种数据结构，如vector、list、deque、set、map等,用来存放数据。 </li>
+<li>算法：各种常用的算法，如sort、find、copy、for_each等 </li>
+<li>迭代器：扮演了容器与算法之间的胶合剂。 </li>
+<li>仿函数：行为类似函数，可作为算法的某种策略。 </li>
+<li>适配器：一种用来修饰容器或者仿函数或迭代器接口的东西。 6. 空间配置器：负责空间的配置与管理</li>
+<li>空间配置器：负责空间的配置与管理。</li>
+</ul>
+<p>其中最主要的三个是容器、算法还有迭代器</p>
+<ol>
+<li>容器：置物之所也 STL容器就是将运用最广泛的一些数据结构实现出来 常用的数据结构：数组, 链表,树, 栈, 队列, 集合, 映射表 等 这些容器分为序列式容器和关联式容器两种:</li>
+</ol>
+<p>​		序列式容器:强调值的排序，序列式容器中的每个元素均有固定的位置。 </p>
+<p>​		关联式容器:二叉树结构，各元素之间没有 严格的物理上的顺序关系</p>
+<p>​	2.算法：问题之解法也 有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法(Algorithms) 算法分为:质变算法和非质变算		法。 </p>
+<p>​		质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等 </p>
+<p>​		非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找、计数、遍历、寻找极值等等</p>
+<p>​	3.迭代器：容器和算法之间粘合剂 提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。 每个容器都有自己专属的迭代器 迭代器使用非常类似于指针。</p>
+<p>​	常用的容器中迭代器种类为双向迭代器，和随机访问迭代器</p>
+<h2 id="常用容器"><a href="#常用容器" class="headerlink" title="常用容器"></a>常用容器</h2><p>以vector容器为例写一个简单的程序</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class My{
+public:
+    My(string a,int b){
+        this-&gt;name=a;
+        this-&gt;age=b;
+    }
+
+    string name;
+    int age;
+};
+
+void test01(){
+    //存放自定义数据类型
+    vector&lt;My&gt; t;
+    My p1("aaa",10);
+    My p2("bbb",20);
+    My p3("ccc",30);
+    My p4("ddd",40);
+    My p5("eee",50);
+    //向容器中添加数据
+    t.push_back(p1);
+    t.push_back(p2);
+    t.push_back(p3);
+    t.push_back(p4);
+    t.push_back(p5);
+    //遍历数据
+    for(vector&lt;My&gt;::iterator it=t.begin();it!=t.end();it++){
+        cout&lt;&lt;"name "&lt;&lt;(*it).name&lt;&lt;"age "&lt;&lt;(*it).age&lt;&lt;endl;
+    }
+}
+
+int main(){
+    test01();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221143114814.png" alt="运行结果"></p>
+<p>通过代码运行我们可以简单的理解为vector容器就是一个存放数组类型的容器。</p>
+<h3 id="string容器"><a href="#string容器" class="headerlink" title="string容器"></a>string容器</h3><h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><ul>
+<li>string(); //创建一个空的字符串 例如: string str; </li>
+<li>string(const char* s); //使用字符串s初始化 </li>
+<li>string(const string&amp; str); //使用一个string对象初始化另一个string对象  <strong>拷贝构造函数</strong></li>
+<li>string(int n, char c); //使用n个字符c初始化</li>
+</ul>
+<p>示例：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//构造函数
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+void test(){
+    //默认构造
+    string str1;
+    //字符串初始化
+    const char* str = "hello world";
+    string str2(str);
+    cout &lt;&lt;"str2="&lt;&lt;str2&lt;&lt;endl;
+    //拷贝构造函数
+    string str3(str2);
+    cout&lt;&lt;"str3="&lt;&lt;str3&lt;&lt;endl;
+    //n个字符初始化
+    string str4(10,'a');
+    cout&lt;&lt;"str4="&lt;&lt;str4&lt;&lt;endl;
+}
+
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221145521831.png" alt="运行结果"></p>
+<h4 id="字符串赋值"><a href="#字符串赋值" class="headerlink" title="字符串赋值"></a>字符串赋值</h4><ul>
+<li>string&amp; operator=(const char* s); //char*类型字符串 赋值给当前的字符串 </li>
+<li>string&amp; operator=(const string &amp;s); //把字符串s赋给当前的字符串 </li>
+<li>string&amp; operator=(char c); //字符赋值给当前的字符串 </li>
+<li>string&amp; assign(const char *s); //把字符串s赋给当前的字符串 </li>
+<li>string&amp; assign(const char *s, int n); //把字符串s的前n个字符赋给当前的字符串 </li>
+<li>string&amp; assign(const string &amp;s); //把字符串s赋给当前字符串 </li>
+<li>string&amp; assign(int n, char c); //用n个字符c赋给当前字符</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">//字符串赋值
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+void test(){
+    //char*类型字符串 赋值给当前的字符串 
+    string str1;
+    str1="hello world";
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //把字符串s赋给当前的字符串 
+    string str2=str1;
+    cout &lt;&lt;"str2="&lt;&lt;str2&lt;&lt;endl;
+    //字符赋值给当前的字符串 
+    string str3;
+    str3='a';
+    cout &lt;&lt;"str3="&lt;&lt;str3&lt;&lt;endl;
+    //把字符串s赋给当前的字符串 
+    string str4;
+    str4.assign("hello STL");
+    cout &lt;&lt;"str4="&lt;&lt;str4&lt;&lt;endl;
+    //把字符串s的前n个字符赋给当前的字符串 
+    string str5;
+    str5.assign(str1,5);
+    cout &lt;&lt;"str5="&lt;&lt;str5&lt;&lt;endl;
+    //把字符串s赋给当前字符串 
+    string str6;
+    str6.assign(str1);
+    cout &lt;&lt;"str6="&lt;&lt;str6&lt;&lt;endl;
+    //用n个字符c赋给当前字符
+    string str7;
+    str7.assign(10,'w');
+    cout &lt;&lt;"str7="&lt;&lt;str7&lt;&lt;endl;
+
+
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221152446912.png" alt="运行结果"></p>
+<h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><ul>
+<li>string&amp; operator+=(const char* str); //重载+=操作符 </li>
+<li>string&amp; operator+=(const char c); //重载+=操作符 </li>
+<li>string&amp; operator+=(const string&amp; str); //重载+=操作符 </li>
+<li>string&amp; append(const char *s); //把字符串s连接到当前字符串结尾 </li>
+<li>string&amp; append(const char *s, int n); //把字符串s的前n个字符连接到当前字符串结尾 </li>
+<li>string&amp; append(const string &amp;s); //同operator+=(const string&amp; str) </li>
+<li>string&amp; append(const string &amp;s, int pos, int n); //字符串s中从pos开始的n个字符连接到字符串结尾</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//字符串拼接
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+void test(){
+    //重载+=操作符 1
+    string str1;
+    str1 = "I ";
+    str1+="Love game";
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //重载+=操作符 2
+    str1+='.';
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //重载+=操作符 3
+    string str2;
+    str2 = " No,you don't";
+    str1+=str2;
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //把字符串s连接到当前字符串结尾 
+    str1.append(" ....");
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //把字符串s的前n个字符连接到当前字符串结尾 
+    str1.append(" bey sdfsdfasdhf",4);
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //同operator+=(const string&amp; str) 
+    string str3;
+    str3 = " aaaa";
+    str1.append(str3);
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //字符串s中从pos开始的n个字符连接到字符串结尾 */
+    str1.append(str3,0,3);
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221153634731.png" alt="运行结果"></p>
+<h4 id="字符串查找替换"><a href="#字符串查找替换" class="headerlink" title="字符串查找替换"></a>字符串查找替换</h4><ul>
+<li>int find(const string&amp; str, int pos = 0) const; //查找str第一次出现位置,从pos开始查找 </li>
+<li>int find(const char* s, int pos = 0) const; //查找s第一次出现位置,从pos开始查找 </li>
+<li>int find(const char* s, int pos, int n) const; //从pos位置查找s的前n个字符第一次位置 </li>
+<li>int find(const char c, int pos = 0) const; //查找字符c第一次出现位置 </li>
+<li>int rfind(const string&amp; str, int pos = npos) const; //查找str最后一次位置,从pos开始查找 </li>
+<li>int rfind(const char* s, int pos = npos) const; //查找s最后一次出现位置,从pos开始查找 </li>
+<li>int rfind(const char* s, int pos, int n) const; //从pos查找s的前n个字符最后一次位置 </li>
+<li>int rfind(const char c, int pos = 0) const; //查找字符c最后一次出现位置 </li>
+<li>string&amp; replace(int pos, int n, const string&amp; str); //替换从pos开始n个字符为字符串str </li>
+<li>string&amp; replace(int pos, int n,const char* s); //替换从pos开始的n个字符为字符串s</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+//查找
+void test01(){
+    //使用find
+    string str = "abcdefg_de";
+    if(str.find("de")==-1){
+        cout &lt;&lt;"find erro"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"find success,this point is "&lt;&lt;str.find("de")&lt;&lt;endl;
+    }
+    if(str.find("dg")==-1){
+        cout &lt;&lt;"find erro"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"find success,this point is "&lt;&lt;str.find("de")&lt;&lt;endl;
+    }
+    //使用rfind
+    if(str.rfind("de")==-1){
+        cout &lt;&lt;"rfind erro"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"rfind success,this point is "&lt;&lt;str.rfind("de")&lt;&lt;endl;
+    }
+    if(str.rfind("dg")==-1){
+        cout &lt;&lt;"rfind erro"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"rfind success,this point is "&lt;&lt;str.rfind("de")&lt;&lt;endl;
+    }
+    //find是从左向右找，rfind是从右往左找
+}
+//替换
+void test02(){
+    string str = "abcdefg";
+    str.replace(1,3,"1111");//把一号位置后面三个位置替换为1111
+    cout &lt;&lt;"str="&lt;&lt;str&lt;&lt;endl;
+}
+int main(){
+    test01();
+    test02();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221160303435.png" alt="运行结果"></p>
+<h4 id="字符串比较和存取"><a href="#字符串比较和存取" class="headerlink" title="字符串比较和存取"></a>字符串比较和存取</h4><ul>
+<li>int compare(const string &amp;s) const; //与字符串s比较 </li>
+<li>int compare(const char *s) const; //与字符串s比较</li>
+<li>char&amp; operator[] (int n); //通过[]方式取字符 </li>
+<li>char&amp; at(int n); //通过at方法获取字符</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+//字符串比较
+void test01(){
+    string str1 ="hello";
+    string str2 ="hello";
+    if(str1.compare(str2)==0){
+        cout &lt;&lt;"str1 == str2"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"str1!=str2"&lt;&lt;endl;
+    }
+
+}
+//字符串存取
+void test02(){
+    //通过[]方式取字符 
+    string str ="hello";
+    for(int i =0; i&lt;str.size();i++){
+         cout &lt;&lt;str[i]&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+    //通过at方法获取字符
+    for(int i =0; i&lt;str.size();i++){
+         cout &lt;&lt;str.at(i)&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+    //修改字符串中的字符
+    str[0]='x';
+    str.at(1)='m';
+    cout &lt;&lt;"str="&lt;&lt;str&lt;&lt;endl;
+}
+int main(){
+    test01();
+    cout &lt;&lt;"-------------"&lt;&lt;endl;
+    test02();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221163442897.png" alt="运行结果"></p>
+<h4 id="字符串插入与删除"><a href="#字符串插入与删除" class="headerlink" title="字符串插入与删除"></a>字符串插入与删除</h4><ul>
+<li>string&amp; insert(int pos, const char* s); //插入字符串 </li>
+<li>string&amp; insert(int pos, const string&amp; str); //插入字符串 </li>
+<li>string&amp; insert(int pos, int n, char c); //在指定位置插入n个字符c </li>
+<li>string&amp; erase(int pos, int n = npos); //删除从Pos开始的n个字符</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+//插入字符串
+void test01(){
+    string str1 = "hello ";
+    string str2 = "world";
+    str1.insert(6,str2);
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+    //在指定位置插入n个字符c 
+    str1.insert(11,1,' ');
+    str1.insert(12,3,'m');
+    cout &lt;&lt;"str1="&lt;&lt;str1&lt;&lt;endl;
+}
+//删除字符串
+void test02(){
+    string str = "asdjfhldskjhf";
+    str.erase(3,5);
+    cout &lt;&lt;"str="&lt;&lt;str&lt;&lt;endl;
+
+}
+int main(){
+    test01();
+    test02();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221165257432.png" alt="运行结果"></p>
+<h4 id="字符串子串"><a href="#字符串子串" class="headerlink" title="字符串子串"></a>字符串子串</h4><ul>
+<li>string substr(int pos = 0, int n = npos) const; //返回由pos开始的n个字符组成的字符串</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;string&gt;
+#include&lt;iostream&gt;
+using namespace std;
+//截取用户名
+void test(){
+    string emil = "zhangfsdf@qq.com";
+    int pos=emil.find("@");
+    string emilUser = emil.substr(0,pos);
+    cout &lt;&lt;"emilUser is "&lt;&lt;emilUser&lt;&lt;endl;
+}
+
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221170025796.png" alt="运行结果"></p>
+<h3 id="vector容器"><a href="#vector容器" class="headerlink" title="vector容器"></a>vector容器</h3><p>vector数据结构和数组非常相似，也称为单端数组，不同之处在于数组是静态空间，而vector可以动态扩展</p>
+<p><strong>动态扩展并不是在原空间之后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间</strong></p>
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221171523525.png"></p>
+<h4 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h4><ul>
+<li>vector v; //采用模板实现类实现，默认构造函数 </li>
+<li>vector(v.begin(), v.end()); //将v[begin(), end())区间中的元素拷贝给本身</li>
+<li>vector(n, elem); //构造函数将n个elem拷贝给本身</li>
+<li>vector(const vector &amp;vec); //拷贝构造函数</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+void printVector(vector&lt;int&gt;&amp; t){
+    for(vector&lt;int&gt;::iterator it=t.begin();it!=t.end();it++){
+        cout &lt;&lt;(*it)&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    //采用模板实现类实现，默认构造函数 
+    vector&lt;int&gt;a;
+    for(int i=0;i&lt;10;i++){
+        a.push_back(i);
+    }
+    printVector(a);
+    //将v[begin(), end())区间中的元素拷贝给本身
+    vector&lt;int&gt;b(a.begin(),a.end());
+    printVector(b);
+    //构造函数将n个elem拷贝给本身
+    vector&lt;int&gt;c(10,100);
+    printVector(c);
+    //拷贝构造函数
+    vector&lt;int&gt;d(c);
+    printVector(d);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221172513923.png" alt="运行结果"></p>
+<h4 id="vector赋值"><a href="#vector赋值" class="headerlink" title="vector赋值"></a>vector赋值</h4><ul>
+<li>vector&amp; operator=(const vector &amp;vec); //重载等号操作符</li>
+<li>assign(beg, end); //将[beg, end)区间中的数据拷贝赋值给本身</li>
+<li>assign(n, elem); //将n个elem拷贝赋值给本身</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+void printVector(vector&lt;int&gt;&amp; t){
+    for(vector&lt;int&gt;::iterator it=t.begin();it!=t.end();it++){
+        cout &lt;&lt;(*it)&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    vector&lt;int&gt;a;
+    for(int i=0;i&lt;10;i++){
+        a.push_back(i);
+    }
+    printVector(a);
+    //重载等号操作符
+    vector&lt;int&gt;b;
+    b=a;
+    printVector(b);
+    //将[beg, end)区间中的数据拷贝赋值给本身
+    vector&lt;int&gt;c;
+    c.assign(b.begin(),b.end());
+    printVector(c);
+    //将n个elem拷贝赋值给本身
+    vector&lt;int&gt;d;
+    d.assign(10,100);
+    printVector(d);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221173155571.png" alt="运行结果"></p>
+<h4 id="vector容量和大小"><a href="#vector容量和大小" class="headerlink" title="vector容量和大小"></a>vector容量和大小</h4><ul>
+<li>empty(); //判断容器是否为空 </li>
+<li>capacity(); //容器的容量 </li>
+<li>size(); //返回容器中元素的个数 </li>
+<li>resize(int num); //重新指定容器的长度为num，若容器变长，则以默认值填充新位置。 //如果容器变短，则末尾超出容器长度的元素被删除</li>
+<li>resize(int num, elem); //重新指定容器的长度为num，若容器变长，则以elem值填充新位置。 //如果容器变短，则末尾超出容器长度的元素被删除</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+void printVector(vector&lt;int&gt;&amp; t){
+    for(vector&lt;int&gt;::iterator it=t.begin();it!=t.end();it++){
+        cout&lt;&lt;(*it)&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    vector&lt;int&gt;a;
+    for(int i = 0;i&lt;10;i++){
+        a.push_back(i);
+    }
+    printVector(a);
+    //如果是空的
+    if(a.empty()){
+        cout&lt;&lt;"a is empty"&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;"a is not empty "&lt;&lt;endl;
+        cout&lt;&lt;"a capacity is "&lt;&lt;a.capacity()&lt;&lt;endl;
+        cout&lt;&lt;"a size is "&lt;&lt;a.size()&lt;&lt;endl;
+    }
+    a.resize(15,1);//重设size大小，多余的空间用1填充
+    printVector(a);
+    a.resize(5);//设置的比原来小，把后面多的删除了
+    printVector(a);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221174903311.png" alt="运行结果"></p>
+<h4 id="vector插入和删除"><a href="#vector插入和删除" class="headerlink" title="vector插入和删除"></a>vector插入和删除</h4><ul>
+<li>push_back(ele); //尾部插入元素ele </li>
+<li>pop_back(); //删除最后一个元素 </li>
+<li>insert(const_iterator pos, ele); //迭代器指向位置pos插入元素ele </li>
+<li>insert(const_iterator pos, int count,ele); //迭代器指向位置pos插入count个元素ele </li>
+<li>erase(const_iterator pos); //删除迭代器指向的元素 </li>
+<li>erase(const_iterator start, const_iterator end); //删除迭代器从start到end之间的元素 </li>
+<li>clear(); //删除容器中所有元素</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+void printVector(vector&lt;int&gt;&amp; t){
+    for(vector&lt;int&gt;::iterator it=t.begin();it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    vector&lt;int&gt;a;
+    //尾部插入元素ele 
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    a.push_back(40);
+    a.push_back(50);
+    //遍历
+    printVector(a);
+    //删除最后一个元素 
+    a.pop_back();
+    printVector(a);
+    //迭代器指向位置pos插入元素ele
+    a.insert(a.begin()+2,3); //在第二个位置插入一个3
+    printVector(a);
+    //迭代器指向位置pos插入count个元素ele 
+    a.insert(a.begin(),3,100);//在开始位置插入三个100
+    printVector(a);
+    //删除迭代器指向的元素 
+    a.erase(a.begin());
+    printVector(a);
+    //删除迭代器从start到end之间的元素 
+    a.erase(a.begin(),a.begin()+2);
+    printVector(a);
+    //删除容器中所有元素
+    a.clear();
+    if(a.empty()){
+        cout&lt;&lt;"a is empty"&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;"a is not empty "&lt;&lt;endl;
+        cout&lt;&lt;"a capacity is "&lt;&lt;a.capacity()&lt;&lt;endl;
+        cout&lt;&lt;"a size is "&lt;&lt;a.size()&lt;&lt;endl;
+    }
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221180445309.png" alt="运行结果"></p>
 
                 
             </div>
@@ -407,7 +970,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">园崎魅音</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhang</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -430,7 +993,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">园崎魅音</a>
+                    <a href="/about" target="_blank">zhang</a>
                     !
                 </span>
             </div>
@@ -454,7 +1017,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/STL/">
+                                    <span class="chip bg-color">STL</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
