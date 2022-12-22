@@ -61,9 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
 </head>
 
 
@@ -954,6 +954,559 @@ int main(){
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221221180445309.png" alt="运行结果"></p>
+<h4 id="vector数据存取"><a href="#vector数据存取" class="headerlink" title="vector数据存取"></a>vector数据存取</h4><ul>
+<li>at(int idx); //返回索引idx所指的数据 </li>
+<li>operator[]; //返回索引idx所指的数据 </li>
+<li>front(); //返回容器中第一个数据元素 </li>
+<li>back(); //返回容器中最后一个数据元素</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+void test(){
+    vector&lt;int&gt;v;
+    for(int i;i&lt;v.size();i++){
+        v.push_back(i);
+    }
+    //返回索引idx所指的数据
+    for(int i = 0; i&lt;10;i++){
+        cout &lt;&lt;v.at(i)&lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+    //返回索引idx所指的数据
+    for(int i = 0; i&lt;10;i++){
+        cout &lt;&lt;v[i]&lt;&lt; " ";
+    } 
+    cout &lt;&lt; endl;
+    //返回容器中第一个数据元素
+    cout &lt;&lt;"第一个数据元素 "&lt;&lt;v.front()&lt;&lt;endl;
+    //返回容器中最后一个数据元素
+    cout &lt;&lt;"最后一个数据元素 "&lt;&lt;v.back()&lt;&lt;endl;
+}
+
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="vector互换容器"><a href="#vector互换容器" class="headerlink" title="vector互换容器"></a>vector互换容器</h4><p>实现两个容器内元素进行互换</p>
+<ul>
+<li>swap(vec); // 将vec与本身的元素互换</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+void printVector(vector&lt;int&gt; t)
+{
+    for(vector&lt;int&gt;::iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt; *it &lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    vector&lt;int&gt;a;
+    vector&lt;int&gt;b;
+    for(int i = 0;i&lt;10;i++){
+        a.push_back(i);
+    }
+    for(int i = 10;i&gt;0;i--){
+        b.push_back(i);
+    }
+    cout &lt;&lt;"交换前"&lt;&lt;endl;
+    printVector(a);
+    printVector(b);
+    cout &lt;&lt;"交换后"&lt;&lt;endl;
+    a.swap(b);
+    printVector(a);
+    printVector(b);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222164440087.png" alt="运行结果"></p>
+<h4 id="vector预留空间"><a href="#vector预留空间" class="headerlink" title="vector预留空间"></a>vector预留空间</h4><ul>
+<li>reserve(int len); //容器预留len个元素长度，预留位置不初始化，元素不可访问</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+//不预留空间，看看空间开辟次数
+void test01(){
+    vector&lt;int&gt;a;
+    int num=0;
+    int *p = NULL;
+    for(int i = 0;i&lt;100000;i++){
+        a.push_back(i);
+        if(p!=&amp;a[0]){
+            p=&amp;a[0];
+            num++;//因为每次重新开辟，头地址都会换位置，可以这么统计开辟次数
+        }
+    }
+    cout &lt;&lt;"开辟次数:"&lt;&lt;num&lt;&lt;endl;
+}
+//预留空间
+void test02(){
+    vector&lt;int&gt;a;
+    a.reserve(100000);
+    int num=0;
+    int *p = NULL;
+    for(int i = 0;i&lt;100000;i++){
+        a.push_back(i);
+        if(p!=&amp;a[0]){
+            p=&amp;a[0];
+            num++;
+        }
+    }
+    cout &lt;&lt;"开辟次数:"&lt;&lt;num&lt;&lt;endl;
+}
+int main(){
+    test01();
+    test02();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222165811098.png" alt="运行结果"></p>
+<h3 id="deque容器"><a href="#deque容器" class="headerlink" title="deque容器"></a>deque容器</h3><p>双端数组，可以对头端进行插入删除操作</p>
+<p>deque与vector的区别</p>
+<ul>
+<li>vector对于头部的插入删除效率低，数据量越大，效率越低 deque相对而言，</li>
+<li>对头部的插入删除速度回比vector快 </li>
+<li>vector访问元素时的速度会比deque快,这和两者内部实现有关</li>
+</ul>
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222170343794.png"></p>
+<p><strong>deque内部有个中控器，维护每段缓冲区中的内容，缓冲区中存放真实数据 中控器维护的是每个缓冲区的地址，使得使用deque时像一片连续的内存空间</strong></p>
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222170442527.png"></p>
+<h4 id="deque构造函数"><a href="#deque构造函数" class="headerlink" title="deque构造函数"></a>deque构造函数</h4><ul>
+<li>deque deqT; //默认构造形式 </li>
+<li>deque(beg, end); //构造函数将[beg, end)区间中的元素拷贝给本身</li>
+<li>deque(n, elem); //构造函数将n个elem拷贝给本身</li>
+<li>deque(const deque &amp;deq); //拷贝构造函数</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;deque&gt;
+using namespace std;
+void printDeque(const deque&lt;int&gt;&amp; t){
+    for(deque&lt;int&gt;::const_iterator it = t.begin(); it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    //默认构造形式
+    deque&lt;int&gt;a;
+    for(int i = 0; i &lt; 10; i++){
+        a.push_back(i);
+    }
+    printDeque(a);
+    //构造函数将[beg, end)区间中的元素拷贝给本身
+    deque&lt;int&gt;b(a.begin()+5,a.end());
+    printDeque(b);
+    //构造函数将n个elem拷贝给本身
+    deque&lt;int&gt;c(10,100);
+    printDeque(c);
+    //拷贝构造函数
+    deque&lt;int&gt;d(c);
+    printDeque(d);
+}
+int main(){
+    test();
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>与vector的构造基本一致</p>
+<h4 id="deque赋值操作"><a href="#deque赋值操作" class="headerlink" title="deque赋值操作"></a>deque赋值操作</h4><ul>
+<li>deque&amp; operator=(const deque &amp;deq); //重载等号操作符 </li>
+<li>assign(beg, end); //将[beg, end)区间中的数据拷贝赋值给本身</li>
+<li>assign(n, elem); //将n个elem拷贝赋值给本身</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;deque&gt;
+using namespace std;
+void printDeque(const deque&lt;int&gt;&amp; t){
+    for(deque&lt;int&gt;::const_iterator it = t.begin(); it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    deque&lt;int&gt;a;
+    for(int i = 0; i &lt; 10; i++){
+        a.push_back(i);
+    }
+    printDeque(a);
+    //重载等号操作符 
+    deque&lt;int&gt;b;
+    b=a;
+    printDeque(b);
+    //将[beg, end)区间中的数据拷贝赋值给本身
+    deque&lt;int&gt;c;
+    c.assign(b.begin()+5,b.end()-2);
+    printDeque(c);
+    //将n个elem拷贝赋值给本身
+    deque&lt;int&gt;d;
+    d.assign(10,100);
+    printDeque(d);
+}
+int main(){
+    test();
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222172325690.png" alt="运行结果"></p>
+<p>与vector基本相同</p>
+<h4 id="deque大小操作"><a href="#deque大小操作" class="headerlink" title="deque大小操作"></a>deque大小操作</h4><ul>
+<li>deque.empty(); //判断容器是否为空</li>
+<li>deque.size(); //返回容器中元素的个数 </li>
+<li>deque.resize(num); //重新指定容器的长度为num,若容器变长，则以默认值填充新位置。 //如果容器变短，则末尾超出容器长度的元素被删除 </li>
+<li>deque.resize(num, elem); //重新指定容器的长度为num,若容器变长，则以elem值填充新位置。 //如果容器变短，则末尾超出容器长度的元素被删除</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;deque&gt;
+using namespace std;
+void printDeque(const deque&lt;int&gt;&amp; t){
+    for(deque&lt;int&gt;::const_iterator it = t.begin(); it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    //判断容器是否为空
+    deque&lt;int&gt;a;
+    deque&lt;int&gt;b;
+    for(int i = 0; i &lt; 10; i++){
+        a.push_back(i);
+    }
+    if(a.empty()){
+        cout &lt;&lt;"这个容器是空的"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"这个容器不是空的且";
+        //返回容器中元素的个数 
+        cout &lt;&lt; "这个容器的size为: "&lt;&lt;a.size()&lt;&lt;endl;
+    }
+    if(b.empty()){
+        cout &lt;&lt;"这个容器是空的"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"这个容器不是空的"&lt;&lt;endl;
+        //返回容器中元素的个数 
+        cout &lt;&lt; "这个容器的size为: "&lt;&lt;a.size()&lt;&lt;endl;
+    }
+    //重新指定容器的长度为num,若容器变长，则以默认值填充新位置。 //如果容器变短，则末尾超出容器长度的元素被删除 
+    a.resize(15);
+    printDeque(a);
+    a.resize(5);
+    printDeque(a);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222173220277.png" alt="运行结果"></p>
+<p><strong>deque没有容量的概念</strong></p>
+<h4 id="deque-插入和删除"><a href="#deque-插入和删除" class="headerlink" title="deque 插入和删除"></a>deque 插入和删除</h4><p>两端插入操作：</p>
+<ul>
+<li>push_back(elem); //在容器尾部添加一个数据 </li>
+<li>push_front(elem); //在容器头部插入一个数据 </li>
+<li>pop_back(); //删除容器最后一个数据 </li>
+<li>pop_front(); //删除容器第一个数据</li>
+</ul>
+<p>指定位置操作：</p>
+<ul>
+<li>insert(pos,elem); //在pos位置插入一个elem元素的拷贝，返回新数据的位置。 </li>
+<li>insert(pos,n,elem); //在pos位置插入n个elem数据，无返回值。 </li>
+<li>insert(pos,beg,end); //在pos位置插入[beg,end)区间的数据，无返回值。 </li>
+<li>clear(); //清空容器的所有数据 </li>
+<li>erase(beg,end); //删除[beg,end)区间的数据，返回下一个数据的位置。 </li>
+<li>erase(pos); //删除pos位置的数据，返回下一个数据的位置。</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;deque&gt;
+using namespace std;
+void printDeque(const deque&lt;int&gt;&amp; t){
+    for(deque&lt;int&gt;::const_iterator it = t.begin(); it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test01(){
+    //判断容器是否为空
+    deque&lt;int&gt;a;
+    deque&lt;int&gt;b;
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    a.push_back(40);
+    a.push_back(50);
+    cout &lt;&lt;"在容器a尾部添加一个数据"&lt;&lt;endl;
+    printDeque(a);
+    b.push_front(10);
+    b.push_front(20);
+    b.push_front(30);
+    b.push_front(40);
+    b.push_front(50);
+    cout &lt;&lt;"在容器b头部插入一个数据"&lt;&lt;endl;
+    printDeque(b);
+    cout &lt;&lt;"删除容器a最后一个数据"&lt;&lt;endl;
+    a.pop_back();
+    printDeque(a);
+    cout &lt;&lt;"删除容器d第一个数据"&lt;&lt;endl;
+    b.pop_front();
+    printDeque(b);
+
+}
+/* insert(pos,elem); //在pos位置插入一个elem元素的拷贝，返回新数据的位置。
+insert(pos,n,elem); //在pos位置插入n个elem数据，无返回值。
+insert(pos,beg,end); //在pos位置插入[beg,end)区间的数据，无返回值。
+clear(); //清空容器的所有数据
+erase(beg,end); //删除[beg,end)区间的数据，返回下一个数据的位置。
+erase(pos); //删除pos位置的数据，返回下一个数据的位置。
+ */
+void test02(){
+    //判断容器是否为空
+    deque&lt;int&gt;a;
+    deque&lt;int&gt;b;
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    a.push_back(40);
+    a.push_back(50);
+    b.push_front(1);
+    b.push_front(2);
+    b.push_front(3);
+    b.push_front(4);
+    b.push_front(5);
+    cout &lt;&lt;"在pos位置插入一个elem元素的拷贝"&lt;&lt;endl;
+    a.insert(a.begin(),100);
+    printDeque(a);
+    cout&lt;&lt;"在pos位置插入n个elem数据"&lt;&lt;endl;
+    a.insert(a.begin(),3,10);
+    printDeque(a);
+    cout&lt;&lt;"在pos位置插入[beg,end)区间的数据"&lt;&lt;endl;
+    a.insert(a.begin(),b.begin(),b.end());
+    printDeque(a);
+    cout&lt;&lt;"删除[beg,end)区间的数据"&lt;&lt;endl;
+    a.erase(a.begin()+1,a.begin()+4);
+    printDeque(a);
+    cout &lt;&lt;"删除pos位置的数据"&lt;&lt;endl;
+    a.erase(a.end());
+    printDeque(a);
+}
+int main(){
+    test01();
+    test02();
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222175701643.png" alt="运行结果"></p>
+<h4 id="deque-数据存取"><a href="#deque-数据存取" class="headerlink" title="deque 数据存取"></a>deque 数据存取</h4><ul>
+<li>at(int idx); //返回索引idx所指的数据 </li>
+<li>operator[]; //返回索引idx所指的数据 </li>
+<li>front(); //返回容器中第一个数据元素</li>
+<li>back(); //返回容器中最后一个数据元素</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;deque&gt;
+using namespace std;
+void printDeque(const deque&lt;int&gt;&amp; t){
+    for(deque&lt;int&gt;::const_iterator it = t.begin(); it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    //默认构造形式
+    deque&lt;int&gt;a;
+    for(int i = 0; i &lt; 10; i++){
+        a.push_back(i);
+    }
+    cout &lt;&lt;"返回索引idx所指的数据 at(5)="&lt;&lt;a.at(5)&lt;&lt;" a[4]="&lt;&lt;a[4]&lt;&lt;endl;
+    cout &lt;&lt;"返回容器中第一个数据元素 a.front()="&lt;&lt;a.front()&lt;&lt;endl;
+    cout &lt;&lt;"返回容器中最后一个数据元素 a.back()="&lt;&lt;a.back()&lt;&lt;endl;
+    printDeque(a);
+
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222180416635.png" alt="运行结果"></p>
+<h4 id="deque-排序"><a href="#deque-排序" class="headerlink" title="deque 排序"></a>deque 排序</h4><p>利用算法实现对deque容器进行排序</p>
+<ul>
+<li>sort(iterator beg, iterator end) //对beg和end区间内元素进行排序</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;deque&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+void printDeque(const deque&lt;int&gt;&amp; t){
+    for(deque&lt;int&gt;::const_iterator it = t.begin(); it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    //默认构造形式
+    deque&lt;int&gt;a;
+    a.push_back(12);
+    a.push_back(43);
+    a.push_back(21);
+    a.push_back(1);
+    a.push_back(90);
+    a.push_back(3);
+    printDeque(a);
+    sort(a.begin(),a.end());
+    printDeque(a);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>sort算法非常实用，使用时包含头文件 algorithm即可</p>
+<h3 id="stack容器"><a href="#stack容器" class="headerlink" title="stack容器"></a>stack容器</h3><p>stack是一种先进后出(First In Last Out,FILO)的数据结构，它只有一个出口</p>
+<ul>
+<li><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222183044923.png"></li>
+<li>栈中只有顶端的元素才可以被外界使用，因此栈不允许有遍历行为 </li>
+<li>栈中进入数据称为 — 入栈 push </li>
+<li>栈中弹出数据称为 — 出栈 pop</li>
+</ul>
+<h4 id="常用接口"><a href="#常用接口" class="headerlink" title="常用接口"></a>常用接口</h4><p>构造函数</p>
+<ul>
+<li>stack stk; //stack采用模板类实现， stack对象的默认构造形式 </li>
+<li>stack(const stack &amp;stk); //拷贝构造函数</li>
+</ul>
+<p>赋值操作：</p>
+<ul>
+<li>stack&amp; operator=(const stack &amp;stk); //重载等号操作符</li>
+</ul>
+<p>数据存取：</p>
+<ul>
+<li>push(elem); //向栈顶添加元素 </li>
+<li>pop(); //从栈顶移除第一个元素</li>
+<li>top(); //返回栈顶元素</li>
+</ul>
+<p>大小操作：</p>
+<ul>
+<li>empty(); //判断堆栈是否为空</li>
+<li>size(); //返回栈的大小</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;stack&gt;
+using namespace std;
+void test(){
+    //构造函数创建
+    stack&lt;int&gt;a;
+    //数据存取，向栈中添加元素，叫做 压栈 入栈
+    a.push(10);
+    a.push(20);
+    a.push(30);
+    a.push(40);
+    a.push(50);
+    cout &lt;&lt;"这个栈的大小是:"&lt;&lt;a.size()&lt;&lt;endl;
+    //栈是不能遍历的
+    while(!a.empty()){
+        //查看栈顶数据
+        cout &lt;&lt;"栈顶数据是:"&lt;&lt;a.top()&lt;&lt;endl;
+        //出栈
+        a.pop();
+    }
+    cout &lt;&lt;"这个栈的大小是:"&lt;&lt;a.size()&lt;&lt;endl;
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222183758702.png"></p>
+<h3 id="queue容器"><a href="#queue容器" class="headerlink" title="queue容器"></a>queue容器</h3><p>Queue是一种先进先出(First In First Out,FIFO)的数据结构，它有两个出口</p>
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222184449640.png"></p>
+<ul>
+<li>队列容器允许从一端新增元素，从另一端移除元素 </li>
+<li>队列中只有队头和队尾才可以被外界使用，因此队列不允许有遍历行为 </li>
+<li>队列中进数据称为 — 入队 push </li>
+<li>队列中出数据称为 — 出队 pop</li>
+</ul>
+<h4 id="常用接口-1"><a href="#常用接口-1" class="headerlink" title="常用接口"></a>常用接口</h4><p>构造函数：</p>
+<ul>
+<li>queue que; //queue采用模板类实现，queue对象的默认构造形式 </li>
+<li>queue(const queue &amp;que); //拷贝构造函数</li>
+</ul>
+<p>赋值操作：</p>
+<ul>
+<li>queue&amp; operator=(const queue &amp;que); //重载等号操作符</li>
+</ul>
+<p>数据存取：</p>
+<ul>
+<li>push(elem); //往队尾添加元素 </li>
+<li>pop(); //从队头移除第一个元素</li>
+<li>back(); //返回最后一个元素 </li>
+<li>front(); //返回第一个元素</li>
+</ul>
+<p>大小操作：</p>
+<ul>
+<li>empty(); //判断堆栈是否为空 </li>
+<li>size(); //返回栈的大小</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;queue&gt;
+using namespace std;
+class Person{
+public:
+    friend void test();
+    Person(int age,string name){
+        this-&gt;age=age;
+        this-&gt;name=name;
+    }
+private:
+    int age;
+    string name;
+};
+
+void test(){
+    //构造函数
+    queue&lt;Person&gt;a;
+    //数据存取
+    Person p1(19,"张三");
+    Person p2(20,"李四");
+    Person p3(25,"王二");
+    Person p4(18,"刘五");
+    a.push(p1);
+    a.push(p2);
+    a.push(p3);
+    a.push(p4);
+    cout &lt;&lt;"这个队列大小是:"&lt;&lt;a.size()&lt;&lt;endl;
+    while(!a.empty()){
+        cout&lt;&lt;"排头的名字和年龄分别是"&lt;&lt;a.front().name&lt;&lt;" "&lt;&lt;a.front().age&lt;&lt;endl;
+        cout&lt;&lt;"排尾的名字和年龄分别是"&lt;&lt;a.back().name&lt;&lt;" "&lt;&lt;a.back().age&lt;&lt;endl;
+        //出队
+        a.pop();
+    }
+    cout &lt;&lt;"这个队列大小是:"&lt;&lt;a.size()&lt;&lt;endl;
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222185626947.png"></p>
 
                 
             </div>
