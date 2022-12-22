@@ -228,9 +228,9 @@
     <category term="ros仿真" scheme="http://example.com/categories/ros%E4%BB%BF%E7%9C%9F/"/>
     
     
-    <category term="ros" scheme="http://example.com/tags/ros/"/>
-    
     <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="ros" scheme="http://example.com/tags/ros/"/>
     
     <category term="linux" scheme="http://example.com/tags/linux/"/>
     
