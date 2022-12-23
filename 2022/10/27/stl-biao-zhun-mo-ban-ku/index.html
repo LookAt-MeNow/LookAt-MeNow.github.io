@@ -61,9 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
 </head>
 
 
@@ -1507,6 +1507,811 @@ int main(){
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221222185626947.png"></p>
+<h3 id="list容器"><a href="#list容器" class="headerlink" title="list容器"></a>list容器</h3><p>链表（list）是一种物理存储单元上非连续的存储结构，数据元素的逻辑顺序是通过链表中的指针链接实现的</p>
+<p><strong>链表的组成：链表由一系列结点组成</strong></p>
+<p><strong>结点的组成：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域</strong></p>
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223150534966.png" alt="双向循环链表"></p>
+<p>由于链表的存储方式并不是连续的内存空间，因此链表list中的迭代器只支持前移和后移，<strong>属于双向迭代器</strong></p>
+<p>list的优缺点：</p>
+<ul>
+<li>采用动态存储分配，不会造成内存浪费和溢出 </li>
+<li>链表执行插入和删除操作十分方便，修改指针即可，不需要移动大量元素</li>
+<li>链表灵活，但是空间(指针域) 和 时间（遍历）额外耗费较大</li>
+</ul>
+<h4 id="list构造函数"><a href="#list构造函数" class="headerlink" title="list构造函数"></a>list构造函数</h4><ul>
+<li>list lst; //list采用采用模板类实现,对象的默认构造形式：</li>
+<li>list(beg,end); //构造函数将[beg, end)区间中的元素拷贝给本身</li>
+<li>list(n,elem); //构造函数将n个elem拷贝给本身</li>
+<li>list(const list &amp;lst); //拷贝构造函数</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;list&gt;
+using namespace std;
+void printList(const list&lt;int&gt;&amp; t){
+    for(list&lt;int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    
+    list&lt;int&gt;a;
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    a.push_back(40);
+    a.push_back(50);
+    cout&lt;&lt;"list采用采用模板类实现,对象的默认构造形式："&lt;&lt;endl;
+    printList(a);
+    a.pop_front();
+    a.pop_back();
+    cout &lt;&lt;"构造函数将[beg, end)区间中的元素拷贝给本身"&lt;&lt;endl;
+    list&lt;int&gt;b(a.begin(),a.end());
+    printList(b);
+    cout &lt;&lt;"构造函数将n个elem拷贝给本身"&lt;&lt;endl;
+    list&lt;int&gt;c(5,10);
+    printList(c);
+    c.pop_back();
+    c.pop_front();
+    cout &lt;&lt;"拷贝构造函数"&lt;&lt;endl;
+    list&lt;int&gt;d(c);
+    printList(d);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223151604960.png" alt="运行结果"></p>
+<h4 id="list-赋值和交换"><a href="#list-赋值和交换" class="headerlink" title="list 赋值和交换"></a>list 赋值和交换</h4><ul>
+<li>给list容器进行赋值，以及交换list容器</li>
+<li>assign(beg, end); //将[beg, end)区间中的数据拷贝赋值给本身</li>
+<li>assign(n, elem); //将n个elem拷贝赋值给本身</li>
+<li>list&amp; operator=(const list &amp;lst); //重载等号操作符 </li>
+<li>swap(lst); //将lst与本身的元素互换</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+void printList(const list&lt;int&gt;&amp; t){
+    for(list&lt;int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;*it &lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    list&lt;int&gt;a;
+    for(int i = 0;i&lt;10;i++){
+        a.push_back(i);
+    }
+    cout &lt;&lt;"将[beg, end)区间中的数据拷贝赋值给本身。"&lt;&lt;endl;
+    list&lt;int&gt;b;
+    b.assign(a.begin(),a.end());
+    printList(b);
+    cout &lt;&lt;"将n个elem拷贝赋值给本身。"&lt;&lt;endl;
+    list&lt;int&gt;c(10,5);
+    printList(c);
+    cout &lt;&lt;"重载等号操作符"&lt;&lt;endl;
+    a.pop_back();
+    a.pop_front();
+    list&lt;int&gt;d;
+    d=a;
+    printList(d);
+    cout &lt;&lt;"将lst与本身的元素互换"&lt;&lt;endl;
+    d.swap(b);
+    printList(d);
+}
+int main()
+{
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223152459311.png" alt="运行结果"></p>
+<h4 id="list-大小操作"><a href="#list-大小操作" class="headerlink" title="list 大小操作"></a>list 大小操作</h4><ul>
+<li>size(); //返回容器中元素的个数 </li>
+<li>empty(); //判断容器是否为空 </li>
+<li>resize(num); //重新指定容器的长度为num，若容器变长，则以默认值填充新位置。 //如果容器变短，则末尾超出容器长度的元素被删除。 </li>
+<li>resize(num, elem); //重新指定容器的长度为num，若容器变长，则以elem值填充新位置。 //如果容器变短，则末尾超出容器长度的元素被删除。</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+void printList(const list&lt;int&gt;&amp; t){
+    for(list&lt;int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;*it &lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void if_empty(const list&lt;int&gt;&amp; t){
+    if(t.empty()){
+        cout &lt;&lt;"这个容器是空的"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"这个容器不是空的,其中的元素个数为:"&lt;&lt;t.size()&lt;&lt;endl;
+    }
+}
+void test(){
+    list&lt;int&gt;a;
+    list&lt;int&gt;b;
+    for(int i = 0;i&lt;10;i++){
+        a.push_back(i);
+    }
+    if_empty(a);
+    if_empty(b);
+    cout &lt;&lt;"重新指定容器的长度为num,重载版本"&lt;&lt;endl;
+    b.resize(10,1);
+    printList(b);
+}
+int main()
+{
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223153128424.png" alt="运行结果"></p>
+<h4 id="list-插入和删除"><a href="#list-插入和删除" class="headerlink" title="list 插入和删除"></a>list 插入和删除</h4><ul>
+<li>push_back(elem);//在容器尾部加入一个元素 </li>
+<li>pop_back();//删除容器中最后一个元素 </li>
+<li>push_front(elem);//在容器开头插入一个元素 </li>
+<li>pop_front();//从容器开头移除第一个元素 </li>
+<li>insert(pos,elem);//在pos位置插elem元素的拷贝，返回新数据的位置</li>
+<li>insert(pos,n,elem);//在pos位置插入n个elem数据，无返回值</li>
+<li>insert(pos,beg,end);//在pos位置插入[beg,end)区间的数据，无返回值</li>
+<li>clear();//移除容器的所有数据</li>
+<li>erase(beg,end);//删除[beg,end)区间的数据，返回下一个数据的位置</li>
+<li>erase(pos);//删除pos位置的数据，返回下一个数据的位置</li>
+<li>remove(elem);//删除容器中所有与elem值匹配的元素</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+void printList(const list&lt;int&gt;&amp; t){
+    for(list&lt;int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;*it &lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    list&lt;int&gt;a;
+    list&lt;int&gt;b;
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    a.push_back(40);
+    a.push_back(50);
+    cout &lt;&lt;"在a容器尾部加入一个元素 "&lt;&lt;endl;
+    printList(a);
+    cout &lt;&lt;"删除a容器中最后一个元素 "&lt;&lt;endl;
+    a.pop_back();
+    printList(a);
+    b.push_front(10);
+    b.push_front(20);
+    b.push_front(30);
+    b.push_front(40);
+    b.push_front(50);
+    cout &lt;&lt;"在容器b开头插入一个元素 "&lt;&lt;endl;
+    printList(b);
+    cout &lt;&lt;"删除容器b中第一个元素"&lt;&lt;endl;
+    b.pop_front();
+    printList(b);
+    cout &lt;&lt;"在pos位置插elem元素的拷贝"&lt;&lt;endl;
+    list&lt;int&gt;::iterator it = a.begin();
+    a.insert(++it,114514);
+    printList(a);
+    cout &lt;&lt;"删除容器中所有与elem值匹配的元素"&lt;&lt;endl;
+    b.remove(30);
+    printList(b);
+    cout &lt;&lt;"输入想删除pos位置的数据"&lt;&lt;endl;
+    int n;
+    cin&gt;&gt;n;
+    it=a.begin();
+    for(int i=0;i&lt;n-1;i++){
+        it++;
+    }
+    a.erase(it);
+    printList(a);
+}
+int main()
+{
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223154821444.png" alt="运行结果"></p>
+<h4 id="list-数据存取"><a href="#list-数据存取" class="headerlink" title="list 数据存取"></a>list 数据存取</h4><ul>
+<li>front(); //返回第一个元素</li>
+<li>back(); //返回最后一个元素</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+void test(){
+    list&lt;int&gt;a;
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    a.push_back(40);
+    a.push_back(50);
+    cout&lt;&lt;"链表a第一个元素是:"&lt;&lt;a.front()&lt;&lt;endl;
+    cout&lt;&lt;"链表a最后一个元素是:"&lt;&lt;a.back()&lt;&lt;endl;
+    //cout &lt;&lt; L1.at(0) &lt;&lt; endl;//错误 不支持at访问数据
+    //cout &lt;&lt; L1[0] &lt;&lt; endl; //错误 不支持[]方式访问数据
+}   
+int main()
+{
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> list<int>::iterator it = a.begin()+1; 错误的写法</int></p>
+<p>it= it+1；这也是错误的写法</p>
+<p><strong>因为list容器的迭代器是双向迭代器，不支持随机访问</strong></p>
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223155332070.png"></p>
+<h4 id="list-反转和排序"><a href="#list-反转和排序" class="headerlink" title="list 反转和排序"></a>list 反转和排序</h4><ul>
+<li>将容器中的元素反转，以及将容器中的数据进行排序</li>
+<li>reverse(); //反转链表 </li>
+<li>sort(); //链表排序   这个sort不再是#include <algorithm> 中的，而是成员函数</algorithm></li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+void printList(const list&lt;int&gt;&amp; t){
+    for(list&lt;int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;*it &lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    list&lt;int&gt;a;
+    list&lt;int&gt;b;
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    a.push_back(40);
+    a.push_back(50);
+    cout&lt;&lt;"反转链表前"&lt;&lt;endl;
+    printList(a);
+    cout&lt;&lt;"反转链表后"&lt;&lt;endl;
+    a.reverse();
+    printList(a);
+    b.push_front(23);
+    b.push_front(43);
+    b.push_front(34);
+    b.push_front(9);
+    b.push_front(12);
+    cout &lt;&lt;"链表排序前"&lt;&lt;endl;
+    printList(b);
+    cout &lt;&lt;"链表排序后"&lt;&lt;endl;
+    b.sort();
+    printList(b);
+}
+int main()
+{
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223160026928.png" alt="运行结果"></p>
+<h3 id="set-x2F-multiset-容器"><a href="#set-x2F-multiset-容器" class="headerlink" title="set/ multiset 容器"></a>set/ multiset 容器</h3><p>所有元素都会在插入时自动被排序</p>
+<p>set/multiset属于关联式容器，底层结构是用二叉树实现</p>
+<p><strong>set不允许容器中有重复的元素 multiset允许容器中有重复的元素</strong></p>
+<h4 id="set构造和赋值"><a href="#set构造和赋值" class="headerlink" title="set构造和赋值"></a>set构造和赋值</h4><ul>
+<li>set st; //默认构造函数</li>
+<li>set(const set &amp;st); //拷贝构造函数</li>
+<li>set&amp; operator=(const set &amp;st); //重载等号操作符</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+void printSet(const set&lt;int&gt;&amp; t){
+    for(set&lt;int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout&lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void test(){
+    set&lt;int&gt;a;
+    a.insert(20);
+    a.insert(50);
+    a.insert(30);
+    a.insert(10);
+    a.insert(40);
+    cout &lt;&lt;"默认构造函数"&lt;&lt;endl;
+    printSet(a);
+    cout &lt;&lt;"拷贝构造函数"&lt;&lt;endl;
+    set&lt;int&gt;b(a);
+    printSet(b);
+    cout &lt;&lt;"重载等号操作符"&lt;&lt;endl;
+    set&lt;int&gt;c;
+    c=a;
+    printSet(c);
+}   
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223162326901.png" alt="运行结果"></p>
+<p><strong>set容器插入数据时用insert</strong></p>
+<h4 id="set大小和交换"><a href="#set大小和交换" class="headerlink" title="set大小和交换"></a>set大小和交换</h4><ul>
+<li>size(); //返回容器中元素的数目</li>
+<li>empty(); //判断容器是否为空 </li>
+<li>swap(st); //交换两个集合容器</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+void printSet(const set&lt;int&gt;&amp; t){
+    for(set&lt;int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout&lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}
+void if_empty(const set&lt;int&gt;&amp; t){
+    if(t.empty()){
+        cout &lt;&lt;"这个容器是空的"&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;"这个容器不是空的,并且容器大小为:"&lt;&lt;t.size()&lt;&lt;endl;
+    }
+}
+void test(){
+    set&lt;int&gt;a;
+    a.insert(20);
+    a.insert(50);
+    a.insert(30);
+    a.insert(10);
+    a.insert(40);
+    set&lt;int&gt;b;
+    b.insert(1);
+    b.insert(5);
+    b.insert(2);
+    b.insert(4);
+    b.insert(3);
+    set&lt;int&gt;c;
+    if_empty(a);
+    if_empty(c);
+    cout &lt;&lt;"交换前"&lt;&lt;endl;
+    printSet(a);
+    printSet(b);
+    cout &lt;&lt;"交换后"&lt;&lt;endl;
+    a.swap(b);
+    printSet(a);
+    printSet(b);
+}   
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223162910820.png" alt="运行结果"></p>
+<h4 id="set插入和删除"><a href="#set插入和删除" class="headerlink" title="set插入和删除"></a>set插入和删除</h4><ul>
+<li>insert(elem); //在容器中插入元素</li>
+<li>clear(); //清除所有元素</li>
+<li>erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器</li>
+<li>erase(beg, end); //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器</li>
+<li>erase(elem); //删除容器中值为elem的元素</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;set&gt;
+#include &lt;iostream&gt;
+using namespace std;
+void printSet(set&lt;int&gt; &amp;s)
+{
+    for (set&lt;int&gt;::iterator it = s.begin(); it != s.end(); it++)
+    {
+        cout &lt;&lt; *it &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}
+// 插入和删除
+
+void test01()
+{
+    set&lt;int&gt; s1;
+    // 插入
+    s1.insert(10);
+    s1.insert(30);
+    s1.insert(20);
+    s1.insert(40);
+    printSet(s1);
+    // 删除
+    s1.erase(s1.begin());
+    printSet(s1);
+    s1.erase(30);
+    printSet(s1);
+    // 清空
+    // s1.erase(s1.begin(), s1.end());
+    s1.clear();
+    printSet(s1);
+}
+int main()
+{
+    test01();
+    system("pause");
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>与前面基本一致</p>
+<h4 id="set查找和统计"><a href="#set查找和统计" class="headerlink" title="set查找和统计"></a>set查找和统计</h4><ul>
+<li>find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end(); </li>
+<li>count(key); //统计key的元素个数，返回值是0 或者 1</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt; 
+#include &lt;set&gt;
+using namespace std;
+void test(){
+    set&lt;double&gt;a;
+    a.insert(1.0);
+    a.insert(4.0);
+    a.insert(2.0);
+    a.insert(3.0);
+    a.insert(5.0);
+    set&lt;double&gt;::iterator it = a.find(3.0);
+    if(it!=a.end()){
+        cout &lt;&lt;"找到了这个元素"&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;"没找到这个元素"&lt;&lt;endl;
+    }
+    int m = a.count(1.0);
+    int n = a.count(223);
+    cout &lt;&lt;m&lt;&lt;endl;
+    cout &lt;&lt;n&lt;&lt;endl;
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223164917438.png" alt="运行结果"></p>
+<h4 id="set和multiset区别"><a href="#set和multiset区别" class="headerlink" title="set和multiset区别"></a>set和multiset区别</h4><ul>
+<li>set不可以插入重复数据，而multiset可以 </li>
+<li>set插入数据的同时会返回插入结果，表示插入是否成功 </li>
+<li>multiset不会检测数据，因此可以插入重复数据</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+void test(){
+    set&lt;int&gt;a;
+    //判断是否插入成功 
+    pair&lt;set&lt;int&gt;::iterator,bool&gt; ret = a.insert(10);
+    if(ret.second){
+        cout&lt;&lt;"插入成功"&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;"插入失败"&lt;&lt;endl;
+    }
+    ret = a.insert(10);
+    if(ret.second){
+        cout&lt;&lt;"插入成功"&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;"插入失败"&lt;&lt;endl;
+    }
+    multiset&lt;int&gt;b;
+    b.insert(10);
+    b.insert(10);
+    b.insert(10);
+    b.insert(10);
+    for(multiset&lt;int&gt;::iterator it = b.begin();it!=b.end();it++){
+        cout&lt;&lt;*it&lt;&lt;" ";
+    }
+    cout &lt;&lt; endl;
+}   
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>multise用法基本一样，只是multiset允许插入重复的数据</strong></p>
+<h4 id="pair对组创建"><a href="#pair对组创建" class="headerlink" title="pair对组创建"></a>pair对组创建</h4><p>成对出现的数据，利用对组可以返回两个数据</p>
+<p>创建方式：</p>
+<ul>
+<li>pair p ( value1, value2 ); </li>
+<li>pair p = make_pair( value1, value2 );</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main(){
+    pair&lt;string,int&gt;a("张三",18);
+    pair&lt;string,int&gt; b = make_pair("李四",20);
+    cout &lt;&lt;"第一个人叫"&lt;&lt;a.first&lt;&lt;"年龄是"&lt;&lt;a.second&lt;&lt;endl;
+    cout &lt;&lt;"第二个人叫"&lt;&lt;b.first&lt;&lt;"年龄是"&lt;&lt;b.second&lt;&lt;endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223170920243.png" alt="运行结果"></p>
+<h4 id="set容器排序"><a href="#set容器排序" class="headerlink" title="set容器排序"></a>set容器排序</h4><p><strong>set是会默认从小到大排序，利用仿函数，可以改变排序规则</strong></p>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+#include &lt;string&gt;
+using namespace std;
+class Person{
+public:
+    string name;
+    int age;
+    int hight;
+    Person(string name,int age,int hight){
+        this-&gt;name=name;
+        this-&gt;age=age;
+        this-&gt;hight=hight;
+    }
+};
+class MyCompare
+{
+public:
+    bool operator()(const Person&amp; p1,const Person&amp; p2) const{
+        if(p1.age == p2.age){
+            return p1.hight &lt; p2.hight;
+        }else{
+            return p1.age &lt; p2.age;
+        }
+    }  
+};
+void test(){
+    Person a1("张三",18,170);
+    Person a2("李四",22,165);
+    Person a3("王二",22,180);
+    Person a4("刘五",22,190);
+    Person a5("陈七",17,176);
+    set&lt;Person,MyCompare&gt;a;
+    a.insert(a1);
+    a.insert(a2);
+    a.insert(a3);
+    a.insert(a4);
+    a.insert(a5);
+    for (set&lt;Person, MyCompare&gt;::iterator it = a.begin(); it != a.end(); it++){
+        cout &lt;&lt; "姓名： " &lt;&lt; it-&gt;name &lt;&lt; " 年龄： " &lt;&lt; it-&gt;age &lt;&lt; "身高："&lt;&lt;it-&gt;hight&lt;&lt;endl;
+    }
+
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223174710464.png" alt="运行结果"></p>
+<h3 id="map-x2F-multimap容器"><a href="#map-x2F-multimap容器" class="headerlink" title="map/ multimap容器"></a>map/ multimap容器</h3><ul>
+<li><p>map中所有元素都是pair </p>
+</li>
+<li><p>pair中第一个元素为key（键值），起到索引作用，</p>
+</li>
+<li><p>第二个元素为value（实值） 所有元素都会根据元素的键值自动排序</p>
+</li>
+<li><p>map/multimap属于关联式容器，底层结构是用二叉树实现</p>
+</li>
+<li><p>可以根据key值快速找到value值</p>
+</li>
+<li><p>map不允许容器中有重复key值元素 </p>
+</li>
+<li><p>multimap允许容器中有重复key值元素</p>
+</li>
+</ul>
+<p><strong>是不能重复key值而不是value值</strong></p>
+<h4 id="map构造和赋值"><a href="#map构造和赋值" class="headerlink" title="map构造和赋值"></a>map构造和赋值</h4><ul>
+<li>map mp; //map默认构造函数</li>
+<li>map(const map &amp;mp); //拷贝构造函数</li>
+<li>map&amp; operator=(const map &amp;mp); //重载等号操作符</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+void printMap(const map&lt;int,int&gt;&amp; t ){
+    for(map&lt;int,int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;it-&gt;first&lt;&lt;" "&lt;&lt;it-&gt;second&lt;&lt;" ";
+        cout &lt;&lt; endl;
+    }       
+    cout &lt;&lt; endl;
+}
+void test(){
+    map&lt;int,int&gt;m;
+    m.insert(pair&lt;int,int&gt;(1,10));
+    m.insert(pair&lt;int,int&gt;(2,20));
+    m.insert(pair&lt;int,int&gt;(3,30));
+    m.insert(pair&lt;int,int&gt;(4,40));
+    m.insert(pair&lt;int,int&gt;(5,50));
+    cout &lt;&lt;"默认构造"&lt;&lt;endl;
+    printMap(m);
+    map&lt;int,int&gt;n(m);
+    cout &lt;&lt;"拷贝构造"&lt;&lt;endl;
+    printMap(n);
+    map&lt;int,int&gt;s;
+    s=m;
+    cout &lt;&lt;"赋值"&lt;&lt;endl;
+    printMap(s);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>map中所有元素都是成对出现，插入数据时候要使用对组</strong></p>
+<h4 id="map大小和交换"><a href="#map大小和交换" class="headerlink" title="map大小和交换"></a>map大小和交换</h4><ul>
+<li>size(); //返回容器中元素的数目 </li>
+<li>empty(); //判断容器是否为空 </li>
+<li>swap(st); //交换两个集合容器</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+void printMap(const map&lt;int,int&gt;&amp; t ){
+    for(map&lt;int,int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;it-&gt;first&lt;&lt;" "&lt;&lt;it-&gt;second&lt;&lt;"|";
+    }       
+    cout &lt;&lt; endl;
+}
+void if_empty(const map&lt;int,int&gt;&amp; t ){
+    if(t.empty()){
+        cout &lt;&lt;"这个容器是空的"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"这个容器不是空的,大小为"&lt;&lt;t.size()&lt;&lt;endl;
+    }
+}
+void test(){
+    map&lt;int,int&gt;m;
+    map&lt;int,int&gt;n;
+    m.insert(pair&lt;int,int&gt;(1,10));
+    m.insert(pair&lt;int,int&gt;(2,20));
+    m.insert(pair&lt;int,int&gt;(3,30));
+    m.insert(pair&lt;int,int&gt;(4,40));
+    m.insert(pair&lt;int,int&gt;(5,50));
+    if_empty(m);
+    if_empty(n);
+    map&lt;int,int&gt;s;
+    s.insert(pair&lt;int,int&gt;(1,22));
+    s.insert(pair&lt;int,int&gt;(2,32));
+    cout &lt;&lt;"交换前"&lt;&lt;endl;
+    printMap(m);
+    printMap(s);
+    cout &lt;&lt;"交换后"&lt;&lt;endl;
+    m.swap(s);
+    printMap(m);
+    printMap(s);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223181601113.png" alt="运行结果"></p>
+<h4 id="map插入和删除"><a href="#map插入和删除" class="headerlink" title="map插入和删除"></a>map插入和删除</h4><ul>
+<li>insert(elem); //在容器中插入元素。 </li>
+<li>clear(); //清除所有元素 </li>
+<li>erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。</li>
+<li>erase(beg, end); //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。 </li>
+<li>erase(key); //删除容器中值为key的元素。</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+void printMap(const map&lt;int,int&gt;&amp; t ){
+    for(map&lt;int,int&gt;::const_iterator it = t.begin();it!=t.end();it++){
+        cout &lt;&lt;it-&gt;first&lt;&lt;" "&lt;&lt;it-&gt;second&lt;&lt;"|";
+    }       
+    cout &lt;&lt; endl;
+}
+void if_empty(const map&lt;int,int&gt;&amp; t ){
+    if(t.empty()){
+        cout &lt;&lt;"这个容器是空的"&lt;&lt;endl;
+    }else{
+        cout &lt;&lt;"这个容器不是空的,大小为"&lt;&lt;t.size()&lt;&lt;endl;
+    }
+}
+void test(){
+    map&lt;int,int&gt;m;
+    //插入方式一
+    m.insert(pair&lt;int,int&gt;(1,10));
+    //插入方式二
+    m.insert(make_pair(2,20));
+    //插入方式三
+    m.insert(map&lt;int,int&gt;::value_type(3,30));
+    //插入方式四
+    m[4]=40;
+    printMap(m);
+    map&lt;int,int&gt;::iterator it = m.begin();
+    m.erase(++it);
+    cout&lt;&lt;"删除元素"&lt;&lt;endl;
+    printMap(m);
+    cout&lt;&lt;"删除key为3的元素"&lt;&lt;endl;
+    m.erase(3);
+    printMap(m);
+    cout&lt;&lt;"清空数据"&lt;&lt;endl;
+    m.clear();
+    if_empty(m);
+}
+int main(){
+    test();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221223182457788.png" alt="运行结果"></p>
+<h4 id="map查找和统计"><a href="#map查找和统计" class="headerlink" title="map查找和统计"></a>map查找和统计</h4><ul>
+<li>find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end(); </li>
+<li>count(key); //统计key的元素个数</li>
+</ul>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;map&gt;
+#include &lt;iostream&gt;
+using namespace std;
+// 查找和统计
+void test01()
+{
+    map&lt;int, int&gt; m;
+    m.insert(pair&lt;int, int&gt;(1, 10));
+    m.insert(pair&lt;int, int&gt;(2, 20));
+    m.insert(pair&lt;int, int&gt;(3, 30));
+    // 查找
+    map&lt;int, int&gt;::iterator pos = m.find(3);
+    if (pos != m.end())
+    {
+        cout &lt;&lt; "找到了元素 key = " &lt;&lt; (*pos).first &lt;&lt; " value = " &lt;&lt; (*pos).second &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; "未找到元素" &lt;&lt; endl;
+    }
+    // 统计
+    int num = m.count(3);
+    cout &lt;&lt; "num = " &lt;&lt; num &lt;&lt; endl;
+}
+int main()
+{
+    test01();
+    system("pause");
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>find的返回值还是迭代器</p>
+<p>count的返回值不是0就是1</p>
+<h4 id="map容器排序"><a href="#map容器排序" class="headerlink" title="map容器排序"></a>map容器排序</h4><p>默认的是从小到大，利用仿函数，可以改变排序规则</p>
+<p>示例</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;map&gt;
+#include &lt;iostream&gt;
+using namespace std;
+class MyCompare
+{
+public:
+    bool operator()(int v1, int v2) const
+    {
+        return v1 &gt; v2;
+    }
+};
+void test01()
+{
+    // 默认从小到大排序
+    // 利用仿函数实现从大到小排序
+    map&lt;int, int, MyCompare&gt; m;
+    m.insert(make_pair(1, 10));
+    m.insert(make_pair(2, 20));
+    m.insert(make_pair(3, 30));
+    m.insert(make_pair(4, 40));
+    m.insert(make_pair(5, 50));
+    for (map&lt;int, int, MyCompare&gt;::iterator it = m.begin(); it != m.end(); it++)
+    {
+        cout &lt;&lt; "key:" &lt;&lt; it-&gt;first &lt;&lt; " value:" &lt;&lt; it-&gt;second &lt;&lt; endl;
+    }
+}
+int main()
+{
+    test01();
+    system("pause");
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>基本上与其他的容器排序方法相同，同样这里可以排序自定义类型</p>
 
                 
             </div>
