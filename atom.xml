@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>园崎魅音</title>
+  
+  <subtitle>MeiYin</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-05-08T11:58:43.761Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>园崎魅音</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL进阶</title>
+    <link href="http://example.com/2023/04/24/mysql-jin-jie/"/>
+    <id>http://example.com/2023/04/24/mysql-jin-jie/</id>
+    <published>2023-04-24T08:57:45.000Z</published>
+    <updated>2023-05-08T11:58:43.761Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这部分是在Linux服务器环境下运行的，所以要先准备一台Linux服务器用来部署MySQL数据库&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="http://example.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="Mysql" scheme="http://example.com/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL基础</title>
+    <link href="http://example.com/2023/04/21/mysql-ji-chu/"/>
+    <id>http://example.com/2023/04/21/mysql-ji-chu/</id>
+    <published>2023-04-21T08:05:06.000Z</published>
+    <updated>2023-04-24T09:02:58.281Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;视频参考：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="http://example.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="Mysql" scheme="http://example.com/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++11</title>
+    <link href="http://example.com/2023/03/17/c-11/"/>
+    <id>http://example.com/2023/03/17/c-11/</id>
+    <published>2023-03-17T08:51:07.000Z</published>
+    <updated>2023-04-22T09:37:55.036Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;auto关键字&quot;&gt;&lt;a href=&quot;#auto关键字&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开发工具</title>
+    <link href="http://example.com/2023/02/20/kai-fa-gong-ju-lian/"/>
+    <id>http://example.com/2023/02/20/kai-fa-gong-ju-lian/</id>
+    <published>2023-02-20T11:19:51.000Z</published>
+    <updated>2023-03-21T08:45:09.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​	介绍基本使用以及概念&lt;/p&gt;
+&lt;h2 id=&quot;一、vim&quot;&gt;&lt;a href=&quot;#一、vim&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="vscode" scheme="http://example.com/tags/vscode/"/>
+    
+    <category term="CMake" scheme="http://example.com/tags/CMake/"/>
+    
+    <category term="vim" scheme="http://example.com/tags/vim/"/>
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+    <category term="Docker" scheme="http://example.com/tags/Docker/"/>
+    
+    <category term="gdb" scheme="http://example.com/tags/gdb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法</title>
+    <link href="http://example.com/2023/01/31/chang-yong-suan-fa/"/>
+    <id>http://example.com/2023/01/31/chang-yong-suan-fa/</id>
+    <published>2023-01-31T04:20:14.000Z</published>
+    <updated>2023-04-05T07:43:11.625Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;边刷题边学&lt;/p&gt;
+&lt;h2 id=&quot;哈希表&quot;&gt;&lt;a href=&quot;#哈希表&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux学习</title>
+    <link href="http://example.com/2022/12/11/linux-xue-xi/"/>
+    <id>http://example.com/2022/12/11/linux-xue-xi/</id>
+    <published>2022-12-11T05:43:29.000Z</published>
+    <updated>2023-03-17T08:54:58.230Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Linux，全称GNU/Linux，是一种免费使用和自由传播的&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://example.com/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++进阶</title>
+    <link href="http://example.com/2022/11/22/c-xiao-zhi-shi-dian/"/>
+    <id>http://example.com/2022/11/22/c-xiao-zhi-shi-dian/</id>
+    <published>2022-11-22T10:38:00.000Z</published>
+    <updated>2023-05-08T12:11:34.877Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;namespace&quot;&gt;&lt;a href=&quot;#namespace&quot; class=&quot;headerlink&quot; title=&quot;namespace&quot;&gt;&lt;/a&gt;namespace&lt;/h2&gt;&lt;p&gt;在学习QT的过程中遇到一句&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QT基础学习</title>
+    <link href="http://example.com/2022/11/21/qt-xue-xi/"/>
+    <id>http://example.com/2022/11/21/qt-xue-xi/</id>
+    <published>2022-11-21T12:12:00.000Z</published>
+    <updated>2023-03-01T14:51:17.387Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="QT" scheme="http://example.com/categories/QT/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="QT" scheme="http://example.com/tags/QT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STL标准模板库</title>
+    <link href="http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/"/>
+    <id>http://example.com/2022/10/27/stl-biao-zhun-mo-ban-ku/</id>
+    <published>2022-10-27T10:07:52.000Z</published>
+    <updated>2023-03-26T10:07:43.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="STL" scheme="http://example.com/tags/STL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode+CMake+多文件编译</title>
+    <link href="http://example.com/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/"/>
+    <id>http://example.com/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/</id>
+    <published>2022-10-27T08:25:00.000Z</published>
+    <updated>2023-02-20T11:24:36.601Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;​	   </summary>
+        
+      
+    
+    
+    
+    <category term="vscode" scheme="http://example.com/categories/vscode/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="vscode" scheme="http://example.com/tags/vscode/"/>
+    
+    <category term="CMake" scheme="http://example.com/tags/CMake/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XTDrone仿真平台</title>
+    <link href="http://example.com/2022/10/19/xtdrone-fang-zhen-ping-tai/"/>
+    <id>http://example.com/2022/10/19/xtdrone-fang-zhen-ping-tai/</id>
+    <published>2022-10-19T08:25:00.000Z</published>
+    <updated>2022-11-14T11:32:33.748Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先是必要的安装，ROS+gazebo+PX4+MAVROS+QGroundControl+XTDrone(这一部分可以参考我在无人机仿真环境搭建查看)，本篇是基本XTDrone官方的文档所学习的，主要记录仿真环境的运行以及自己在过程中遇到的坑。&lt;/p&gt;
+&lt;p&gt;官方文档链接</summary>
+        
+      
+    
+    
+    
+    <category term="ros" scheme="http://example.com/categories/ros/"/>
+    
+    
+    <category term="ros" scheme="http://example.com/tags/ros/"/>
+    
+    <category term="无人机仿真" scheme="http://example.com/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构学习</title>
+    <link href="http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/"/>
+    <id>http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/</id>
+    <published>2022-10-19T08:25:00.000Z</published>
+    <updated>2023-03-17T08:52:01.808Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、线性表&quot;&gt;&lt;a href=&quot;#一、线性表&quot; class=&quot;headerlink&quot; title=&quot;一、线性表&quot;&gt;&lt;/a&gt;一、线性表&lt;/h2&gt;&lt;h3 id=&quot;1-顺序储存结构的插入与删除&quot;&gt;&lt;a href=&quot;#1-顺序储存结构的插入与删除&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="http://example.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="数据结构与算法" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无人机仿真搭建</title>
+    <link href="http://example.com/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/"/>
+    <id>http://example.com/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/</id>
+    <published>2022-05-09T08:25:00.000Z</published>
+    <updated>2023-03-01T14:53:17.277Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基于ubuntu18无人机仿真环境搭建&quot;&gt;&lt;a href=&quot;#基于ubuntu18无人机仿真环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基于ubuntu18无人机仿真环境搭建&quot;&gt;&lt;/a&gt;基于ubuntu18无人机仿真环境搭建&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="ros仿真" scheme="http://example.com/categories/ros%E4%BB%BF%E7%9C%9F/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="ros" scheme="http://example.com/tags/ros/"/>
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言学习</title>
+    <link href="http://example.com/2021/12/03/c-yu-yan-de-xue-xi/"/>
+    <id>http://example.com/2021/12/03/c-yu-yan-de-xue-xi/</id>
+    <published>2021-12-03T08:25:00.000Z</published>
+    <updated>2023-02-20T11:30:01.632Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在C语言中最好使用#define 或者 const 以付符号代表数字常量&lt;/p&gt;
+&lt;p&gt;scanf</summary>
+        
+      
+    
+    
+    
+    <category term="c" scheme="http://example.com/categories/c/"/>
+    
+    
+    <category term="C" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
+  
+</feed>

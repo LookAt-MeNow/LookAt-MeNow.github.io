@@ -1,0 +1,1768 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="开发工具, 园崎魅音">
+    <meta name="description" content="磨刀不废砍柴功">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>开发工具 | 园崎魅音</title>
+    <link rel="icon" type="image/jpeg" href="/888.jpeg">
+    
+    <style>
+        body{
+            background-image: url(https://pic1.zhimg.com/v2-fbf206692f5d7df61ec7ed117052247c_r.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/345.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">园崎魅音</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/345.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">园崎魅音</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LookAt-MeNow" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LookAt-MeNow" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F9b6bd1fe-72a5-4df3-866c-9bd32b83b594%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1679484158&t=c27ec0eb2f3ebde8853a79bffbe5419b')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">开发工具</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/vscode/">
+                                <span class="chip bg-color">vscode</span>
+                            </a>
+                        
+                            <a href="/tags/CMake/">
+                                <span class="chip bg-color">CMake</span>
+                            </a>
+                        
+                            <a href="/tags/vim/">
+                                <span class="chip bg-color">vim</span>
+                            </a>
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                            <a href="/tags/gdb/">
+                                <span class="chip bg-color">gdb</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C/" class="post-category">
+                                C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-02-20
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-03-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.6k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	介绍基本使用以及概念</p>
+<h2 id="一、vim"><a href="#一、vim" class="headerlink" title="一、vim"></a>一、vim</h2><p>vim在大多数的IDE都是有支持插件的，以下操作是在vscode进行的。</p>
+<p>在插件商店搜索 vim</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230220195558123.png" alt="第一个就是"></p>
+<p>在windows下安装就可以使用了，在Mac中用根据插件说明进行设置。</p>
+<h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><p>vim有四种模式：</p>
+<p>普通模式：可以进行换行等操作</p>
+<p>插入模式：字面意思，再次模式下可以进行文字的输入</p>
+<p>可视化模式：可以选择一块编辑区域，然后对选中的文件内容执行插入、删除、替换、改变大小写等操作</p>
+<p>命令行模式：在这种模式可以进行一些命令操作</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230301213816293.png" alt="模式之间的转化"></p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><table>
+<thead>
+<tr>
+<th>对应按键</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h</td>
+<td>光标向左移动</td>
+</tr>
+<tr>
+<td>k</td>
+<td>光标向上移动</td>
+</tr>
+<tr>
+<td>l</td>
+<td>光标向右移动</td>
+</tr>
+<tr>
+<td>j</td>
+<td>光标向下移动</td>
+</tr>
+<tr>
+<td>0</td>
+<td>跳到行首</td>
+</tr>
+<tr>
+<td>^</td>
+<td>跳到从行首开始的第一个非空字符</td>
+</tr>
+<tr>
+<td>$</td>
+<td>跳到行尾</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>跳到第一行</td>
+</tr>
+<tr>
+<td>G</td>
+<td>跳到最后一行</td>
+</tr>
+<tr>
+<td>f+{char}</td>
+<td>光标跳到下一个{char}所在的位置</td>
+</tr>
+<tr>
+<td>F+{char}</td>
+<td>光标跳到上一个{char}所在的位置</td>
+</tr>
+<tr>
+<td>；</td>
+<td>重复上一次的查找动作</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>剪切光标所在的行</td>
+</tr>
+<tr>
+<td>n+d</td>
+<td>向上剪切n行</td>
+</tr>
+<tr>
+<td>n+dd</td>
+<td>向下剪切n行</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制光标所在的行</td>
+</tr>
+<tr>
+<td>n+y</td>
+<td>向上复制n行</td>
+</tr>
+<tr>
+<td>n+yy</td>
+<td>向下复制n行</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴操作</td>
+</tr>
+<tr>
+<td>c</td>
+<td>修改操作（删除并进去插入模式）</td>
+</tr>
+<tr>
+<td>ctrl+r</td>
+<td>重复上一次的操作</td>
+</tr>
+<tr>
+<td>ctrl+f</td>
+<td>向下翻页</td>
+</tr>
+<tr>
+<td>ctrl+b</td>
+<td>向上翻页</td>
+</tr>
+<tr>
+<td>v</td>
+<td>进入可视化操作</td>
+</tr>
+<tr>
+<td>~</td>
+<td>将光标下的字母改变大小写</td>
+</tr>
+</tbody></table>
+<p>以上列出的仅仅是一些常用的操作，还有一些操作用的不是很多或者都可以用以上操作代替就没有罗列</p>
+<p>这里的 d c y v等叫做操作符，操作符可以配合着动作实现一些操作</p>
+<h3 id="动作与操作符"><a href="#动作与操作符" class="headerlink" title="动作与操作符"></a>动作与操作符</h3><p>动作的格式：</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>iw</td>
+<td>改变单词</td>
+</tr>
+<tr>
+<td>i(</td>
+<td>改变()里的内容</td>
+</tr>
+<tr>
+<td>i{</td>
+<td>改变{}里的内容</td>
+</tr>
+<tr>
+<td>i&lt;</td>
+<td>改变&lt;&gt;里的内容</td>
+</tr>
+<tr>
+<td>i[</td>
+<td>改变[]里的内容</td>
+</tr>
+<tr>
+<td>i”</td>
+<td>改变””里的内容</td>
+</tr>
+<tr>
+<td>i’</td>
+<td>改变‘’里的内容</td>
+</tr>
+</tbody></table>
+<p>这里的i可以用a来代替，但是实现的效果不同</p>
+<p>操作格式：</p>
+<p>操作符+动作（这里一共要分别按三次按键才行，不是一起按的）</p>
+<p>例如</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int main(){
+	string str = {"hello"};
+    vector&lt;int&gt;a;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果我想要删除这个hello单词的话</p>
+<p><strong>d+iw（先按d再按i再按w）</strong>这样就可以删除hello单词</p>
+<p>那么如果是</p>
+<p>d+aw（先按d再按a再按w）这样的话也可以删除hello单词，<strong>但是同时会删除掉” “</strong></p>
+<p>这就是两者的不同用i不会包括旁别的符号，用a会包括</p>
+<p>举一反三的，要是想将vector&lt; int &gt;a里的int 复制，就可以</p>
+<p>**y+i&lt;**（先按y再按i再按&lt;）</p>
+<p>以上都是在普通模式下进行的操作，在可视化模式中就是类似鼠标操作，可以选中一片区域的代码</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230301222625079.png" alt="当前可以使用操作符进行一些操作"></p>
+<h3 id="在vscode中使用的技巧"><a href="#在vscode中使用的技巧" class="headerlink" title="在vscode中使用的技巧"></a>在vscode中使用的技巧</h3><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>实现功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>g+d</td>
+<td>查看函数的实现（跳转到函数定义）</td>
+</tr>
+<tr>
+<td>g+h</td>
+<td>查看函数的模板及重载</td>
+</tr>
+<tr>
+<td>g+t</td>
+<td>跳转到下一个标签页</td>
+</tr>
+<tr>
+<td>g+T</td>
+<td>跳转到上一个标签页</td>
+</tr>
+<tr>
+<td>n+g+t</td>
+<td>跳转到第n个标签页</td>
+</tr>
+<tr>
+<td>ctrl+0</td>
+<td>跳转到旁别的资源管理器一栏，选中想要打开的文件按回车进入</td>
+</tr>
+<tr>
+<td>ctrl+~</td>
+<td>跳转到终端，ctrl+1回到代码栏</td>
+</tr>
+</tbody></table>
+<h3 id="终端中使用"><a href="#终端中使用" class="headerlink" title="终端中使用"></a>终端中使用</h3><p>在终端中使用vim还是有些不同的，比如没有了解过vim的第一次在Linux系统中以vim的方式打开文件甚至都不知道怎么保存退出，这里的保存退出就涉及到了命令行模式。（有时间再写捏）</p>
+<h2 id="二、git"><a href="#二、git" class="headerlink" title="二、git"></a>二、git</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1r3411F7kn/?spm_id_from=333.788.recommend_more_video.-1&amp;vd_source=f342719b375d872cded85ce2655fee5d">Git工作流和核心原理 | GitHub基本操作 | VS Code里使用Git和关联GitHub_哔哩哔哩_bilibili</a></p>
+<p>强烈建议先观看该视频</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/all-about-git">git大全</a></p>
+<p><a target="_blank" rel="noopener" href="https://oschina.gitee.io/learn-git-branching/">git_learn</a>十分推荐该网站，有实例操作和图形演示</p>
+<p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<p>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p>
+<p>Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
+<h3 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h3><p>Git支持在windows，Linux，mac等系统运行</p>
+<p>windows：</p>
+<p><a target="_blank" rel="noopener" href="https://gitforwindows.org/">下载链接</a></p>
+<p>Linux：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">apt-get</span> <span class="token function">install</span> libcurl4-gnutls-dev libexpat1-dev gettext <span class="token punctuation">\</span>
+  libz-dev libssl-dev
+  
+$ <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>安装完成后使用命令查看是否成功安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token parameter variable">--versoi</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304140624422.png" alt="Linux也可以使用这个命令来查看"></p>
+<p>配置用户信息</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"xxxxx"</span>
+$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email xxxxx@xxxxx.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>查看配置信息</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">$ git config --list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304141114917.png"></p>
+<h3 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h3><ul>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交</li>
+</ul>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304141359274.png"></p>
+<h3 id="Git工作分区"><a href="#Git工作分区" class="headerlink" title="Git工作分区"></a>Git工作分区</h3><table>
+<thead>
+<tr>
+<th>分区</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>工作区</td>
+<td>在git管理下的正常目录都算是工作区。就是你平时存放项目代码的地方，本地代码</td>
+</tr>
+<tr>
+<td>资源区</td>
+<td>资源库（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本。</td>
+</tr>
+<tr>
+<td>暂存区</td>
+<td>暂存区，用于临时存放你的改动。</td>
+</tr>
+<tr>
+<td>git仓库</td>
+<td>远程仓库，托管代码的服务器。</td>
+</tr>
+</tbody></table>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/310e426a4fe346169b8fb9e70699cafd.png" alt="分区关系"></p>
+<p>在你的workspace写好的代码使用add放入暂存区index，在commit提交到资源库，再见资源库的文件push到远程仓库</p>
+<p>所以git管理的文件有三种状态：</p>
+<p>已修改   已暂存   已提交</p>
+<p><strong>文件的状态</strong></p>
+<p>Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304164149203.png"></p>
+<p>比如该文件夹下的QT是刚新建的，如果想上传到远程仓库首先要将这个文件放在暂存区</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> QT<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样QT文件就变成暂存状态了。</p>
+<p>Staged: 暂存状态。执行git commit则将修改同步到库中, 相当于给文件一个标记，当执行git commit有这个标记的就会上传到资源区</p>
+<p>committed：已经是提交状态了，执行git pull即可上传到远程仓库</p>
+<p>modified： 表示修改了文件，但是还没保存到数据库中</p>
+<h3 id="Git创建远程仓库"><a href="#Git创建远程仓库" class="headerlink" title="Git创建远程仓库"></a>Git创建远程仓库</h3><p>关联远程仓库（以github为例）</p>
+<p>由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过SSH加密的，所以我们需要配置验证信息：</p>
+<p>可以参考该文</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39909808/article/details/116480722">配置SSH</a></p>
+<p>现在github新建一个仓库</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304150956498.png" alt="默认配置即可"></p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304151023944.png" alt="创建成功的界面"></p>
+<p>根据github的提示一步步操作即可</p>
+<p>选中一个文件夹目录在改目录下使用命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init <span class="token comment">#初始化</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>该命令执行完后会在当前目录生成一个隐藏的 .git 目录。使用我们指定目录作为Git仓库。</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304142024415.png" alt="将这个文件创建一个git仓库"></p>
+<p>在改目录使用命令git inti，提示Initialized empty Git repository in D:/curriculum design/.git/，即成功，并且这个时候在改目录下打开git bash</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304142630760.png" alt="目录旁别有master的标识"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">--all</span> <span class="token comment">#add也可以跟你想要git的子文件夹</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"C++课设"</span> <span class="token comment">#第一次提交并备注提交信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-M</span> main  <span class="token comment">#这个可以不执行，执行之后主分支就是main，不执行的化就是默认的master</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/LookAt-MeNow/Curriculum_Design.git <span class="token comment">#添加远程仓库，这个命令具体根据你自己的不能复制我的这个</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin main <span class="token comment">#这里如果没有运行branch -M main 的话就应该是maseter而不是main</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304153007269.png" alt="我没有运行branch所以不能用main"></p>
+<p><strong>可能出现的错误</strong></p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304160032021.png" alt="git限制文件大小，如果单文件大于100m会push失败"></p>
+<p><a target="_blank" rel="noopener" href="https://git-lfs.com/">解决方法</a></p>
+<p>这是第一次提交</p>
+<p>下一次提交的时候使用命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> status  <span class="token comment">#更新目录</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"注释"</span>
+<span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304162338878.png" alt="这样代码就上传到远程仓库了"></p>
+<p>从远程clone别人的仓库到本地</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token comment">#+仓库地址</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果要更新从远端更新工作区，可以直接使用git pull，但是这样会把原来的工作区文件丢失，可以先使用git fetch，将远程仓库更新至资源库，使用git diff比较远程仓库和工作区的不同，选取不同的文件进行更新。</p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init     <span class="token comment">#初始化仓库</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>    <span class="token comment">#添加文件到暂存区。</span>
+<span class="token function">git</span> commit 	 <span class="token comment">#将暂存区内容添加到仓库中</span>
+<span class="token function">git</span> <span class="token function">add</span>	     <span class="token comment">#添加文件到暂存区</span>
+<span class="token function">git</span> status	 <span class="token comment">#查看仓库当前的状态，显示有变更的文件。</span>
+<span class="token function">git</span> <span class="token function">diff</span>	 <span class="token comment">#比较文件的不同，即暂存区和工作区的差异</span>
+<span class="token function">git</span> commit	 <span class="token comment">#提交暂存区到本地仓库。</span>
+<span class="token function">git</span> reset	 <span class="token comment">#回退版本。</span>
+<span class="token function">git</span> <span class="token function">rm</span>	     <span class="token comment">#将文件从暂存区和工作区中删除</span>
+<span class="token function">git</span> <span class="token function">mv</span>	     <span class="token comment">#移动或重命名工作区文件</span>
+<span class="token function">git</span> log	     <span class="token comment">#查看历史提交记录</span>
+<span class="token function">git</span> remote	 <span class="token comment">#远程仓库操作</span>
+<span class="token function">git</span> fetch	 <span class="token comment">#从远程获取代码库</span>
+<span class="token function">git</span> pull	 <span class="token comment">#下载远程代码并合并</span>
+<span class="token function">git</span> push	 <span class="token comment">#上传远程代码并合并</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>git statuas</strong></p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230304165145262.png"></p>
+<p>使用改命令后即可标记出当前修改过的文件，和新建的没有被追踪的文件</p>
+<h3 id="Git分支管理"><a href="#Git分支管理" class="headerlink" title="Git分支管理"></a>Git分支管理</h3><p>git分支主要是多人协作开发使用，当只有一个主分支的时候如果你有一个需要2周才能完成的代码，第一周写了50%，如果现在你要提交的话就是一个半成品影响别人的使用，如果不提交的话又存在丢失进度的风险，现在创建一个只属于你自己的分支，所有代码都提交到这个分支上，当开发完成在把改分支合并到主分支。</p>
+<p><strong>创建分支：</strong></p>
+<p>在Git中开始就存在一条主线master，有一个指针HEAD指向master，HEAD是指向当前分支的，如果当时用的是master分支就指向master，如果是别的分支就指向别分支。</p>
+<p><a target="_blank" rel="noopener" href="https://oschina.gitee.io/learn-git-branching/">git_learn</a>该网站形象的描绘了这一过程</p>
+<p>首先我们需要创建一个分支bugFix</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch bugFix   <span class="token comment">#创建bugFix分支</span>
+<span class="token function">git</span> checkout bugFix <span class="token comment">#转到bugFix分支，也就是让HEAD指针指向bugFix</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这两句可以合成一条命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> bugFix  <span class="token comment">#创建并转到bugFix分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用 git branch 可以查看当前所有分支，和当前指向的分支</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch
+* bugFix
+  master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>*就代表当前的分支是bugFix</p>
+<p><strong>合并分支：</strong></p>
+<p>现在就可以在bugFix分支进行提交的操作了，当在bugFix的任务完成后切换回master分支</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这个时候在bugFix提交的文件在master是看不到的</p>
+<p>现在将bugFix分支合并到master分支来</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> merge bugFix  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>删除分支：</strong></p>
+<p>合并完成后就可以删除bugFix分支了</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-d</span> bugFix<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在最新的git版本中checkout也可以用switch来代替，使用方法相同，不过在新建并转到分支有些不同</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> switch <span class="token parameter variable">-c</span> bugFix <span class="token comment">#这里是-c，而checkout是-b</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Git标签管理"><a href="#Git标签管理" class="headerlink" title="Git标签管理"></a>Git标签管理</h3><p>Git标签是和commit协同的，commit相当于一个人的身份证号，标签是他的名字</p>
+<p><strong>创建标签：</strong></p>
+<p>先转到需要打标签的分支</p>
+<p>使用命令 git tag &lt;name.&gt;即可打上一个标签</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> tag v1.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用git tag可以查看所有标签</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> tag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>默认标签是打在最新提交的commit上的。</p>
+<p>还可以创建带有说明的标签，用<code>-a</code>指定标签名，<code>-m</code>指定说明文字</p>
+<p>使用git show &lt;name.&gt;可以查看标签的信息</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> show v1.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果上一次的commit忘记打标签了，可以先使用git log找到对应的commit id</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> tag v2.0 <span class="token comment">#+commit id</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样也是可以给已经提交过的打标签</p>
+<p><strong>删除标签：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> tag <span class="token parameter variable">-d</span> v1.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>没有上传到远端的标签可以直接删除掉</p>
+<p>如果要将标签上传到远端，使用命令<code>git push origin &lt;tagname&gt;</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> tag origin v1.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果有多个标签可以一次全部上传</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> tag origin <span class="token parameter variable">--tag</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>要是标签已经上传到远端，删除标签操作</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> tag <span class="token parameter variable">-d</span> v0.9     <span class="token comment">#先删除掉本地的</span>
+<span class="token function">git</span> push origin :refs/tags/v0.9   <span class="token comment">#删除远端仓库的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="vscode中使用"><a href="#vscode中使用" class="headerlink" title="vscode中使用"></a>vscode中使用</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1r3411F7kn/?spm_id_from=333.788.recommend_more_video.-1&amp;vd_source=f342719b375d872cded85ce2655fee5d">Git工作流和核心原理 | GitHub基本操作 | VS Code里使用Git和关联GitHub_哔哩哔哩_bilibili</a></p>
+<p>观看这个视频即可。视频里的操作都是图形化的，也可以使用vscode自带的终端来执行</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230305203940379.png" alt="总结"></p>
+<h2 id="三、CMake"><a href="#三、CMake" class="headerlink" title="三、CMake"></a>三、CMake</h2><p>首先理清make ,makefile,CMake, CMakeLists, QMake的关系</p>
+<p>为什么会有make，make是干嘛用的？假如现在你又{1…99}.cpp个文件需要编译，不可能说你一个一个文件的编译99次吧，这个时候就有了make，make可以帮助我们快速的编译大量的文件，为什么make会帮我们快速的编译大量的文件，其中的奥妙就是makefile了，你编写了makefile文件，告诉make应该编译那些文件，但是编译一个文件你就要写一句</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">g++ <span class="token parameter variable">-g</span> <span class="token parameter variable">-o</span> <span class="token number">1</span> <span class="token number">1</span>.cpp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>但是你有99文件总不能你再写99句这个命令吧，这个时候CMake就来了，CMake就是帮助我们生成makefile的文件，也就是说你只需要使用CMake就可以完成多文件的编译了，但是捏，凭什么CMake又知道你要编译的是什么文件，然后就有了CMakeLists，这个全部过程中你需要干的是就是编写CMakeLists就可以了。</p>
+<p>QMake其实就是QT下的构建工具，在QT下你编写的是.pro文件，这个玩意就会根据你写的.pro再进行操作，其实就是相当于，你在QT写了一句代码，但是QT在后台可能给你生成了数十条代码</p>
+<p>CMake其实就是高级编译配置工具，当多个人用不同的语言或者编译器开发一个项目，最终要输出一个可执行文件或者共享库（dll，so等等），这种场景下就是可以用CMake的。</p>
+<h3 id="makefile文件"><a href="#makefile文件" class="headerlink" title="makefile文件"></a>makefile文件</h3><p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230314211638251.png" alt="现在要编译3个程序"></p>
+<p>不使用make的编译方法</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230314211821514.png" alt="需要你一个一个编译"></p>
+<p>使用make编译，首先编写makefile文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> makefile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230314213927702.png" alt="最简单的一个makefile文件"></p>
+<p>执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230314214014541.png" alt="将我们写的文件都编译了"></p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230314214134519.png" alt="都编译成功了嗷"></p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230314214235327.png" alt="全部源文件"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wucz122140729/article/details/98477445?ops_request_misc=%7B%22request_id%22:%22167880008416800184186812%22,%22scm%22:%2220140713.130102334.pc_blog.%22%7D&amp;request_id=167880008416800184186812&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-1-98477445-null-null.blog_rank_default&amp;utm_term=make&amp;spm=1018.2226.3001.4450">(64条消息) C语言makefile文件_c程序 makefile_C语言技术网-码农有道的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ba4y1h76W/?spm_id_from=333.999.0.0&amp;vd_source=f342719b375d872cded85ce2655fee5d">原作者视频讲解</a></p>
+<p>这里只是简单的试一下make，我们的主要目的还是CMake嗷，makefile文件的一下别的用法参数可以参考这篇文章</p>
+<h3 id="CMakeLists-txt"><a href="#CMakeLists-txt" class="headerlink" title="CMakeLists.txt"></a>CMakeLists.txt</h3><h4 id="demo1-单文件"><a href="#demo1-单文件" class="headerlink" title="demo1(单文件)"></a>demo1(单文件)</h4><p>先一个简单的例子看看具体怎么做的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#先cd到你的工作空间下</span>
+<span class="token function">vi</span> test.cpp
+<span class="token function">vi</span> CMakeLists.txt <span class="token comment">#这个不能拼错</span>
+cmake ./  <span class="token comment">#./代表当前文件夹下的所有文件</span>
+<span class="token function">make</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230317174941447.png" alt="源文件和CMakeLists.txt文件内容"></p>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token variable">CMAKE_MINIMUM_REQUIRED</span><span class="token punctuation">(</span><span class="token property">VERSION</span> <span class="token number">3.10</span><span class="token punctuation">)</span>  <span class="token comment">#这一句代表cmake的最低版本</span>
+
+<span class="token function">PROJECT</span><span class="token punctuation">(</span>demo1<span class="token punctuation">)</span>   <span class="token comment">#代表当前编译的工程</span>
+
+<span class="token function">ADD_EXECUTABLE</span><span class="token punctuation">(</span>demo1 test.cpp<span class="token punctuation">)</span>  <span class="token comment">#生成可执行文件，这个test.cpp文件必须要和你创建的文件名相同，demo1可以随便命名其实就和g++ -o demo1 test.cpp这句等效  ，只是为可执行文件起一个别名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230317175304080.png"></p>
+<p>这执行完cmake ./这句的时候cmake根据我们写的CMakeLists.txt帮我生成好了makefile文件，这其实也就是cmake最主要的功能之一，帮助我们写了makefile文件。</p>
+<h4 id="demo2-单文件夹多文件"><a href="#demo2-单文件夹多文件" class="headerlink" title="demo2(单文件夹多文件)"></a>demo2(单文件夹多文件)</h4><p>所有的源文件包括头文件都在一个文件夹的情况</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230317180909203.png" alt="跟第一种基本一致"></p>
+<p>这种情况和第一种CMakeLists.txt只有一点点不一样</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMAKE_MINIMUM_REQUIRED<span class="token punctuation">(</span>VERSION <span class="token number">3.10</span><span class="token punctuation">)</span>
+
+PROJECT<span class="token punctuation">(</span>demo2<span class="token punctuation">)</span>
+
+ADD_EXECUTABLE<span class="token punctuation">(</span>demo2 my.cpp test.cpp<span class="token punctuation">)</span> <span class="token comment">#把头文件实现的那个cpp包括进来就可以了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="demo3-多目录多文件"><a href="#demo3-多目录多文件" class="headerlink" title="demo3(多目录多文件)"></a>demo3(多目录多文件)</h4><p>先新建一个文件夹，demo3</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> demo3/mylib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230317185329013.png" alt="此时的文件结构"></p>
+<p>在多目录多文件的情况下，每个文件夹都需要一个CMakeLists.txt文件</p>
+<p>demo3下的CMakeLists.txt</p>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token variable">CMAKE_MINIMUM_REQUIRED</span><span class="token punctuation">(</span><span class="token property">VERSION</span> <span class="token number">3.10</span><span class="token punctuation">)</span>
+
+<span class="token function">PROJECT</span><span class="token punctuation">(</span>dome3<span class="token punctuation">)</span>
+
+<span class="token function">ADD_SUBDIRECTORY</span><span class="token punctuation">(</span>./mylib<span class="token punctuation">)</span>
+
+<span class="token function">AUX_SOURCE_DIRECTORY</span><span class="token punctuation">(</span>./ DIR_SRCS<span class="token punctuation">)</span>
+
+<span class="token function">ADD_EXECUTABLE</span><span class="token punctuation">(</span>dome3 <span class="token punctuation">${</span>DIR_SRCS<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">TARGET_LINK_LIBRARIES</span><span class="token punctuation">(</span>dome3 mylib<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>mylib下的CMakeLists.txt</p>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token function">AUX_SOURCE_DIRECTORY</span><span class="token punctuation">(</span>. DIR_LIB_SRCS<span class="token punctuation">)</span>
+
+<span class="token function">ADD_LIBRARY</span><span class="token punctuation">(</span>mylib <span class="token namespace">STATIC</span> <span class="token punctuation">${</span>DIR_LIB_SRCS<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>添加完成后,回到demo3文件夹，cmake ./ 再make</p>
+<p>这里make可能会出现一个问题</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230317185851951.png"></p>
+<p>根据报错我们可以得知错误出现在头文件找不到，但是上demo2中就可以找到，<strong>这是因为这个时候你的头文件和你的test已经不是一个文件夹，这样是找不到的，</strong>要写成**#include”./mylib/my.h**将头文件的路径添加进来</p>
+<p>然后就可以了</p>
+<h4 id="dmeo4-标准工程目录"><a href="#dmeo4-标准工程目录" class="headerlink" title="dmeo4(标准工程目录)"></a>dmeo4(标准工程目录)</h4><p>build文件(子目录bin放可执行文件，lib放库文件)，src文件(放源文件)，include文件(放库源文件)</p>
+<p><img src="/2023/02/20/kai-fa-gong-ju-lian/image-20230321161502867.png" alt="文件目录"></p>
+<p>build文件在CMake之前是没有文件的，什么都不用写，有CMakeLists.txt文件时根目录，include，src目录</p>
+<p><strong>根目录CMakeLists.txt</strong></p>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token variable">CMAKE_MINIMUM_REQUIRED</span><span class="token punctuation">(</span><span class="token property">VERSION</span> <span class="token number">3.10</span><span class="token punctuation">)</span>
+
+<span class="token function">PROJECT</span><span class="token punctuation">(</span>demo4<span class="token punctuation">)</span>
+
+<span class="token function">ADD_SUBDIRECTORY</span><span class="token punctuation">(</span>./include<span class="token punctuation">)</span>
+
+<span class="token function">ADD_SUBDIRECTORY</span><span class="token punctuation">(</span>./src<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>include目录CMakeLists.txt</strong></p>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token function">AUX_SOURCE_DIRECTORY</span><span class="token punctuation">(</span>. DIR_LIB_SRCS<span class="token punctuation">)</span>
+<span class="token comment">#这句用来将生成的库文件放在${PROJECT_BINARY_DIR}/lib，因为我们是在build文件下cmake的，所以这个${PROJECT_BINARY_DIR}也可以改成build，也就是说这个东西在哪里cmake的就是哪个目录，所以用${PROJECT_BINARY_DIR}这个格式更加规范</span>
+<span class="token function">SET</span><span class="token punctuation">(</span><span class="token variable">LIBRARY_OUTPUT_PATH</span> <span class="token punctuation">${</span><span class="token variable">PROJECT_BINARY_DIR</span><span class="token punctuation">}</span>/lib<span class="token punctuation">)</span>
+
+<span class="token function">ADD_LIBRARY</span><span class="token punctuation">(</span>include <span class="token namespace">STATIC</span> <span class="token punctuation">${</span>DIR_LIB_SRCS<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>src目录CMakeLists.txt</strong></p>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token property">INCLUDE_DIRECTORIES</span><span class="token punctuation">(</span><span class="token punctuation">${</span><span class="token variable">PROJECT_SOURCE_DIR</span><span class="token punctuation">}</span>/include<span class="token punctuation">)</span>
+
+<span class="token function">SET</span><span class="token punctuation">(</span><span class="token variable">EXECUTABLE_OUTPUT_PATH</span> <span class="token punctuation">${</span><span class="token variable">PROJECT_BINARY_DIR</span><span class="token punctuation">}</span>/bin<span class="token punctuation">)</span>
+
+<span class="token function">AUX_SOURCE_DIRECTORY</span><span class="token punctuation">(</span>./ DIR_SRC<span class="token punctuation">)</span>
+
+<span class="token function">ADD_EXECUTABLE</span><span class="token punctuation">(</span>demo4 <span class="token punctuation">${</span>DIR_SRC<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">TARGET_LINK_LIBRARIES</span><span class="token punctuation">(</span>demo4 include<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里源文件复制的是demo3里的，可以直接用，但是还是要改一下的</p>
+<p>在demo2中的test.cpp</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include"my.h"
+int main(){
+        my_info();
+        return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在demo3中的test.cpp</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include"./mylib/my.h"
+int main(){
+        my_info();
+        return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在demo4中的test.cpp</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include"../include/my.h"
+int main(){
+        my_info();
+        return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>主要就是头文件不同</p>
+<p>​	<strong>demo2是所有文件夹都在一个目录下，直接引用my.h就可以了</strong></p>
+<p>​	<strong>demo3是test.cpp在根目录，头文件在mylib目录下，在test.cpp看来就是我要找本目录下的(mylib文件夹，那里存的是头文件，所以先定位到本目录就是  ./   然后就是mylib文件夹</strong></p>
+<p>​	<strong>demo3是test.cpp在src目录，头文件在include目录下，在test.cpp看来就是我要找根目录下的include文件夹，那里存的是头文件，所以先回到上一级目录  .. 然后就是include文件夹</strong></p>
+<p>以上就可以理解一些简单的应用的，但是熟练掌握的话还在要多用罢</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/QTVLC/article/details/82380413">CMake预定义变量</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.hahack.com/codes/cmake/#%E4%BF%AE%E6%94%B9-CMakeLists-%E6%96%87%E4%BB%B6">CMake 入门实战 | HaHack</a>其余教程可参考这篇教程，包括自定义编译选项，安装和测试等。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2023/02/20/kai-fa-gong-ju-lian/">http://example.com/2023/02/20/kai-fa-gong-ju-lian/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/vscode/">
+                                    <span class="chip bg-color">vscode</span>
+                                </a>
+                            
+                                <a href="/tags/CMake/">
+                                    <span class="chip bg-color">CMake</span>
+                                </a>
+                            
+                                <a href="/tags/vim/">
+                                    <span class="chip bg-color">vim</span>
+                                </a>
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                                <a href="/tags/gdb/">
+                                    <span class="chip bg-color">gdb</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">......</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/zhifu.jpeg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/weixin.jpeg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NzQ5Ny8zMzk2MQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/03/17/c-11/">
+                    <div class="card-image">
+                        
+                        <img src="https://gss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d000baa1cd11728b88004fffc9fcc3cec3fd2c3a.jpg" class="responsive-img" alt="C++11">
+                        
+                        <span class="card-title">C++11</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            C++新特性
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/01/31/chang-yong-suan-fa/">
+                    <div class="card-image">
+                        
+                        <img src="https://ts1.cn.mm.bing.net/th/id/R-C.cfc49e950dcb042b238767004d4f64aa?rik=Cq1vwQF%2b8Exrgw&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fece2df2334a4341ab804d65ed2531df65d962401.jpg&ehk=0m6CxNWG7%2fYf8dlgDQXf3u5wXmwZ8TfMKZq9W7IWToE%3d&risl=&pid=ImgRaw&r=0" class="responsive-img" alt="算法">
+                        
+                        <span class="card-title">算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            太难了(悲
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 园崎魅音<br />'
+            + '文章作者: 园崎魅音<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="876941698"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">园崎魅音</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">108.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LookAt-MeNow" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2979565338@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2979565338" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2979565338" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>

@@ -1,0 +1,1590 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="XTDrone仿真平台, 园崎魅音">
+    <meta name="description" content="仿真">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>XTDrone仿真平台 | 园崎魅音</title>
+    <link rel="icon" type="image/jpeg" href="/888.jpeg">
+    
+    <style>
+        body{
+            background-image: url(https://pic1.zhimg.com/v2-fbf206692f5d7df61ec7ed117052247c_r.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/345.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">园崎魅音</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/345.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">园崎魅音</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LookAt-MeNow" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LookAt-MeNow" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpeg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">XTDrone仿真平台</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ros/">
+                                <span class="chip bg-color">ros</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F/">
+                                <span class="chip bg-color">无人机仿真</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ros/" class="post-category">
+                                ros
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-10-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-11-14
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.8k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>首先是必要的安装，ROS+gazebo+PX4+MAVROS+QGroundControl+XTDrone(这一部分可以参考我在无人机仿真环境搭建查看)，本篇是基本XTDrone官方的文档所学习的，主要记录仿真环境的运行以及自己在过程中遇到的坑。</p>
+<p>官方文档链接:<a target="_blank" rel="noopener" href="https://www.yuque.com/xtdrone/manual_cn">https://www.yuque.com/xtdrone/manual_cn</a></p>
+<h2 id="一、键盘控制无人机飞行"><a href="#一、键盘控制无人机飞行" class="headerlink" title="一、键盘控制无人机飞行"></a>一、键盘控制无人机飞行</h2><p>正确安装完成上面的必要依赖就可以先测试一下无人机是否可以通过键盘控制起飞</p>
+<p>打开一个终端运行启动gazebo，这里的indoor1就是px4自带的一个仿真环境可以改成别的，比如indoor2.launch</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/PX4_Firmware
+roslaunch px4 indoor1.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这里启动后由于是在虚拟机运行的因此可能有很大的卡顿，可以点左上角的Camera然后勾选Orthographic可以很大的优化</p>
+<p>gazebo启动后再运行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication/
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>与0号iris建立通信，然后再启动键盘控制</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>起飞流程</p>
+<p>按住i把速度加到0.3以上—–&gt;按b切换offboard模式—–&gt;按b解锁起飞</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667716834278.png" alt="效果图"></p>
+<h2 id="二、配置控制多旋翼无人机"><a href="#二、配置控制多旋翼无人机" class="headerlink" title="二、配置控制多旋翼无人机"></a>二、配置控制多旋翼无人机</h2><h3 id="1-配置方法"><a href="#1-配置方法" class="headerlink" title="1.配置方法"></a>1.配置方法</h3><p>在单机仿真中，indoor和outdoor开头的launch文件都是仿真启动的文件，不同的文件代表在不同的场景下进行仿真，上面已经说过了，这里以outdoor3.launch为例，配置多旋翼无人机</p>
+<p>打开这个文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/PX4_Firmware/launch/
+gedit outdoor3.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>默认的是车辆的仿真，搜索rover，只需对应改成需要的机型就可以了。然后就是sdf文件，因为同一种机型可能配备不同的传感器，所以sdf文件的命名也会随之不同，可以在~/PX4_Firmware/Tools/sitl_gazebo/models/ 目录下寻找所需要的sdf文件</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667717533413.png" alt="没改的小车仿真"></p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667717610118.png" alt="改过的多旋翼无人机"></p>
+<h3 id="2-控制方法"><a href="#2-控制方法" class="headerlink" title="2.控制方法"></a>2.控制方法</h3><p>多旋翼无人机相应的机型是solo，这里由于里地面高度较高，需要把launch文件中初始位置z设置为1，不然无人机就在地面以下了</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>z<span class="token punctuation">"</span></span> <span class="token attr-name">default</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后启动仿真程序，这里要是用的别的场景也是设置launch文件的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/PX4_Firmware
+roslaunch px4 outdoor3.launch <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后启动通信脚本,solo代表机型，0代表飞机编号</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication
+python multirotor_communication.py solo <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后在启动键盘控制，1代表的是飞机个数，vel代表速度控制</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py solo <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后按i把z速度加到0.3以上，在按b切换到offboard模式，再按t解锁起飞飞到合适位置按s实现悬停</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667718809610.png"></p>
+<p>然后打开地面站设置导航点即可运行</p>
+<h2 id="三、PX4飞控EKF配置"><a href="#三、PX4飞控EKF配置" class="headerlink" title="三、PX4飞控EKF配置"></a>三、PX4飞控EKF配置</h2><p>PX4默认使用的EKF配置为融合GPS的水平位置与气压计高度。如果我们想使用视觉定位就需要修改配置文件，我们这里使用的是ORBSLAM2</p>
+<p><em><strong>注意，此修改意味着EKF融合来自mavros/vision_pose/pose的数据，并不是修改完无人机就可以视觉定位了，需要相关程序提供mavros/vision_pose/pose的数据，相关程序包括视觉SLAM、激光SLAM和获取Gazebo真值等。如果没有额外的视觉数据，想要飞行必须改回基于GPS和气压计的定位。</strong></em></p>
+<p>先打开相应文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gedit ~/PX4_Firmware/ROMFS/px4fmu_common/init.d-posix/rcS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># GPS used
+#param set EKF2_AID_MASK 1
+# Vision used and GPS denied
+param set EKF2_AID_MASK 24
+
+# Barometer used for hight measurement
+#param set EKF2_HGT_MODE 0
+# Barometer denied and vision used for hight measurement
+param set EKF2_HGT_MODE 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667720317892.png"></p>
+<p>重启仿真之前要先删除上一次记录在虚拟eeprom中的参数文件，否则仿真程序就会读取参数文件导致本次rcS的修改不能生效</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> ~/.ros/eeprom/parameters*
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.ros/sitl*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="四、ORBSLAM视觉仿真"><a href="#四、ORBSLAM视觉仿真" class="headerlink" title="四、ORBSLAM视觉仿真"></a>四、ORBSLAM视觉仿真</h2><p>首先是编译两种方式的ORB文件SLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> <span class="token parameter variable">-r</span> ~/XTDrone/sensing/slam/vslam/ORB_SLAM2/ ~/catkin_ws/src/
+<span class="token function">mkdir</span> ~/catkin_ws/scripts/
+<span class="token function">cp</span> ~/catkin_ws/src/ORB_SLAM2/xtdrone* ~/catkin_ws/scripts/
+<span class="token builtin class-name">cd</span> ~/catkin_ws/src/ORB_SLAM2
+<span class="token function">chmod</span> +x build.sh
+./build.sh
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">ROS_PACKAGE_PATH</span><span class="token operator">=</span><span class="token variable">$ROS_PACKAGE_PATH</span>:~/catkin_ws/src/ORB_SLAM2/Examples/ROS <span class="token comment">#将这句放到~/.bashrc中，以后使用更方便</span>
+<span class="token function">chmod</span> +x build_ros.sh
+./build_ros.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>XTDnore官方的方法也可以参考<a target="_blank" rel="noopener" href="https://gitee.com/robin_shaun/XTDrone/tree/master/sensing/slam/vslam/ORB_SLAM2#2-prerequisites">https://gitee.com/robin_shaun/XTDrone/tree/master/sensing/slam/vslam/ORB_SLAM2#2-prerequisites</a></p>
+<p>在运行到./build.sh可能会报错，运行崩溃</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667727928350.png"></p>
+<p>这里进去./build.sh文件把最后的make -j改成make -j4就可以了，ros版本同理</p>
+<p>这里ORB就已经编译好了。理论上就已经可以跑SLAM仿真了</p>
+<p>1.先启动PX4仿真</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> PX4_Firmware
+roslaunch px4 indoor1.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2.启动ORNBSLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/catkin_ws/scripts/
+<span class="token function">sh</span> xtdrone_run_stereo.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这里没有运行成功，我自己运行没有反应无论是编译官方的ORB包还是XTD给出的ORB暂时还没有找出问题所在</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1667728340573.png" alt="官方成功示例"></p>
+<p>成功可以在终端看到</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">23860000</span>: reset position to ev position
+INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">23860000</span>: commencing external vision position fusion
+INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">23860000</span>: commencing external vision yaw fusion<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>3.建立通信</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>4.启动键盘控制</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="五、HectorSLAM建图"><a href="#五、HectorSLAM建图" class="headerlink" title="五、HectorSLAM建图"></a>五、HectorSLAM建图</h2><h3 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h3><p>安装HectorSLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-hector-slam*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装map server保存地图</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-map-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>复制相关文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscd hector_slam_launch
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/hector_slam_xtdrone.launch launch/
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/mapping_xtdrone.rviz rviz_cfg/mapping_xtdrone.rviz
+roscd hector_imu_attitude_to_tf/
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/hector_imu_xtdrone.launch launch/
+roscd hector_mapping/
+<span class="token function">sudo</span> <span class="token function">cp</span> ~/XTDrone/sensing/slam/laser_slam/hector_slam/hector_mapping_xtdrone.launch launch/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><p>启动仿真环境，这里用的是indoor3.launch，然后要把这个文件里的sdf改成iris_2d_lidar</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch px4 indoor3.launch <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动HectorSLAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch hector_slam_launch hector_slam_xtdrone.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668064035807.png"></p>
+<p>如果你运行不出来可以看看当前的tf_tree</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosrun rqt_tf_tree rqt_tf_tree<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668064336216.png" alt="tf_tree"></p>
+<p>启动通信脚本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication/
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>同样的这里的iris要是别的机型也要换成相应的</p>
+<p>将HectorSLAM输出的2D位姿和高度值（由1D激光测距仪获得），转换为mavros话题</p>
+<pre class="line-numbers language-bsah" data-language="bsah"><code class="language-bsah">cd ~/XTDrone/sensing/slam/laser_slam/script/
+python laser_transfer.py iris 0 hector<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>启动键盘控制脚本，控制无人机飞行，注意不能飞太高，导致激光雷达扫不到围墙。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard/
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>绕着场地飞行保存地图，用于后面路径规划</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosrun map_server map_saver <span class="token parameter variable">-f</span> ~/XTDrone/motion_planning/2d/map/indoor3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668066273306.png"></p>
+<p>这里要慢慢飞不然画的地图就很奇怪</p>
+<h2 id="六、Cartographer建图"><a href="#六、Cartographer建图" class="headerlink" title="六、Cartographer建图"></a>六、Cartographer建图</h2><h3 id="1-安装依赖-1"><a href="#1-安装依赖-1" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h3><p>安装Cartographer</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-cartographer-ros
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-cartographer-rviz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>从XTD复制相关文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscd cartographer_ros
+<span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span>  ~/XTDrone/sensing/slam/laser_slam/cartographer/* ./<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="2-使用-1"><a href="#2-使用-1" class="headerlink" title="2.使用"></a>2.使用</h3><p>启动indoor3.launch，这里还是和上面一样要改sdf</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch px4 indoor3.launch <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动Cartographer</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch cartographer_ros xtdrone_2d.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668066751060.png"></p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668066840356.png" alt="tf_tree"></p>
+<p>启动通信脚本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication/
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>将cartographer输出的2D位姿和高度值（由1D激光测距仪获得），转换为mavros话题</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/sensing/slam/laser_slam/script/
+python laser_transfer.py iris <span class="token number">0</span> cartographer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>启动键盘控制脚本，控制无人机飞行，注意不能飞太高，导致激光雷达扫不到围墙</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard/
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后再保存地图</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosrun map_server map_saver <span class="token parameter variable">-f</span> ~/XTDrone/motion_planning/2d/map/indoor3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>总的来说就是跟上面的HectorSLAM差不多只不过是不同的SLAM算法</p>
+<h2 id="七、二维运动规划"><a href="#七、二维运动规划" class="headerlink" title="七、二维运动规划"></a>七、二维运动规划</h2><p>这一部分的运动规划可以任意选取上面两种二维视觉算法</p>
+<p>这里以HectorSLAM为例</p>
+<h3 id="1-安装依赖-2"><a href="#1-安装依赖-2" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h3><p>安装ros的规划库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> ros-melodic-move-base <span class="token punctuation">\</span>
+ros-melodic-costmap-2d <span class="token punctuation">\</span>
+ros-melodic-dwa-local-planner <span class="token punctuation">\</span>
+ros-melodic-global-planner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>先把launch文件里的rviz启动注释掉</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscd hector_slam_launch/launch/
+<span class="token function">sudo</span> gedit hector_slam_xtdrone.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668237841251.png"></p>
+<p>这里提一句这里用的所有相关文件都是可以px4还有XTD文件下找到的</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668159898362.png" alt="例如Cartographer都是可以找到的"></p>
+<p>之前在安装依赖的时候用的cp都是从这里复制出去的</p>
+<h3 id="2-在已经建好的地图进行规划"><a href="#2-在已经建好的地图进行规划" class="headerlink" title="2.在已经建好的地图进行规划"></a>2.在已经建好的地图进行规划</h3><p>先用Cartographer已经建好的地图修改配置文件，使新发布的地图不会代替已经建好的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscd hector_mapping/launch/
+<span class="token function">sudo</span> gedit hector_mapping_xtdrone.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>把发布地图服务改为false</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>param <span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">"advertise_map_service"</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">"false"</span>/<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668238109893.png"></p>
+<p>放开56行的话题名映射注释，将map映射为map_new，从而不被订阅使用</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>remap <span class="token assign-left variable">from</span><span class="token operator">=</span><span class="token string">"/map"</span> <span class="token assign-left variable">to</span><span class="token operator">=</span><span class="token string">"/map_new"</span>/<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668238186527.png"></p>
+<p>启动仿真环境</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/PX4_Firmware
+roslaunch px4 indoor3.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>启动二维激光，但是这里启动的时候并不会打开rviz了，上面已经把这个文件里的rviz启动注释了</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch hector_slam_launch hector_slam_xtdrone.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>建立和PX4仿真的通信，同时发布位置真值</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication
+python multirotor_communication.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>将激光水平定位和高度真值数据通过MAVROS发给PX4</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/sensing/slam/laser_slam/script
+python laser_transfer.py iris <span class="token number">0</span> hector<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>启动运动规划（注意 2d_motion_planning.launch、move_base.launch和indoor3.yaml中的路径变量，要改成自己电脑对应的路径名）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/motion_planning/2d/launch
+roslaunch 2d_motion_planning.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这个时候就会弹出rviz界面了</p>
+<p>控制无人机起飞，如果您是用的takeoff模式起飞，起飞后需要切换到offboard模式</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>成功起飞之后要把键盘控制关掉，不然会与地图规划消息冲突</p>
+<p>然后再切换到rviz，使用一个2D Nav Goal无人机就可以自己规划路线了</p>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware
+roslaunch px4 indoor4.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="3-边建图边规划"><a href="#3-边建图边规划" class="headerlink" title="3.边建图边规划"></a>3.边建图边规划</h3><p>修改HectorSLAM配置文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscd hector_mapping/launch/
+<span class="token function">sudo</span> gedit hector_mapping_xtdrone.launch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>把地图发布服务改成true</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>param <span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">"advertise_map_service"</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">"true"</span>/<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>注释掉map话题映射</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>--remap <span class="token assign-left variable">from</span><span class="token operator">=</span><span class="token string">"/map"</span> <span class="token assign-left variable">to</span><span class="token operator">=</span><span class="token string">"/map_new"</span>/--<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>修改地图尺寸</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>arg <span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">"map_size"</span> <span class="token assign-left variable">default</span><span class="token operator">=</span><span class="token string">"2048"</span>/<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>修改地图原点</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>param <span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">"map_start_x"</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">"0.5"</span>/<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>param <span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">"map_start_y"</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">"0.5"</span> /<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后后面的操作就跟上面一样的了</p>
+<h2 id="八、三维激光SLAM"><a href="#八、三维激光SLAM" class="headerlink" title="八、三维激光SLAM"></a>八、三维激光SLAM</h2><h3 id="1-安装编译ALOAM"><a href="#1-安装编译ALOAM" class="headerlink" title="1.安装编译ALOAM"></a>1.安装编译ALOAM</h3><h4 id="（1）安装ALOAM依赖"><a href="#（1）安装ALOAM依赖" class="headerlink" title="（1）安装ALOAM依赖"></a>（1）安装ALOAM依赖</h4><p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668242749932.png"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Wadewhl/article/details/112648707">Ceres Solver编译</a></p>
+<p>这里一定要记得编译ceres solver虽然这里不编译ALOAM仍然可以编译成功但是仿真跑不了</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668392765512.png"></p>
+<p>出现这种编译错误多编译几次</p>
+<p>PCL：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libpcl-dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="（2）编译ALOAM"><a href="#（2）编译ALOAM" class="headerlink" title="（2）编译ALOAM"></a>（2）编译ALOAM</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> <span class="token parameter variable">-r</span> ~/XTDrone/sensing/slam/laser_slam/A-LOAM ~/catkin_try/src/
+<span class="token function">cp</span> <span class="token parameter variable">-r</span> ~/XTDrone/sitl_config/gazebo_plugin/velodyne/* ~/catkin_try/src/ <span class="token comment">#这里是3D激光雷达插件</span>
+<span class="token builtin class-name">cd</span> ~/catkin_try
+catkin_make <span class="token comment">#或catkin build，取决于您的编译工具</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我这里出现了这个错误不过不要紧，这是catkin_make编译崩溃导致的，可以多执行几遍，直至成功为止，或者也可以参考这篇文章就行设置</p>
+<p> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/vcan123/p/12218927.html">关于树莓派编译工作空间卡死情况的解决办法 - Yimiu - 博客园 (cnblogs.com)</a> </p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668242939491.png"></p>
+<p>然后一定要再bashrc下添加source ~/catkin_try/devel/setup.bash<strong>（这个功能包的名字用你自己的）</strong></p>
+<p>然后刷新以下bashrc</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> /.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="2-启动仿真"><a href="#2-启动仿真" class="headerlink" title="2.启动仿真"></a>2.启动仿真</h3><p>三维激光雷达有两个模型3d_lidar和3d_gpu_lidar，前者使用CPU计算，后者使用GPU计算，其他没有区别，您可以根据您的需要选择。在模型中可以设置激光雷达的线数，以3d_gpu_lidar.sdf为例<em>（文件目录：/home/zhang/PX4Firmware/Tools/sitlgazebo/models/3d_gpu_lidar）</em>，官方教程用的32线程，您可以修改为其他线数，其他参数也都可以修改。注意刷新率不能改的太高，否则ALOAM算不过来。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">&lt;sensor name='3d_lidar' type='gpu_ray'<span class="token punctuation">&gt;</span>
+   &lt;ray<span class="token punctuation">&gt;</span>
+     &lt;scan<span class="token punctuation">&gt;</span>
+       &lt;horizontal<span class="token punctuation">&gt;</span>
+         &lt;samples<span class="token punctuation">&gt;</span>512&lt;/samples<span class="token punctuation">&gt;</span>
+         &lt;resolution<span class="token punctuation">&gt;</span>1&lt;/resolution<span class="token punctuation">&gt;</span>
+         &lt;min_angle<span class="token punctuation">&gt;</span><span class="token punctuation">-</span>3.1415926535897931&lt;/min_angle<span class="token punctuation">&gt;</span>
+         &lt;max_angle<span class="token punctuation">&gt;</span>3.1415926535897931&lt;/max_angle<span class="token punctuation">&gt;</span>
+       &lt;/horizontal<span class="token punctuation">&gt;</span>
+       &lt;vertical<span class="token punctuation">&gt;</span>
+         &lt;samples<span class="token punctuation">&gt;</span>32&lt;/samples<span class="token punctuation">&gt;</span>
+         &lt;min_angle<span class="token punctuation">&gt;</span><span class="token punctuation">-</span>0.2617993877991494365&lt;/min_angle<span class="token punctuation">&gt;</span>
+         &lt;max_angle<span class="token punctuation">&gt;</span>0.2617993877991494365&lt;/max_angle<span class="token punctuation">&gt;</span>
+       &lt;/vertical<span class="token punctuation">&gt;</span>
+     &lt;/scan<span class="token punctuation">&gt;</span>
+     &lt;range<span class="token punctuation">&gt;</span>
+       &lt;min<span class="token punctuation">&gt;</span>0.2&lt;/min<span class="token punctuation">&gt;</span>
+       &lt;max<span class="token punctuation">&gt;</span>30&lt;/max<span class="token punctuation">&gt;</span>
+       &lt;resolution<span class="token punctuation">&gt;</span>0.01&lt;/resolution<span class="token punctuation">&gt;</span>
+     &lt;/range<span class="token punctuation">&gt;</span>
+   &lt;/ray<span class="token punctuation">&gt;</span>
+   &lt;plugin name='3d_laser' filename='libgazebo_ros_velodyne_gpu_laser.so'<span class="token punctuation">&gt;</span>
+       &lt;topicName<span class="token punctuation">&gt;</span>/velodyne_points&lt;/topicName<span class="token punctuation">&gt;</span>
+       &lt;frameName<span class="token punctuation">&gt;</span>laser_3d&lt;/frameName<span class="token punctuation">&gt;</span>
+       &lt;gaussianNoise<span class="token punctuation">&gt;</span>0.008&lt;/gaussianNoise<span class="token punctuation">&gt;</span>
+     &lt;/plugin<span class="token punctuation">&gt;</span>
+     &lt;always_on<span class="token punctuation">&gt;</span>1&lt;/always_on<span class="token punctuation">&gt;</span>
+     &lt;update_rate<span class="token punctuation">&gt;</span>15&lt;/update_rate<span class="token punctuation">&gt;</span>
+     &lt;visualize<span class="token punctuation">&gt;</span>0&lt;/visualize<span class="token punctuation">&gt;</span>
+   &lt;/sensor<span class="token punctuation">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>将outdoor1.launch中的无人机换为iris_3d_gpu_lidar，然后启动仿真文件(更换教程在配置控制多旋翼无人机)</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch px4 outdoor1.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668244793476.png" alt="由于是虚拟机有时候会很卡的"></p>
+<p>这里会卡成这样，我这个换一个gazebo版本即可，我这里开始是gazebo9然后换成gazebo11结果还是不可以，然后又换回gazebo9不知道为什么又可以了，可能是别的版本的gazebo9</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668326879031.png" alt="这个虚拟机运行有点卡"></p>
+<p>启动ALOAM</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch aloam_velodyne aloam_velodyne_HDL_32.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里我还是运行不了</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668396064951.png"></p>
+<p>目前能想到的原因是这是由显卡渲染的但是虚拟机里不能共用主机显卡，也安装不了显卡驱动，所以有没有可能是由于这个原因导致黑屏</p>
+<h2 id="九、三维路径规划"><a href="#九、三维路径规划" class="headerlink" title="九、三维路径规划"></a>九、三维路径规划</h2><h3 id="1-编译VINS-Fusion"><a href="#1-编译VINS-Fusion" class="headerlink" title="1.编译VINS-Fusion"></a>1.编译VINS-Fusion</h3><p><a target="_blank" rel="noopener" href="https://gitee.com/robin_shaun/XTDrone/tree/master/sensing/slam/vio/VINS-Fusion">相关依赖安装</a></p>
+<p>编译VINS-Fusion</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> <span class="token parameter variable">-r</span> ~/XTDrone/sensing/slam/vio/VINS-Fusion ~/catkin_ws/src/
+<span class="token function">mkdir</span> ~/catkin_ws/scripts/
+<span class="token function">cp</span> ~/XTDrone/sensing/slam/vio/xtdrone_run_vio.sh ~/catkin_ws/scripts/
+<span class="token builtin class-name">cd</span> ~/catkin_ws
+catkin_make <span class="token comment">#或catkin build，取决于您的编译工具</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我在这里报错</p>
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668413091217.png"></p>
+<p>是ceres这里出错，百度后发现是版本问题，所以我就把我的2.1版本删了换了 ceres1.14.0 </p>
+<p>先把相对应的ceres文件删除再执行彻底删除</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">rm</span> <span class="token parameter variable">-r</span> /usr/local/lib/cmake/Ceres
+<span class="token function">sudo</span> <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /usr/local/include/ceres /usr/local/lib/libceres.a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新安装放到合适位置编译</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ceres-solver-1.14.0
+<span class="token function">mkdir</span> build <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> build
+cmake <span class="token punctuation">..</span>
+<span class="token function">make</span> <span class="token parameter variable">-j4</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-启动VINS-Fusion仿真"><a href="#2-启动VINS-Fusion仿真" class="headerlink" title="2.启动VINS-Fusion仿真"></a>2.启动VINS-Fusion仿真</h3><p>先把EKF设置为视觉定位</p>
+<p>PX4默认使用的EKF配置为融合GPS的水平位置与气压计高度。如果我们想使用视觉定位，就需要把修改配置文件。<br>● 注意，此修改意味着EKF融合来自mavros/vision_pose/pose的数据，并不是修改完无人机就可以视觉定位了，需要相关程序提供mavros/vision_pose/pose的数据，相关程序包括视觉SLAM、激光SLAM和获取Gazebo真值等。如果没有额外的视觉数据，想要飞行必须改回基于GPS和气压计的定位。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gedit ~/PX4_Firmware/ROMFS/px4fmu_common/init.d-posix/rcS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># GPS used</span>
+<span class="token comment">#param set EKF2_AID_MASK 1</span>
+<span class="token comment"># Vision used and GPS denied</span>
+param <span class="token builtin class-name">set</span> EKF2_AID_MASK <span class="token number">24</span>
+
+<span class="token comment"># Barometer used for hight measurement</span>
+<span class="token comment">#param set EKF2_HGT_MODE 0</span>
+<span class="token comment"># Barometer denied and vision used for hight measurement</span>
+param <span class="token builtin class-name">set</span> EKF2_HGT_MODE <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重启仿真前，需要删除上一次记录在虚拟eeprom中的参数文件，否则仿真程序会读取该参数文件，导致本次rcS的修改不能生效</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> ~/.ros/eeprom/parameters*
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.ros/sitl*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>启动仿真程序，将launch文件中的sdf改为iris_stereo_camera.sdf</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roslaunch px4 indoor1.launch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动VINS-Fusion，注意其默认订阅的话题是iris_0的，如果要换别的vehicle，需要对应修改。另外临时文件存储路径也要对应修改。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gedit ~/catkin_ws/src/VINS-Fusion/config/xtdrone_sitl/px4_sitl_stereo_imu_config.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">imu_topic</span><span class="token punctuation">:</span> <span class="token string">"/iris_0/imu_gazebo"</span>
+<span class="token key atrule">image0_topic</span><span class="token punctuation">:</span> <span class="token string">"/iris_0/stereo_camera/left/image_raw"</span>
+<span class="token key atrule">image1_topic</span><span class="token punctuation">:</span> <span class="token string">"/iris_0/stereo_camera/right/image_raw"</span>
+<span class="token key atrule">output_path</span><span class="token punctuation">:</span> <span class="token string">"/home/robin/catkin_ws/vins_output"</span>
+.
+.
+.
+<span class="token key atrule">pose_graph_save_path</span><span class="token punctuation">:</span> <span class="token string">"/home/robin/catkin_ws/vins_output/pose_graph/"</span>  <span class="token comment"># save and load path</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里没有改所以就继续用iris就可以了</p>
+<p>启动VINS-Fusion</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/catkin_ws
+<span class="token function">bash</span> scripts/xtdrone_run_vio.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/xtdrone-fang-zhen-ping-tai/1668415378343.png"></p>
+<p>出现这种错误是由于没有刷新配置环境，在当前终端执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> devel/setup.bash <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后再重新启动就可以了</p>
+<p>由于VINS-Fusion发布的是Odometry类型的话题，我们要将其对应转为PX4所需的话题</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/sensing/slam/vio
+python vins_transfer.py iris <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这时PX4仿真终端出现如下所示输出，代表视觉信息融合成功</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">1213644000</span>: reset position to ev position
+INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">1213644000</span>: commencing external vision position fusion
+INFO  <span class="token punctuation">[</span>ecl/EKF<span class="token punctuation">]</span> <span class="token number">1213644000</span>: commencing external vision yaw fusion<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>然后建立通信，键盘控制起飞即可</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/communication
+python multirotor_communication.py iris <span class="token number">0</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/XTDrone/control/keyboard
+python multirotor_keyboard_control.py iris <span class="token number">1</span> vel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="3-编译ego-planner"><a href="#3-编译ego-planner" class="headerlink" title="3.编译ego_planner"></a>3.编译ego_planner</h3><pre class="line-numbers language-none"><code class="language-none">cp -r  ~/XTDrone/motion_planning/3d/ego_planner ~/catkin_ws/src/
+cd ~/catkin_ws/
+catkin_make #或catkin build ego_planner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>ego_planner需要输入深度图+相机位姿或是点云，深度图来源于realsense_camera，(记得把indoor1.launch的iris_stereo_camera换成iris_realsense_camera)，相机位姿由VINS-Fusion计算得到，所以按照上步将飞机用键盘控制起飞后悬停，关闭键盘控制。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/10/19/xtdrone-fang-zhen-ping-tai/">http://example.com/2022/10/19/xtdrone-fang-zhen-ping-tai/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ros/">
+                                    <span class="chip bg-color">ros</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F/">
+                                    <span class="chip bg-color">无人机仿真</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">......</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/zhifu.jpeg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/weixin.jpeg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NzQ5Ny8zMzk2MQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/10/27/vscode-cmake-duo-wen-jian-bian-yi/">
+                    <div class="card-image">
+                        
+                        <img src="https://pic4.zhimg.com/84d37e282fefb1c1630a9691c0f488d0_r.jpg?source=1940ef5c" class="responsive-img" alt="vscode+CMake+多文件编译">
+                        
+                        <span class="card-title">vscode+CMake+多文件编译</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ....
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/vscode/" class="post-category">
+                                    vscode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
+                    </a>
+                    
+                    <a href="/tags/CMake/">
+                        <span class="chip bg-color">CMake</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/">
+                    <div class="card-image">
+                        
+                        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftvax2.sinaimg.cn%2Flarge%2F006yt1Omgy1gtr2d04l4yj30sg1464q3.jpg&refer=http%3A%2F%2Ftvax2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671628995&t=63d745c2ff6031c0993fdf1f11e20f28" class="responsive-img" alt="数据结构学习">
+                        
+                        <span class="card-title">数据结构学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据结构的实现
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 园崎魅音<br />'
+            + '文章作者: 园崎魅音<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="876941698"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">园崎魅音</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">108.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LookAt-MeNow" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2979565338@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2979565338" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2979565338" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>

@@ -1,0 +1,2046 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="QT基础学习, 园崎魅音">
+    <meta name="description" content="年轻人的第一款可视化编程软件MFC(bushi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>QT基础学习 | 园崎魅音</title>
+    <link rel="icon" type="image/jpeg" href="/888.jpeg">
+    
+    <style>
+        body{
+            background-image: url(https://pic1.zhimg.com/v2-fbf206692f5d7df61ec7ed117052247c_r.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/345.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">园崎魅音</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/345.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">园崎魅音</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LookAt-MeNow" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LookAt-MeNow" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2.baidu.com/it/u=3593634426,2234394914&fm=253&fmt=auto&app=138&f=JPEG?w=1082&h=500')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">QT基础学习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/QT/">
+                                <span class="chip bg-color">QT</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/QT/" class="post-category">
+                                QT
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-11-21
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-03-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命名规范：类名首字母大写，单词与单词之间大写；函数名首字母小写，单词与单词之间大写</p>
+<ul>
+<li><p>快捷键：</p>
+</li>
+<li><p>注释：ctrl+/</p>
+</li>
+<li><p>运行:   ctrl+r</p>
+</li>
+<li><p>编译：ctrl+b</p>
+</li>
+<li><p>整行移动：ctrl+shift+上or下</p>
+</li>
+<li><p>帮助文档：F1</p>
+</li>
+<li><p>自动对齐：ctrl+i</p>
+</li>
+<li><p>xxx.cpp文件和xxx.h文件之间快速切换：F4</p>
+</li>
+</ul>
+<h2 id="一、第一个QT程序"><a href="#一、第一个QT程序" class="headerlink" title="一、第一个QT程序"></a>一、第一个QT程序</h2><p>创建一个桌面QT应用程序，选择如下</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122171218506.png"></p>
+<p>choose下一步</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122171329115.png" alt="不能含有中文路径"></p>
+<p>继续下一步</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122171502488.png"></p>
+<p>这里有三个选择分别是QMainWindow,QDialog,Qwidget,这里的QWidget相当于其他两个父类，选择QWidget就是一个空的窗口，选择QMainWindow会在空窗口的基础上多了菜单栏，QDialog就是对话窗类，下面有个创建界面，如果不勾选就是自己编写程序的窗口各种组件，如果勾选了就可以类似MFC在一个空的窗口自己添加各种组件设计界面。继续下一步完成创建</p>
+<p>打开文件中的widget.ui文件就会跳转到添加组件界面，这里添加两个组件</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122172231052.png" alt="在旁别的视图会显示出当前添加组件的类"></p>
+<p>先打开01_learn.pro文件添加语句</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122172421216.png" alt="添加QT       += core gui texttospeech"></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QT       += core gui texttospeech<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然在在ui界面右击按钮，选择跳转到槽，然后选择clicked，然后会跳转到相应的控制组件的相应语句在其实添加事件处理程序</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122172925619.png"></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">x-&gt;say(ui-&gt;lineEdit-&gt;text()); <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>再编写Wdiget的构造函数添加语句</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122173040858.png"></p>
+<p>由于这里使用了QTextTOSpeeh所以还要在widget.h文件中添加该类的头文件</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122173216491.png"></p>
+<p>最后在运行程序</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122173311946.png"></p>
+<p>在文本框中输入文字，点击按钮就会语音播报出这段文字</p>
+<h2 id="二、基本认识"><a href="#二、基本认识" class="headerlink" title="二、基本认识"></a>二、基本认识</h2><p>文件目录</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221121202806777.png"></p>
+<p>.pro文件</p>
+<p>第一个pro是项目工程文件文件</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#-------------------------------------------------
+#
+# Project created by QtCreator 2022-11-21T19:30:51
+#
+#-------------------------------------------------
+
+QT       += core gui texttospeech #QT包含的模块，这个时候里面有三个模块分别是core gui texttospeech
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets    #大于4版本包含widget模块
+
+TARGET = hello #目标 生成.exe可执行文件的名称
+TEMPLATE = app #模板 应用程序模板，默认生成的是app模板，也有别的一些模板
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS    #表示当Qt的某些功能被标记为过时的，那么编译器会发出警告。
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+
+SOURCES += \ #源文件
+        main.cpp \
+        widget.cpp
+
+HEADERS += \ #头文件
+        widget.h
+
+FORMS += \  #ui文件
+        widget.ui
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/Qt5%20%E6%A8%A1%E5%9D%97.png" alt="Qt5所包含的主要模块"></p>
+<p>main.cpp</p>
+<p>main.cpp是主函数文件，里面包含了主要应用程序的入口函数，和C/C++一般写法一样，QT界面的main（）函数也有固定的格式</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int main(int argc,char **argv){
+	QApplication a(argc,argv);
+	
+	return a.exec();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>图中的main()函数代码解析:</p>
+<ul>
+<li><p>1~2行：由于在main()函数中分别定义了 QApplication和Widget类的对象，因此要引入两个文件的头文件。由于widget.h是我们自己创建的，所以引用的时候要用 “ “;QApplication是QT提供的所以用 &lt; &gt;;</p>
+</li>
+<li><p>7行：Widget是自定义的类，继承自QWidget,QWidget类是所有用户界面对象的基类,所有Widget也是，w是实例化出的一个用户界面</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221122174145895.png" alt="如果在创建一个就会显示两个"></p>
+</li>
+<li><p>8行:   在默认的情况下，QT所提供的所有组件都是隐藏的不会自动显示出来。通过调用show()方法，w用户界面就可以在程序运行后显示出来</p>
+</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "widget.h" //用户自定义的头文件，名字可以在创建的时候更改
+#include &lt;QApplication&gt; //应用程序头文件，
+
+int main(int argc, char *argv[])// argc是命令个数，argv是命令参数
+{
+    QApplication a(argc, argv); //定义一个应用程序类，并且在每个QT文件中有且仅有一个应用程序类
+    //它的构造函数接受和main函数一样的参数，相当于c/c++程序中的程序入口，这个是QT图形化程序入口
+    Widget w;//创建一个窗口
+    w.show();//默认不会显示窗口，显示窗口
+
+    return a.exec();//会进入QT程序的事件循环函数等待用户的操作，图形程序需要与用户交互所以不会自动退出，当且仅当点击“X”之后就会返回一个0值关闭窗口
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>widget.cpp和widget.h</p>
+<p>创建项目的时候定义了继承自QWidget的用户界面类,使用的默认名称widget,该类的定义部分位于widget.h头文件中，实现部分在widget.cpp文件中</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">//
+#ifndef WIDGET_H
+#define WIDGET_H
+
+#include &lt;QWidget&gt; //添加的窗口类
+#include &lt;QTextToSpeech&gt; //说话类
+
+namespace Ui {
+class Widget;
+}
+
+class Widget : public QWidget
+{
+    Q_OBJECT //定义好的宏，允许使用信号和槽机制
+
+public:
+    explicit Widget(QWidget *parent = 0);  //构造函数
+    ~Widget();  //析构函数
+
+private slots:
+    void on_pushButton_clicked(); //按钮
+
+private:
+    Ui::Widget *ui; 
+
+    QTextToSpeech *x; //创建说话对象
+};
+
+#endif // WIDGET_H
+
+---------------------------------
+#include "widget.h"
+#include "ui_widget.h"
+
+Widget::Widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::Widget)
+{
+    ui-&gt;setupUi(this);
+
+    x = new QTextToSpeech;
+}
+
+Widget::~Widget()
+{
+    delete ui;
+}
+
+void Widget::on_pushButton_clicked()
+{
+    x-&gt;say(ui-&gt;lineEdit-&gt;text()); //提取框中文字语音播报
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在初始的状态下widget类是由Q_OBJECT，构造函数还有析构函数组成的</p>
+<ul>
+<li>Q_OBJECT：本质是一个已经定义好的宏，所有需要的”信号和槽”功能组件都必须将Q_OBJECT作为private属性的成员引入类中。</li>
+<li>带参数的构造函数：QWidget是所有组件的基类，借助parent指针，可以为当前窗口指定父窗口，如果删除父窗口，里面所有的子窗口都会关掉</li>
+</ul>
+<p>后面两个prviate是自己添加的组件时QT自动添加的</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221121210925946.png"></p>
+<p>运行结果在w主窗口中有两个自己添加的组件</p>
+<p>widget.ui</p>
+<p>这个文件中就是设计图形界面的，在这里添加的组件QT都会自动在相应的文件中生成，这时候只需要去对应的代码区写事件处理程序。</p>
+<h2 id="三、创建一个QPushButton"><a href="#三、创建一个QPushButton" class="headerlink" title="三、创建一个QPushButton"></a>三、创建一个QPushButton</h2><p>先创建一个新的项目my_PushButton，这次设置不创建界面，通过API接口添加组件。</p>
+<p>如果第一次接触一个组件不知都怎么使用可以使用QT的界面中的帮助选项，这里以QPushButton为例</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125144300444.png" alt="查看帮助界面"></p>
+<p>在QPushButton Class一栏中包含了使用所需要在文件中添加的内容</p>
+<pre class="line-numbers language-none"><code class="language-none">Header: #include &lt;QPushButton&gt;   //使用所包含的头文件
+qmake: QT += widgets             //使用要添加的模块
+Inherits: QAbstractButton		 //QPUshButton的父类
+Inherited By: QCommandLinkButton //QPushButton的子类<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在widget.cpp文件中添加控件，注意不是main.cpp</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "widget.h"
+#include&lt;QPushButton&gt;
+
+Widget::Widget(QWidget *parent)
+    : QWidget(parent)
+{
+    //创建一个按钮
+    QPushButton *bt=new QPushButton; //这里要采用new的方式创建组件
+    
+}
+
+Widget::~Widget()
+{
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这样就创建好了一个简单的按钮，但是运行编译发现，界面并没有出现按钮，之前说过默认是不会显示窗口的，那我们用show试一下</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125145425694.png" alt="加一句bt->show();"></p>
+<p>我们发现是没有在一个窗口上的，我们所期望的是按钮的就在我们初始创建的窗口上，所以我们把令bt的对象指向初始窗口</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bt-&gt;setParent(this);//因为在窗口类里创建的对象，所以用this指针就可以指向窗口<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125145840918.png" alt="在窗口中间生成一个按钮"></p>
+<p>设置这个按钮的文本</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">bt-&gt;setText("我的按钮");<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125150014939.png"></p>
+<p>这样创建其实是蛮麻烦的，QPushButton类中有多个重载的构造函数，利用重载构造函数我们可以快速创建出一个按钮组件</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125150616486.png"></p>
+<p>根据构造函数参数表我们所用第二个就可以了</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125151011376.png"></p>
+<p>我的按照第一个方式创建的组件是在窗口中心的，有的版本可能是和第二按钮一样在左上角，导致重合，不过都不要紧，反正位置可以调的 ，通过调用move函数移动按钮位置，以下是完整代码</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "widget.h"
+#include&lt;QPushButton&gt;
+
+Widget::Widget(QWidget *parent)
+    : QWidget(parent)
+{
+    //创建一个按钮
+    QPushButton *bt1=new QPushButton; //这里要采用new的方式创建组件
+    bt1-&gt;show();//show()以顶层的方式弹出窗口控件
+    bt1-&gt;setParent(this);//因为在窗口类里创建的对象，所以用this指针就可以指向窗口
+    bt1-&gt;setText("我的第一个按钮");
+    //创建第二个按钮
+    QPushButton *bt2=new QPushButton("我的第二个按钮",this);
+    bt1-&gt;move(100,100);//移动第二个窗口
+    resize(640,400);//设置窗口大小
+    setFixedSize(640,400);//固定窗口大小，可以拖拽，不能缩放
+    setWindowTitle("我的第一个窗口");//设置窗口名称
+}
+
+Widget::~Widget()
+{
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125151615505.png" alt="运行结果"></p>
+<p>总结：</p>
+<ul>
+<li>创建按钮：QPushButton *bt1=new QPushButton;</li>
+<li>设置父亲：setParent(this);</li>
+<li>设置文本：setText(“文本”);</li>
+<li>设置位置：move(宽,高);</li>
+<li>重新指定窗口大小： resize</li>
+<li>设置窗口标题：setwindowTitle</li>
+<li>设置窗口固定大小：setFixedsize</li>
+</ul>
+<p>在创建的组件是使用new的主要有两个原因，一就是非new在栈上，所以空间有限，能分配的空间相对小，再就是由于非new在栈上，所以会随着所在块的结束，也就是所在大括号{}之后会销毁，如果有局部自动变量，在退出构造函数之后这些自动变量就会被销毁，这样 你的窗口调用show的时候也不会显示组件了</p>
+<p>我们通过new创建了两个按钮组件，但是在我们所写函数并没有添加相应的delete()函数，这主要是由于在QT中 对象树的概念，我们在创建按钮组件的时候把他父类指定了QWidget，而在QT中存在一个chidren表，两个按钮组件就放在chidren表中，当关闭窗口的时候QWidget析构的时候也会把在它chidren表中的控件析构</p>
+<p><img src="/2022/11/21/qt-xue-xi/Qt%E5%AF%B9%E8%B1%A1%E6%A0%91.png" alt="Qt对象树"></p>
+<p>也就是如果在用new创建的对象指定的父类是QObject或者是QObject的子类对象是可以不用管理内存的释放的</p>
+<h2 id="四、信号和槽"><a href="#四、信号和槽" class="headerlink" title="四、信号和槽"></a>四、信号和槽</h2><h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><p>QT中的信号和槽机制可以简单的理解为：张三想要像李四表白，张三先在微信给李四发了表白消息，然后李四就拒绝了嘛</p>
+<p>这里张三就是信号的发送者   在微信发的消息就是发送的信号，李四就是信号的接受者，李四拒绝就是处理的槽函数</p>
+<p>现在实现点击按钮关闭窗口的实例</p>
+<p>首先需要一个connect函数用来连接以上参数</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">
+//需求：点击我的第一个按钮关闭窗口
+    //参数1： 信号的发送者 参数二: 发送的信号（函数地址，这个函数地址可以理解成微信，就是要用哪种方式表白，这里就是用哪种组件的函数发送信号）
+    //参数3： 信号的接收者 参数4：处理的参函数
+   connect(bt1,&amp;QPushButton::clicked,this,&amp;Widget::close);//QPushButton发出点击的信号，Widget执行槽函数关闭窗口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>QPushButton发出的信号可以在帮助文档中查询</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125162044688.png" alt="QPushButton的信号"></p>
+<p>Widget是继承于QWidget的，所以可以在帮助文档查找QWidget的槽函数</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125162423866.png"></p>
+<p>每个槽函数可以点击查看作用</p>
+<h3 id="自定义信号和槽"><a href="#自定义信号和槽" class="headerlink" title="自定义信号和槽"></a>自定义信号和槽</h3><p>新创建一个文件夹SignalAndSlot</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125172139311.png" alt="添加一个Class，命名teacher，继承QObject"></p>
+<p>然后再用类似的方法创建一个Student类，我们这里定义teacher发送信号，student执行槽函数</p>
+<p>实现功能：当下课了，老师饿了，学生请老师吃饭</p>
+<p>student.h</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#ifndef STUDENT_H
+#define STUDENT_H
+
+#include &lt;QObject&gt;
+
+class Student : public QObject
+{
+    Q_OBJECT
+public:
+    explicit Student(QObject *parent = nullptr);
+
+signals:
+
+public slots:
+    //在这里写槽函数
+    //返回值是void，需要声明，也需要实现
+    //可以有参数，可以有重载
+    void treat();
+};
+
+#endif // STUDENT_H
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>teacher.h</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#ifndef TEACHER_H
+#define TEACHER_H
+
+#include &lt;QObject&gt;
+
+class Teacher : public QObject
+{
+    Q_OBJECT
+public:
+    explicit Teacher(QObject *parent = nullptr);
+
+signals:
+    //自定义信号  写在signal下
+    //返回值是void，只需要声明，不需要实现
+    //可以有参数，可以重载
+    void hungry();
+public slots:
+};
+
+#endif // TEACHER_H
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>widget.h</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#ifndef WIDGET_H
+#define WIDGET_H
+
+#include &lt;QWidget&gt;
+#include "teacher.h"
+#include "student.h"
+namespace Ui {
+class Widget;
+}
+
+class Widget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit Widget(QWidget *parent = 0);
+    ~Widget();
+
+private:
+    Teacher* zt;//定义类成员
+    Student* st;//定义类成员
+    Ui::Widget *ui;
+    void ClassIsOver();//定义下课了条件函数
+};
+
+#endif // WIDGET_H
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>student.cpp</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "student.h"
+#include &lt;QDebug&gt;//调试类
+
+Student::Student(QObject *parent) : QObject(parent)
+{
+
+}
+
+void Student::treat(){
+    qDebug()&lt;&lt;"on my treat today";//打印调试信息
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>teacher.cpp</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "teacher.h"
+
+Teacher::Teacher(QObject *parent) : QObject(parent)
+{
+    //什么都不用写
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>widget.cpp</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "widget.h"
+#include "ui_widget.h"
+
+Widget::Widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::Widget)
+{
+    //创建老师对象
+    this-&gt;zt =new Teacher(this);//把这个Teacher指定为Widget，放入对象树，就不用担心内存释放的问题
+    //创建学生对象
+    this-&gt;st =new Student(this);
+    //自定义的信号与槽
+    connect(zt,&amp;Teacher::hungry,st,&amp;Student::treat);
+    //添加下课了的前提
+    ClassIsOver(); //这个不能放在自定义信号于槽的语句前面，这里的逻辑是先有了信号了，然后条件达成触发信号
+
+    ui-&gt;setupUi(this);
+}
+
+void Widget::ClassIsOver(){
+    //下课了，老师饿了，触发信号
+    emit zt-&gt;hungry();
+}
+
+Widget::~Widget()
+{
+    delete ui;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221125175240410.png" alt="运行结果"></p>
+<h3 id="自定义信号和槽的重载情况"><a href="#自定义信号和槽的重载情况" class="headerlink" title="自定义信号和槽的重载情况"></a>自定义信号和槽的重载情况</h3><p>分别在teacher和student类中编写重载版本</p>
+<p>在teacher.h中添加一句</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void hungry(QString foodname);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>student.h添加</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void treat(QString foodname);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在student的cpp文件编写函数</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void treat(QString foodname){
+	qDebug()&lt;&lt;"Reload version"&lt;&lt;foodname;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>修改widget.cpp</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126162247783.png"></p>
+<p>重载版本的参数不能直接在connect中指定，要分别写两个函数的函数指针，通过函数指针访问</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126162449726.png" alt="运行结果"></p>
+<p>这里的food输出的带有双引号但是我们写的程序并没有添加双引号</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">qDebug()&lt;&lt;"Reload version"&lt;&lt;foodname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里通过强转，将QString转换成char* 类型就可以了</p>
+<pre class="line-numbers language-none"><code class="language-none">qDebug()&lt;&lt;"Reload version"&lt;&lt;foodname.toUtf8().data();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126162745924.png" alt="运行结果"></p>
+<p>转换过程：先用toUTf8()转换成QByteArray,再把用data()把QByteArray转换成char*</p>
+<h3 id="信号连接信号"><a href="#信号连接信号" class="headerlink" title="信号连接信号"></a>信号连接信号</h3><p>这个时候我们是一运行老师就饿了，然后输出了调试信息，现在添加一个按钮，当点击了按钮输出调试按钮</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126165045473.png"></p>
+<p>别忘记了添加头文件#include<qpushbutton></qpushbutton></p>
+<p>现在就可以实现了点击按钮输出调试信息</p>
+<p>接下来是通过信号连接信号的方式，创建两个按钮，按“有参调试”输出：Reload version food，按“无参调试”输出：on my treat today</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126170328982.png"></p>
+<p>widget.cpp完整代码</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "widget.h"
+#include "ui_widget.h"
+#include &lt;QPushButton&gt;
+
+
+Widget::Widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::Widget)
+{
+    //创建老师对象
+    this-&gt;zt =new Teacher(this);//把这个Teacher指定为Widget，放入对象树，就不用担心内存释放的问题
+    //创建学生对象
+    this-&gt;st =new Student(this);
+    //自定义的信号与槽
+    //connect(zt,&amp;Teacher::hungry,st,&amp;Student::treat);
+
+    //连接带有参数的信号和槽
+    //函数指针-&gt;函数地址
+    void(Teacher:: *teacherSignal)(QString)=&amp;Teacher::hungry;
+    void(Student:: *studentSlot)(QString)=&amp;Student::treat;
+    connect(zt,teacherSignal,st,studentSlot);
+    QPushButton* bt1=new QPushButton("有参调试",this);
+    bt1-&gt;move(100,100);//移动按钮
+    connect(bt1,QPushButton::clicked,this,Widget::ClassIsOver);//当点击按钮，触发ClassISOver
+    //添加下课了的前提
+    //ClassIsOver(); //这个不能放在自定义信号于槽的语句前面，这里的逻辑是先有了信号了，然后条件达成触发信号
+
+    void(Teacher:: *teacherSignal2)(void)=&amp;Teacher::hungry;//
+    void(Student:: *studentSlot2)(void)=&amp;Student::treat;//先用函数指针指定使用的函数
+    connect(zt,teacherSignal2,st,studentSlot2);//创建信号与槽的连接
+    QPushButton* bt2=new QPushButton("无参调试",this);//创建按钮
+    bt2-&gt;move(100,200);//移动按钮
+    connect(bt2,QPushButton::clicked,zt,teacherSignal2);  //信号连接信号
+    ui-&gt;setupUi(this);
+}
+
+void Widget::ClassIsOver(){
+    //下课了，老师饿了，触发信号
+    //emit zt-&gt;hungry();
+    emit zt-&gt;hungry("food");
+}
+
+Widget::~Widget()
+{
+    delete ui;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126170424084.png" alt="运行结果"></p>
+<p>在使用完一个信号连接后是可以断开的使用disconnect()断开连接，参数和要断开的连接一样</p>
+<h3 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h3><p>在lambda表达式中实现一个信号对应多个槽</p>
+<p>先创建一个按钮，实现在点击按钮的时候关闭窗口，并输出调试信息</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//lamdba表达式
+QPushButton* bt3=new QPushButton("lambda",this);
+bt3-&gt;move(100,300);
+connect(bt3,QPushButton::clicked,[=](){  //如果在使用lambda的时候如果第三个参数是this,可以省略不写
+    this-&gt;close();
+    this-&gt;ClassIsOver();
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126174003604.png"></p>
+<p>点击lambda会关闭窗口输出调试信息</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221126174117012.png"></p>
+<h2 id="五、QMainWindow"><a href="#五、QMainWindow" class="headerlink" title="五、QMainWindow"></a>五、QMainWindow</h2><p>新建一个项目，选择QMainWindow，现在mainwindow.cpp添加以下头文件</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "mainwindow.h"
+#include &lt;QMenuBar&gt;
+#include &lt;QMenu&gt;
+#include &lt;QToolBar&gt;
+#include &lt;QDebug&gt;
+#include &lt;QPushButton&gt;
+#include &lt;QStatusBar&gt;
+#include &lt;QLabel&gt;
+#include &lt;QDockWidget&gt;
+#include &lt;QTextEdit&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h3><p>在QMainWindow类窗口中添加一个菜单栏，在MainWindow的构造函数添加以下两句即可显示出一个简单的菜单栏，最多只有一个</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QMenuBar* bar = menuBar();//新建一个菜单，这里是不需要设置this指针的
+setMenuBar(bar);//显示菜单栏<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127154710600.png" alt="现在是空的，什么都没有"></p>
+<p>在菜单栏添加菜单</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QMenu* fileMenu = bar-&gt;addMenu("file");//创建一个文件菜单
+QMenu* newMenu = bar-&gt;addMenu("new");//创建一个新建菜单
+QMenu* delMenu =bar-&gt;addMenu("del");//创建一个删除菜单<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>如果是在Window系统下添加之后不显示，检查一下是否创建了图形界面</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127155912736.png" alt="运行结果"></p>
+<h3 id="菜单项"><a href="#菜单项" class="headerlink" title="菜单项"></a>菜单项</h3><p>在菜单中的单个选项添加菜单项</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">fileMenu-&gt;addAction("last one");//创建文件下的一个菜单项
+fileMenu-&gt;addSeparator();       //添加一跳分割线
+fileMenu-&gt;addAction("before one");//创建文件下的一个菜单项<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127161505225.png" alt="运行结果"></p>
+<h3 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h3><p>添加一个工具栏</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QToolBar* toolbar= new QToolBar(this);//这里还是要设置this指针
+addToolBar(Qt::LeftToolBarArea,toolbar);//设置工具栏默认显示位置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这里使用的是addToolBar的一个重载函数，第一个参数可以设置为默认位置上下左右四个位置</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127162502775.png"></p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127162516241.png" alt="运行结果"></p>
+<p>创建完成不设置工具栏是可以随意拖动的，甚至可以拖动到窗口中间</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127162643917.png"></p>
+<p>设置一下浮动并让窗口只能停靠在左边或者右边</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127163138354.png" alt="需要使用的函数在QToolBar中可以找到"></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">toolbar-&gt;setAllowedAreas(Qt::LeftToolBarArea | Qt::RightToolBarArea);//设置只能显示在左边或者右边
+toolbar-&gt;setFloatable(false);//设置浮动这样就可以使工具栏不显示在窗口中间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>设置移动，设置之后工具栏就不可以移动了</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">toolbar-&gt;setMovable(false);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后设置工具栏的内容</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">   toolbar-&gt;addAction("tool1");
+toolbar-&gt;addSeparator();
+   toolbar-&gt;addAction("tool2");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>在工具栏添加一个按钮</p>
+<pre class="line-numbers language-none"><code class="language-none">toolbar-&gt;addSeparator();
+QPushButton* bt = new QPushButton("tool3",this);
+toolbar-&gt;addWidget(bt);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127164736862.png"></p>
+<h3 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h3><p>跟菜单栏一样也只能有一个</p>
+<p>设置一个状态栏</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QStatusBar* stbar = new QStatusBar;//这里也是不用this，可以理解为由于只能设置一个QT已经帮我们设置好了
+setStatusBar(stbar); //设置到窗口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127170154634.png" alt="由于没在状态栏添加东西所以显示的是空的"></p>
+<p>添加控件标签</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QLabel* lab1 = new QLabel("提示左侧信息",this);
+stbar-&gt;addWidget(lab1);//在左侧显示一个标签
+QLabel* lab2 = new QLabel("提示右侧信息",this);
+stbar-&gt;addPermanentWidget(lab2);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127170733667.png"></p>
+<p>设置浮动铆接部件</p>
+<pre class="line-numbers language-none"><code class="language-none">QDockWidget* dock1 = new QDockWidget("浮动",this);
+addDockWidget(Qt::BottomDockWidgetArea,dock1);//第一个参数填设置位置，与工具栏类似
+dock1-&gt;setAllowedAreas(Qt::TopDockWidgetArea | Qt::BottomDockWidgetArea); //设置只能在上下显示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这里设置的位置是下方</p>
+<p>其他位置的设置可以参考帮助文档</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127171711401.png" alt="参数表"></p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127171127337.png" alt="虽然设置的是下方但是由于主界面没有内容，这个下方定义的是在内容之下，所以仍然显示的是最上方"></p>
+<p>在窗口内添加一个中心部件，中心部件也只能设置一个</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QTextEdit* edi1 = new QTextEdit(this);
+setCentralWidget(edi1);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127171549948.png" alt="这时铆接部件就显示在下方的"></p>
+<p>这一节中有的控件是只能添加一个的，有的可以设置多个，可以根据使用对应的函数记忆，用set创建的就只能有一个，用add创建的就可以有多个</p>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "mainwindow.h"
+#include &lt;QMenuBar&gt;
+#include &lt;QMenu&gt;
+#include &lt;QToolBar&gt;
+#include &lt;QDebug&gt;
+#include &lt;QPushButton&gt;
+#include &lt;QStatusBar&gt;
+#include &lt;QLabel&gt;
+#include &lt;QDockWidget&gt;
+#include &lt;QTextEdit&gt;
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+{
+
+    resize(640,400);
+    QMenuBar* bar = menuBar();//新建一个菜单，这里是不需要设置this指针的
+    setMenuBar(bar);//显示菜单栏
+    QMenu* fileMenu = bar-&gt;addMenu("file");//创建一个文件菜单
+    QMenu* newMenu = bar-&gt;addMenu("new");//创建一个新建菜单
+    QMenu* delMenu =bar-&gt;addMenu("del");//创建一个删除菜单
+    //添加菜单项----------------------------------------------------------
+    fileMenu-&gt;addAction("last one");//创建文件下的一个菜单项
+    fileMenu-&gt;addSeparator();       //添加一跳分割线
+    fileMenu-&gt;addAction("before one");//创建文件下的一个菜单项
+    //添加工具栏----------------------------------------------------------
+    QToolBar* toolbar= new QToolBar(this);//这里还是要设置this指针
+    addToolBar(Qt::LeftToolBarArea,toolbar);//设置工具栏默认显示位置
+    toolbar-&gt;setAllowedAreas(Qt::LeftToolBarArea | Qt::RightToolBarArea);//设置只能显示在左边或者右边
+    toolbar-&gt;setFloatable(false);//设置浮动这样就可以使工具栏不显示在窗口中间
+    //设置移动，设置之后工具栏就不可以移动了
+    toolbar-&gt;setMovable(false);
+    //设置工具栏内容
+    toolbar-&gt;addAction("tool1");
+    toolbar-&gt;addSeparator();
+    toolbar-&gt;addAction("tool2");
+    //在工具栏添加控件
+    toolbar-&gt;addSeparator();
+    QPushButton* bt = new QPushButton("tool3",this);
+    toolbar-&gt;addWidget(bt);
+    //添加状态栏---------------------------------------------------------
+    QStatusBar* stbar = new QStatusBar;//这里也是不用this，可以理解为由于只能设置一个QT已经帮我们设置hao
+    setStatusBar(stbar); //设置到窗口
+    //放标签控件
+    QLabel* lab1 = new QLabel("提示左侧信息",this);
+    stbar-&gt;addWidget(lab1);//在左侧显示一个标签
+    QLabel* lab2 = new QLabel("提示右侧信息",this);
+    stbar-&gt;addPermanentWidget(lab2);
+    //铆接部件(浮动窗口)
+    QDockWidget* dock1 = new QDockWidget("浮动",this);
+    addDockWidget(Qt::BottomDockWidgetArea,dock1);//第一个参数填设置位置，与工具栏类似
+    dock1-&gt;setAllowedAreas(Qt::TopDockWidgetArea | Qt::BottomDockWidgetArea); //设置只能在上下显示
+    //设置中心部件,只能一个
+    QTextEdit* edi1 = new QTextEdit(this);
+    setCentralWidget(edi1);
+}
+
+MainWindow::~MainWindow()
+{
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="六、添加资源文件"><a href="#六、添加资源文件" class="headerlink" title="六、添加资源文件"></a>六、添加资源文件</h2><p>新建一个项目My_Res，勾选图形界面创建</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127174251650.png" alt="先用UI界面创建如下窗口"></p>
+<p>右击文件目录，选择在Explore中显示，跳转到文件目录，把要填加的资源文件放在目录下，这里以存放图片为例</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127175032276.png" alt="image包含了要使用了图片资源"></p>
+<p>然后右击项目根目录选择添加新文件</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127175212680.png" alt="勾选这个选项"></p>
+<p>然后进入相应文件</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127175402027.png" alt="先点击添加前缀 / 就可以了，然后点击天机文件，选择刚在放在项目文件夹目录的Image，全选添加"></p>
+<p>然后点击编译</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127175554602.png" alt="如图显示就添加成功了"></p>
+<p>为菜单项添加图标</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ui-&gt;actionedit-&gt;setIcon(QIcon(":/Image/Sunny.jpg"));
+ui-&gt;actiondel-&gt;setIcon(QIcon(":/Image/Frame.jpg"));//这两句要放在ui-&gt;setupUi(this);的下面，不然运行不了的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221127180459061.png" alt="运行结果"></p>
+<h2 id="七、对话框"><a href="#七、对话框" class="headerlink" title="七、对话框"></a>七、对话框</h2><p>新建一个项目My_QDig,先用图形界面创建以下界面</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128161122443.png"></p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128181921311.png" alt="参数"></p>
+<h3 id="模态对话框"><a href="#模态对话框" class="headerlink" title="模态对话框"></a>模态对话框</h3><p>模态对话框：弹出后就不可以对其他窗口做操作</p>
+<p>实现功能：点击tool，弹出一个模态对话框</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiontool,&amp;QAction::triggered,[=](){//建立连接，当触发tool弹出窗口
+//模态对话框------------------------------------------
+QDialog dia1(this);//创建一个窗口
+dia1.resize(520,300);//设置弹出的窗口大小
+dia1.exec();//显示模态对话框
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>connect第二个参数是QAction里的信号</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128162306164.png"></p>
+<h3 id="非模态对话框"><a href="#非模态对话框" class="headerlink" title="非模态对话框"></a>非模态对话框</h3><p>非模态对话框：弹出后可以对其他的窗口操作</p>
+<p>实现功能：点击tool2弹出一个非模态对话框</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">    connect(ui-&gt;actiontool2,&amp;QAction::triggered,[=](){//建立连接，当触发tool2弹出窗口
+    //非模态对话框----------------------------------------
+    //QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过
+    QDialog *dia2 = new QDialog(this);//创建一个窗口，
+    dia2-&gt;resize(520,300);
+    dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+    dia2-&gt;show();//显示非模态对话框
+    });
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过，所以应该创建在堆区，由于模态对话框会有一个堵塞的特性，不会退出connect函数所以可以直接创建</strong></p>
+<p> <strong>dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); ，由于创建在堆区，所以如果要是一直创建非模态对话框，在程序还在运行时内存是不会释放的，有可能引起内存泄漏，使用这句保证在每次创建的非模态对话框删除时清理内存</strong></p>
+<h3 id="消息对话框"><a href="#消息对话框" class="headerlink" title="消息对话框"></a>消息对话框</h3><p>根据上述方法分别在菜单项的编辑添加模态对话框，删除添加非模态对话框</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionedit,&amp;QAction::triggered,[=](){//建立连接，当触发编辑弹出窗口
+//模态对话框------------------------------------------
+QDialog dia3(this);//创建一个窗口
+dia3.resize(520,300);//设置弹出的窗口大小
+dia3.exec();//显示模态对话框
+});
+connect(ui-&gt;actiondel,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+//非模态对话框----------------------------------------
+QDialog *dia4 = new QDialog(this);//创建一个窗口，
+dia4-&gt;resize(520,300);
+dia4-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+dia4-&gt;show();//显示非模态对话框
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>实现功能：点击tool弹出错误消息，点击tool2弹出对话消息，点击编辑弹出提问消息，点击删除弹出警告信息</p>
+<h4 id="点击tool弹出错误消息："><a href="#点击tool弹出错误消息：" class="headerlink" title="点击tool弹出错误消息："></a>点击tool弹出错误消息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiontool,&amp;QAction::triggered,[=](){//建立连接，当触发tool弹出窗口
+//模态对话框------------------------------------------
+//QDialog dia1(this);//创建一个窗口
+//dia1.resize(520,300);//设置弹出的窗口大小
+//dia1.exec();//显示模态对话框
+QMessageBox::critical(this,"error","错误");//点击弹出错误信息
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="点击tool2弹出对话信息："><a href="#点击tool2弹出对话信息：" class="headerlink" title="点击tool2弹出对话信息："></a>点击tool2弹出对话信息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiontool2,&amp;QAction::triggered,[=](){//建立连接，当触发tool2弹出窗口
+   //非模态对话框----------------------------------------
+   //QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过
+   //QDialog *dia2 = new QDialog(this);//创建一个窗口，
+   //dia2-&gt;resize(520,300);
+   //dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+   //dia2-&gt;show();//显示非模态对话框
+   QMessageBox::information(this,"info","Hello World");//点击弹出消息信息
+   });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="点击编辑弹出提问消息："><a href="#点击编辑弹出提问消息：" class="headerlink" title="点击编辑弹出提问消息："></a>点击编辑弹出提问消息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionedit,&amp;QAction::triggered,[=](){//建立连接，当触发编辑弹出窗口
+//模态对话框------------------------------------------
+//QDialog dia3(this);//创建一个窗口
+//dia3.resize(520,300);//设置弹出的窗口大小
+//dia3.exec();//显示模态对话框
+    if(QMessageBox::Yes == QMessageBox::question(this,"edit","是否编辑",QMessageBox::Yes | QMessageBox::Yes,QMessageBox::No)){
+        qDebug()&lt;&lt;"开始编辑";QMessageBox::No
+    }else{
+        qDebug()&lt;&lt;"退出编辑";
+    }
+
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128172336598.png"></p>
+<p>点击yes弹出开始编辑消息，点击no弹出退出编辑消息</p>
+<h4 id="点击删除弹出警告信息："><a href="#点击删除弹出警告信息：" class="headerlink" title="点击删除弹出警告信息："></a>点击删除弹出警告信息：</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actiondel,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+//非模态对话框----------------------------------------
+//QDialog *dia4 = new QDialog(this);//创建一个窗口，
+//dia4-&gt;resize(520,300);
+//dia4-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+//dia4-&gt;show();//显示非模态对话框
+  QMessageBox::warning(this,"warning","可能没有成功删除");
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="/2022/11/21/qt-xue-xi/image-20221128172928176.png" alt="使用函数的参数"></p>
+<p>QWidget* parent：指定父类</p>
+<p>const QString &amp;title：窗口标题</p>
+<p>const QString &amp;text:   窗口内容</p>
+<p>StandardButton buttons：选择使用的按钮，这里只有question使用了这个</p>
+<p><img src="/2022/11/21/qt-xue-xi/image-20221128173250715.png" alt="所有按钮"></p>
+<p>StandardButton <em>defaultButton</em> = NoButton：设置第四个窗口使用的默认值，比如上面的 question例子，默认值是</p>
+<p>QMessageBox::No，也是就说如果不做选择直接回车会默认选择no运行</p>
+<h3 id="颜色对话框"><a href="#颜色对话框" class="headerlink" title="颜色对话框"></a>颜色对话框</h3><p>实现功能：点击选择颜色，弹出颜色选择栏，选择后并输出调试信息</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actioncolor,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+    //返回值是QColor而不是QcolorDialog
+    //QColor 参数一：red 参数二：green 参数三：blue 参数四：透明度
+    QColor color1 = QColorDialog::getColor(QColor(255,0,0,255));
+    qDebug() &lt;&lt;"r="&lt;&lt;color1.red()&lt;&lt;"g="&lt;&lt;color1.green()&lt;&lt;"b="&lt;&lt;color1.blue();
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件对话框"><a href="#文件对话框" class="headerlink" title="文件对话框"></a>文件对话框</h3><p>实现功能：点击选择文件，弹出指定的文件目录，并再选择文件后输出文件路径</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionfile,&amp;QAction::triggered,[=](){
+    //返回值string,是打开文件的路径
+    //getOpenFileName 参数一：指定父亲 参数二：窗口名称 参数三：打开路径 参数四：筛选文件类型
+    QString cwd = QFileDialog::getOpenFileName(this,"打开桌面txt文件","E:/资源/桌面","*.txt");
+    qDebug() &lt;&lt;cwd;
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="字体对话框"><a href="#字体对话框" class="headerlink" title="字体对话框"></a>字体对话框</h3><p>实现功能：点击选择字体，弹出字体选择对话框，并输出选择后的字体信息</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(ui-&gt;actionfont,&amp;QAction::triggered,[=](){
+    bool flag;
+    //返回值是QFont而不是QFontDialog
+    //QFont 参数一：默认的字体 参数二：默认的大小
+    QFont font = QFontDialog::getFont(&amp;flag,QFont("宋体",36));
+    qDebug()&lt;&lt;"字体："&lt;&lt;font.family()&lt;&lt;"字号："&lt;&lt;font.pointSize()&lt;&lt;"是否加粗"&lt;&lt;font.bold()&lt;&lt;"是否斜体"&lt;&lt;font.italic();
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include &lt;QDialog&gt;
+#include &lt;QMessageBox&gt;
+#include &lt;QDebug&gt;
+#include &lt;QColorDialog&gt;
+#include &lt;QFileDialog&gt;
+#include &lt;QFontDialog&gt;
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui-&gt;setupUi(this);
+    resize(640,400);//设置主窗口大小
+    connect(ui-&gt;actiontool,&amp;QAction::triggered,[=](){//建立连接，当触发tool弹出窗口
+    //模态对话框------------------------------------------
+    //QDialog dia1(this);//创建一个窗口
+    //dia1.resize(520,300);//设置弹出的窗口大小
+    //dia1.exec();//显示模态对话框
+    QMessageBox::critical(this,"error","错误");//点击弹出错误信息==============================消息对话框
+    });
+    connect(ui-&gt;actiontool2,&amp;QAction::triggered,[=](){//建立连接，当触发tool2弹出窗口
+    //非模态对话框----------------------------------------
+    //QDialog dia2(this);不能使用这种方式创建，这样创建窗口会一闪而过
+    //QDialog *dia2 = new QDialog(this);//创建一个窗口，
+    //dia2-&gt;resize(520,300);
+    //dia2-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+    //dia2-&gt;show();//显示非模态对话框
+    QMessageBox::information(this,"info","Hello World");//点击弹出消息信息====================消息对话框
+    });
+    connect(ui-&gt;actionedit,&amp;QAction::triggered,[=](){//建立连接，当触发编辑弹出窗口
+    //模态对话框------------------------------------------
+    //QDialog dia3(this);//创建一个窗口
+    //dia3.resize(520,300);//设置弹出的窗口大小
+    //dia3.exec();//显示模态对话框
+        if(QMessageBox::Yes == QMessageBox::question(this,"edit","是否编辑",QMessageBox::Yes | QMessageBox::Yes,QMessageBox::No)){
+            qDebug()&lt;&lt;"开始编辑";
+        }else{
+            qDebug()&lt;&lt;"退出编辑";
+        }//=================================================================================消息对话框
+    });
+    connect(ui-&gt;actiondel,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+    //非模态对话框----------------------------------------
+//    QDialog *dia4 = new QDialog(this);//创建一个窗口，
+//    dia4-&gt;resize(520,300);
+//    dia4-&gt;setAttribute(Qt::WA_DeleteOnClose); //55号属性
+//    dia4-&gt;show();//显示非模态对话框
+      QMessageBox::warning(this,"warning","可能没有成功删除");//===============================消息对话框
+    });
+
+    //颜色对话框----------------------------------------------------------------------------
+    connect(ui-&gt;actioncolor,&amp;QAction::triggered,[=](){//建立连接，当触发删除弹出窗口
+        //返回值是QColor而不是QcolorDialog
+        //QColor 参数一：red 参数二：green 参数三：blue 参数四：透明度 填参数是选择打开后的默认颜色
+        QColor color1 = QColorDialog::getColor(QColor(255,0,0,255));
+        qDebug() &lt;&lt;"r="&lt;&lt;color1.red()&lt;&lt;"g="&lt;&lt;color1.green()&lt;&lt;"b="&lt;&lt;color1.blue();
+    });
+    //文件对话框----------------------------------------------------------------------------
+    connect(ui-&gt;actionfile,&amp;QAction::triggered,[=](){
+        QString cwd = QFileDialog::getOpenFileName(this,"打开桌面txt文件","E:/资源/桌面","*.txt");
+        qDebug() &lt;&lt;cwd;
+    });
+    //字体对话框----------------------------------------------------------------------------
+    connect(ui-&gt;actionfont,&amp;QAction::triggered,[=](){
+        bool flag;
+        QFont font = QFontDialog::getFont(&amp;flag,QFont("宋体",36));
+        qDebug()&lt;&lt;"字体："&lt;&lt;font.family()&lt;&lt;"字号："&lt;&lt;font.pointSize()&lt;&lt;"是否加粗"&lt;&lt;font.bold()&lt;&lt;"是否斜体"&lt;&lt;font.italic();
+    });
+
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="七、自定义控件"><a href="#七、自定义控件" class="headerlink" title="七、自定义控件"></a>七、自定义控件</h2><p>QT里的各种已有的控件使用方法推荐观看视频</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g4411H78N?p=24&amp;vd_source=f342719b375d872cded85ce2655fee5d">控件P24-P28</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/11/21/qt-xue-xi/">http://example.com/2022/11/21/qt-xue-xi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/QT/">
+                                    <span class="chip bg-color">QT</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">......</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/zhifu.jpeg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/weixin.jpeg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NzQ5Ny8zMzk2MQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/11/22/c-xiao-zhi-shi-dian/">
+                    <div class="card-image">
+                        
+                        <img src="https://pic.rmb.bdstatic.com/0b1a908690bc8c7ac08025756bd6c294.jpeg" class="responsive-img" alt="C++进阶">
+                        
+                        <span class="card-title">C++进阶</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            杂七杂八
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/10/27/stl-biao-zhun-mo-ban-ku/">
+                    <div class="card-image">
+                        
+                        <img src="https://pic.baike.soso.com/p/20140304/20140304110320-633388332.jpg" class="responsive-img" alt="STL标准模板库">
+                        
+                        <span class="card-title">STL标准模板库</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            STL好用捏
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/STL/">
+                        <span class="chip bg-color">STL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 园崎魅音<br />'
+            + '文章作者: 园崎魅音<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="876941698"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">园崎魅音</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">108.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LookAt-MeNow" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2979565338@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2979565338" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2979565338" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>

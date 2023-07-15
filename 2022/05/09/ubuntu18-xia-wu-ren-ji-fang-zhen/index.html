@@ -1,0 +1,1789 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="无人机仿真搭建, 园崎魅音">
+    <meta name="description" content=".">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>无人机仿真搭建 | 园崎魅音</title>
+    <link rel="icon" type="image/jpeg" href="/888.jpeg">
+    
+    <style>
+        body{
+            background-image: url(https://pic1.zhimg.com/v2-fbf206692f5d7df61ec7ed117052247c_r.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/345.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">园崎魅音</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/345.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">园崎魅音</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LookAt-MeNow" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LookAt-MeNow" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpeg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">无人机仿真搭建</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/ros/">
+                                <span class="chip bg-color">ros</span>
+                            </a>
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ros%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                ros仿真
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-09
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-03-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="基于ubuntu18无人机仿真环境搭建"><a href="#基于ubuntu18无人机仿真环境搭建" class="headerlink" title="基于ubuntu18无人机仿真环境搭建"></a>基于ubuntu18无人机仿真环境搭建</h1><h2 id="1-安装相关依赖"><a href="#1-安装相关依赖" class="headerlink" title="1.安装相关依赖"></a>1.安装相关依赖</h2><pre class="line-numbers language-none"><code class="language-none">sudo apt install ninja-build exiftool ninja-build protobuf-compiler libeigen3-dev genromfs xmlstarlet libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">pip2 install pandas jinja2 pyserial cerberus pyulog==0.7.0 numpy toml pyquaternion empy pyyaml 
+pip3 install packaging numpy empy toml pyyaml jinja2 pyargparse
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>安装依赖过程比较缓慢，要先换国内的源</p>
+<h2 id="2-ros的安装"><a href="#2-ros的安装" class="headerlink" title="2.ros的安装"></a>2.ros的安装</h2><pre class="line-numbers language-none"><code class="language-none">sudo apt update
+sudo apt install ros-melodic-desktop
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>18.04对应ros版本是melodic，每个版本不一样</p>
+<p>设定环境</p>
+<pre class="line-numbers language-none"><code class="language-none">echo "source /opt/ros/melodic/setup.bash" &gt;&gt; ~/.bashrc
+source ~/.bashrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>软件包依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo apt install python-rosdep
+sudo rosdep init
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>安装完成打开终端运行</p>
+<pre class="line-numbers language-none"><code class="language-none">roscore<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>运行成功如下</p>
+<pre class="line-numbers language-none"><code class="language-none">... logging to /home/robin/.ros/log/a5118af0-5474-11ea-8b86-e454e828c524/r
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is &lt;1GB.
+started roslaunch server http://robin-G3-3590:34223/
+ros_comm version 1.12.14
+SUMMARY
+========
+PARAMETERS
+* /rosdistro: kinetic
+* /rosversion: 1.12.14
+NODES
+auto-starting new master
+process[master]: started with pid [30244]
+ROS_MASTER_URI=http://robin-G3-3590:11311/
+setting /run_id to a5118af0-5474-11ea-8b86-e454e828c524
+process[rosout-1]: started with pid [30261]
+started core service [/rosout]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接下来可以打开下午试一试，再打开一个终端输入</p>
+<pre class="line-numbers language-none"><code class="language-none">roscore rosrun turtlesim turtlesim_node <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后创建一个自己的工作空间</p>
+<pre class="line-numbers language-none"><code class="language-none">mkdir -p ~/catkin_ws/src
+mkdir -p ~/catkin_ws/scripts
+cd catkin_ws/src 
+catkin_init_workspace
+cd .. 
+catkin_make
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="3-gazebo的安装"><a href="#3-gazebo的安装" class="headerlink" title="3.gazebo的安装"></a>3.gazebo的安装</h2><p>这里先把ros自动下载的gazebo先卸载</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get remove gazebo* 
+sudo apt-get remove libgazebo*
+sudo apt-get remove ros-melodic-gazebo* 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p> 1.设置计算机以接受来自package.osrfoundation.org的软件 </p>
+<p>这里一定要设置不然后面px4安装会有问题</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" &gt; /etc/apt/sources.list.d/gazebo-stable.list'
+cat /etc/apt/sources.list.d/gazebo-stable.list
+#如果出现deb http://packages.osrfoundation.org/gazebo/ubuntu-stable xenial main表示没问题
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>设置密钥</p>
+<pre class="line-numbers language-none"><code class="language-none">wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt-get update
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>安装9.1版本</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install gazebo9=9.1*
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装完成后运行gazebo如果成功打开则安装成功</p>
+<p>安装ros的gazebo的插件</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt install ros-melodic-gazebo9-*
+sudo apt install ros-melodic-gazebo-*
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>测试先运行roscore然后再打开一个终端</p>
+<pre class="line-numbers language-none"><code class="language-none">rosrun gazebo_ros gazebo 
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="4-MAVROS安装"><a href="#4-MAVROS安装" class="headerlink" title="4.MAVROS安装"></a>4.MAVROS安装</h2><pre class="line-numbers language-none"><code class="language-none">sudo apt install ros-kinetic-mavros ros-kinetic-mavros-extras 		# for ros-kinetic
+sudo apt install ros-melodic-mavros ros-melodic-mavros-extras 		# for ros-melodic
+wget https://gitee.com/robin_shaun/XTDrone/raw/master/sitl_config/mavros/install_geographiclib_datasets.sh
+sudo chmod a+x ./install_geographiclib_datasets.sh
+sudo ./install_geographiclib_datasets.sh  
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最后一步可能会卡着不动，多等一会</p>
+<h2 id="5-px4安装"><a href="#5-px4安装" class="headerlink" title="5.px4安装"></a>5.px4安装</h2><p>官方给的github在国内实在太慢了，而且容易漏下，我自己本人用github是没有成功过的，这里就用gitee的镜像</p>
+<p>这个是github的地址，如果有条件建议最好还是GitHub下，比较方便</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https://github.com/PX4/PX4-Autopilot.git
+mv PX4-Autopilot PX4_Firmware
+cd PX4_Firmware
+git checkout -b xtdrone/dev v1.11.0-beta1
+git submodule update --init --recursive
+make px4_sitl_default gazebo
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个是gitee的</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https://gitee.com/robin_shaun/PX4_Firmware
+cd PX4_Firmware
+git checkout -b xtdrone/dev v1.11.0-beta1
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在工作空间下ctrl+h找到隐藏文件 .gitmodules 修改</p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "mavlink/include/mavlink/v2.0"]
+	path = mavlink/include/mavlink/v2.0
+	url = https://gitee.com/robin_shaun/c_library_v2.git
+	branch = master
+[submodule "src/drivers/uavcan/libuavcan"]
+	path = src/drivers/uavcan/libuavcan
+	url = https://gitee.com/robin_shaun/uavcan.git
+	branch = px4
+[submodule "Tools/jMAVSim"]
+	path = Tools/jMAVSim
+	url = https://gitee.com/robin_shaun/jMAVSim.git
+	branch = master
+[submodule "Tools/sitl_gazebo"]
+	path = Tools/sitl_gazebo
+	url = https://gitee.com/robin_shaun/sitl_gazebo.git
+	branch = master
+[submodule "src/lib/matrix"]
+	path = src/lib/matrix
+	url = https://gitee.com/robin_shaun/Matrix.git
+	branch = master
+[submodule "src/lib/ecl"]
+	path = src/lib/ecl
+	url = https://gitee.com/robin_shaun/ecl.git
+	branch = master
+[submodule "boards/atlflight/cmake_hexagon"]
+	path = boards/atlflight/cmake_hexagon
+	url = https://gitee.com/robin_shaun/cmake_hexagon.git
+	branch = px4
+[submodule "src/drivers/gps/devices"]
+	path = src/drivers/gps/devices
+	url = https://gitee.com/robin_shaun/GpsDrivers.git
+	branch = master
+[submodule "src/modules/micrortps_bridge/micro-CDR"]
+	path = src/modules/micrortps_bridge/micro-CDR
+	url = https://gitee.com/robin_shaun/micro-CDR.git
+	branch = px4
+[submodule "platforms/nuttx/NuttX/nuttx"]
+	path = platforms/nuttx/NuttX/nuttx
+	url = https://gitee.com/robin_shaun/NuttX.git
+	branch = px4_firmware_nuttx-9.1.0+
+[submodule "platforms/nuttx/NuttX/apps"]
+	path = platforms/nuttx/NuttX/apps
+	url = https://gitee.com/robin_shaun/NuttX-apps.git
+	branch = px4_firmware_nuttx-9.1.0+
+[submodule "platforms/qurt/dspal"]
+	path = platforms/qurt/dspal
+	url = https://gitee.com/robin_shaun/dspal.git
+[submodule "Tools/flightgear_bridge"]
+	path = Tools/flightgear_bridge
+	url = https://gitee.com/robin_shaun/PX4-FlightGear-Bridge.git
+	branch = master 
+[submodule "Tools/jsbsim_bridge"]
+	path = Tools/jsbsim_bridge
+	url = https://gitee.com/robin_shaun/px4-jsbsim-bridge.git
+[submodule "src/examples/gyro_fft/CMSIS_5"]
+	path = src/examples/gyro_fft/CMSIS_5
+	url = https://gitee.com/mirrors/CMSIS_5
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> 执行子模块更新指令 </p>
+<pre class="line-numbers language-none"><code class="language-none">git submodule update --init
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 更改子模块下的submodule： </p>
+<ol>
+<li></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware/src/drivers/uavcan/libuavcan
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 修改.gitmodules：（要先到PX4_Firmware/src/drivers/uavcan/libuavcan这个文件夹中找到.gitmodules这个文件，下面也是同样） </p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "dsdl"]
+	path = dsdl
+	url = https://gitee.com/robin_shaun/dsdl
+	branch = legacy-v0
+[submodule "libuavcan/dsdl_compiler/pyuavcan"]
+	path = libuavcan/dsdl_compiler/pyuavcan
+	url = https://gitee.com/robin_shaun/pyuavcan
+[submodule "libuavcan_drivers/kinetis"]
+	path = libuavcan_drivers/kinetis
+	url = https://gitee.com/robin_shaun/libuavcan_kinetis.git
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">git submodule update --init
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="2">
+<li></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware/src/drivers/uavcan/libuavcan/libuavcan/dsdl_compiler/pyuavcan
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 修改.gitmodules： </p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "dsdl"]
+	path = dsdl
+	url = https://gitee.com/robin_shaun/dsdl
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware/Tools/jMAVSim
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 修改.gitmodules： </p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "jMAVlib"]
+	path = jMAVlib
+	url = https://gitee.com/robin_shaun/jMAVlib
+	branch = master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">git submodule update --init
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="4">
+<li></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware/Tools/sitl_gazebo
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 修改.gitmodules：</p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "external/OpticalFlow"]
+	path = external/OpticalFlow
+	url = https://gitee.com/robin_shaun/OpticalFlow
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">git submodule update --init
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="5">
+<li></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware/platforms/qurt/dspal
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 修改.gitmodules： </p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "cmake_hexagon"]
+	path = cmake_hexagon
+	url = https://gitee.com/robin_shaun/cmake_hexagon
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">git submodule update --init
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="6">
+<li></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware/Tools/sitl_gazebo/external/OpticalFlow
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 修改.gitmodules： </p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "external/klt_feature_tracker"]
+	path = external/klt_feature_tracker
+	url = https://gitee.com/robin_shaun/klt_feature_tracker
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">git submodule update --init
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装python依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware
+bash ./Tools/setup/ubuntu.sh --no-nuttx --no-sim-tools
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>编译</p>
+<pre class="line-numbers language-none"><code class="language-none">make px4_sitl_default gazebo
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>设置路径</p>
+<pre class="line-numbers language-none"><code class="language-none">source ~/catkin_ws/devel/setup.bash
+source ~/PX4_Firmware/Tools/setup_gazebo.bash ~/PX4_Firmware/ ~/PX4_Firmware/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4_Firmware
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4_Firmware/Tools/sitl_gazebo
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">source ~/.bashrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>运行命令会打开gazebo</p>
+<pre class="line-numbers language-none"><code class="language-none">cd ~/PX4_Firmware
+roslaunch px4 mavros_posix_sitl.launch
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在打开一个终端运行</p>
+<pre class="line-numbers language-none"><code class="language-none">rostopic echo /mavros/state
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 若connected: True,则说明MAVROS与SITL通信成功。如果是false，一般是因为.bashrc里的路径写的不对，请仔细检查。 </p>
+<h2 id="6-地面站安装"><a href="#6-地面站安装" class="headerlink" title="6.地面站安装"></a>6.地面站安装</h2><pre class="line-numbers language-none"><code class="language-none">sudo usermod -a -G dialout $USER
+sudo apt-get remove modemmanager -y
+sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>安装成功后把文件移动到主文件下</p>
+<pre class="line-numbers language-none"><code class="language-none">chmod +x ./QGroundControl.AppImage
+./QGroundControl.AppImage
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h1 id="ros基础"><a href="#ros基础" class="headerlink" title="ros基础"></a>ros基础</h1><h2 id="创建ros功能包"><a href="#创建ros功能包" class="headerlink" title="创建ros功能包"></a>创建ros功能包</h2><h3 id="1-创建工作空间"><a href="#1-创建工作空间" class="headerlink" title="1.创建工作空间"></a>1.创建工作空间</h3><p>工作空间是存放相关开发文件的也就是工程目录 </p>
+<p>src：代码空间  存放功能包及其配置文件以及launch文件 </p>
+<p>build：编译空间  编译中所产生的中间文件，即二进制文件 </p>
+<p>devel ：开发空间  编译生成的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6&amp;spm=1001.2101.3001.7020">可执行文件</a>，库，脚 </p>
+<p>install：安装空间  安装空间，使用安装指令时的默认文件存储位置 </p>
+<p><img src="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/6fcbe324ed4ae766dc06db76660d3ff-1652691188915.png" alt="6fcbe324ed4ae766dc06db76660d3ff"></p>
+<p>创建工作空间</p>
+<p><img src="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/0a42a183c92e9b6f3bff29472454763.png" alt="0a42a183c92e9b6f3bff29472454763"></p>
+<h3 id="2-创建一个catkin功能包"><a href="#2-创建一个catkin功能包" class="headerlink" title="2.创建一个catkin功能包"></a>2.创建一个catkin功能包</h3><p>首先回到工作空间的src目录下，创建catkin功能包</p>
+<pre class="line-numbers language-none"><code class="language-none">catkin_create_pkg this std_msgs roscpp rospy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>后面接的三个东西是这个这个功能包的依赖</p>
+<p>这会创建一个名为this的文件夹，这个文件夹包含一个package.xml文件和一个CMakeLists.txt文件</p>
+<p>package.xml</p>
+<p>文件提供有关功能包的元信息 如作者，依赖的其他功能包等 </p>
+<p>CMakeLists.txt包</p>
+<p> 这个文件直接规定了这个package要依赖哪些package，要编译生成哪些目标，如何编译等等</p>
+<p><strong>同一个工作空间下不允许出现相同的名称的功能包</strong>  </p>
+<ul>
+<li><strong>主文件夹：自己用户名命名的目录下</strong></li>
+<li><strong>catkin_ws可以不同，但后面的src一定要相同</strong></li>
+<li><strong>要在工作空间的根目录上进行编译</strong></li>
+</ul>
+<p><img src="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/3133a0038d6893a58eaeae682ae36d9.png" alt="3133a0038d6893a58eaeae682ae36d9"></p>
+<ul>
+<li><strong>install,dev功能类似，install更多强调在开发后分享给客户使用的结果文件</strong></li>
+<li><strong>源码要放在功能包中</strong></li>
+<li><strong>include文件夹：包含头文件等</strong></li>
+<li><strong>source的原因：运行前要设置环境变量</strong></li>
+</ul>
+<h2 id="发布者-amp-订阅者的实现"><a href="#发布者-amp-订阅者的实现" class="headerlink" title="发布者&amp;订阅者的实现"></a>发布者&amp;订阅者的实现</h2><p><img src="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/185ae8e07826f1c2fe24c70273e8e2d.png" alt="185ae8e07826f1c2fe24c70273e8e2d"></p>
+<p>发布者向话题发布Twist类型的话题，订阅者订阅该话题</p>
+<h3 id="1-简易发布者代码"><a href="#1-简易发布者代码" class="headerlink" title="1.简易发布者代码"></a>1.简易发布者代码</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"ros/ros.h"</span> <span class="token comment">//该头文件必须包含</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"std_msgs/String.h"</span> <span class="token comment">//ros标准消息里面的字符串消息</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sstream&gt;</span></span>
+
+<span class="token comment">/**
+ * 在一个话题上发布一个简单的字符串消息
+ */</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">/**
+	 * ros::init()初始化节点函数需要使用argc和argv，不能缺少这两个参数，与话题重映射等有关的
+	 */</span>
+	ros<span class="token operator">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">"study"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//节点名为study，随便取</span>
+	
+	<span class="token comment">/**
+	 *NodeHandle是与ROS系统通信的主要访问点（句柄）,有了它节点就可以“说话了”（在话题上发布消息）
+	 * 构造的第一个NodeHandle将完全初始化该节点，最后一个被析构的NodeHandle将关闭该节点。
+	 */</span>
+	ros<span class="token operator">::</span>NodeHandle n<span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * advertise()函数是你告诉ROS你想在给定的话题名上发布特定类型的消息。
+	 * 在这个advertise()调用之后，master节点将通知任何试图订阅这个话题名称的节点，然后他们将与这个节点建立一个对等网络（peer to peer/P2P）连接。
+	 * advertise()括号里面的第一个参数是话题名字，第二个参数是用于发布消息的消息队列的大小。
+	 * &lt;&gt;里面指定消息的类型
+	 */</span>
+	ros<span class="token operator">::</span>Publisher chatter_pub <span class="token operator">=</span> n<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>String<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"chatter"</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">/**
+	 * 循环频率10Hz
+	 发布一个消息类型为std_msgs/String，命名为chatter的话题。
+     定义消息队列大小为1000，即超过1000条消息之后，旧的消息就会丢弃。
+	 */</span>
+	ros<span class="token operator">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>ros<span class="token operator">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token comment">/**
+		 * 先创建一个消息对象。然后用数据填充它，最后发布它。
+		 * 要查看消息结构在命令行使用rosmsg show std_msgs/String，其它消息类似
+		默认roscpp会植入一个SIGINT处理机制，当按下Ctrl-C，就会让ros::ok()返回false,那循环就会结束。
+         ros::ok() 返回false的几种情况：
+         SIGINT收到(Ctrl-C)信号
+         另一个同名节点启动，会先中止之前的同名节点
+         ros::shutdown()被调用
+         所有的ros::NodeHandles被销毁
+		 */</span>
+		std_msgs<span class="token operator">::</span>String msg<span class="token punctuation">;</span>
+
+		std<span class="token operator">::</span>stringstream ss<span class="token punctuation">;</span>
+		ss <span class="token operator">&lt;&lt;</span> <span class="token string">"hello world "</span> <span class="token operator">&lt;&lt;</span> count<span class="token punctuation">;</span>
+		msg<span class="token punctuation">.</span>data <span class="token operator">=</span> ss<span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">/**
+		 * 在终端打印字符串的内容，消息在ROS里面封装成类，类公有函数这些请去wiki上看API文档
+		 */</span>
+		<span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> msg<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">/**
+		 * publish()函数是发送消息的函数，参数是消息对象。
+		 * 消息类型要与n.advertise&lt;&gt;里面声明的一致。
+		 */</span>
+		chatter_pub<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		ros<span class="token operator">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//触发回调函数的，不订阅消息的话可删</span>
+
+		loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//以10Hz循环，循环跑太快就在这里睡一会儿</span>
+		<span class="token operator">++</span>count<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-编写订阅节点"><a href="#2-编写订阅节点" class="headerlink" title="2.编写订阅节点"></a>2.编写订阅节点</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"ros/ros.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"std_msgs/String.h"</span></span>
+
+<span class="token keyword">void</span> <span class="token function">chatterCallback</span><span class="token punctuation">(</span><span class="token keyword">const</span> std_msgs<span class="token operator">::</span>String<span class="token operator">::</span>ConstPtr<span class="token operator">&amp;</span> msg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"I heard: [%s]"</span><span class="token punctuation">,</span> msg<span class="token operator">-&gt;</span>data<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">/*
+    定义回调函数chatterCallback，当收到chatter话题的消息就会调用这个函数。
+    消息通过boost shared_ptr（共享指针）来传递。
+    但收到消息，通过ROS_INFO函数显示到终端
+  */</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  
+  ros<span class="token operator">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">"listener"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  
+  ros<span class="token operator">::</span>NodeHandle n<span class="token punctuation">;</span>
+
+
+  ros<span class="token operator">::</span>Subscriber sub <span class="token operator">=</span> n<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"chatter"</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> chatterCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">/*
+    定义订阅节点，名称为chatter，指定回调函数chatterCallback
+    但收到消息，则调用函数chatterCallback来处理。
+    参数1000，定义队列大小，如果处理不够快，超过1000，则丢弃旧的消息。
+   */</span>
+
+
+  ros<span class="token operator">::</span><span class="token function">spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//调用此函数才真正开始进入循环处理，直到 ros::ok()返回false才停止。</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-构建节点"><a href="#3-构建节点" class="headerlink" title="3.构建节点"></a>3.构建节点</h3><p>在之前使用catkin_create_pkg创建包learning_rosing，会得到 package.xml 和 CMakeLists.txt两个文件</p>
+<p><img src="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/1652952598439.png" alt="1652952598439"></p>
+<p>增加如下代码到CMakeLists.txt：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">include_directories</span><span class="token punctuation">(</span>include $<span class="token punctuation">{</span>catkin_INCLUDE_DIRS<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">add_executable</span><span class="token punctuation">(</span>talker src<span class="token operator">/</span>talker<span class="token punctuation">.</span>cpp<span class="token punctuation">)</span>
+<span class="token function">target_link_libraries</span><span class="token punctuation">(</span>talker $<span class="token punctuation">{</span>catkin_LIBRARIES<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">add_executable</span><span class="token punctuation">(</span>listener src<span class="token operator">/</span>listener<span class="token punctuation">.</span>cpp<span class="token punctuation">)</span>
+<span class="token function">target_link_libraries</span><span class="token punctuation">(</span>listener $<span class="token punctuation">{</span>catkin_LIBRARIES<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在此位置添加</p>
+<p><img src="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/1652952791303.png" alt="1652952791303"></p>
+<h3 id="4-编译并运行"><a href="#4-编译并运行" class="headerlink" title="4.编译并运行"></a>4.编译并运行</h3><pre class="line-numbers language-none"><code class="language-none">cd ~/catkin_ws
+catkin_make
+source devel/setuo.bash
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>再打开一个终端运行</p>
+<pre class="line-numbers language-none"><code class="language-none">roscore
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>再再打开一个终端运行</p>
+<pre class="line-numbers language-none"><code class="language-none">rosrun learning_rosing talker
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>再再再打开一个终端运行</p>
+<pre class="line-numbers language-none"><code class="language-none">rosrun learning_rosing listener
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>运行结果</p>
+<p><img src="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/1652953805026.png" alt="1652953805026"></p>
+<h2 id="服务端-amp-客户端的实现"><a href="#服务端-amp-客户端的实现" class="headerlink" title="服务端&amp;客户端的实现"></a>服务端&amp;客户端的实现</h2><h3 id="1-服务端节点"><a href="#1-服务端节点" class="headerlink" title="1.服务端节点"></a>1.服务端节点</h3><p>打开工作空间中对应的功能包，在src目录下新建一个c++文件 add_two_ints_server.cpp</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include "ros/ros.h"
+#include "learning_rosing/AddTwoInts.h"
+
+//learning_rosing/AddTwoInts.h是由编译系统自动根据我们先前创建的srv文件生成的对应该srv文件的头文件。
+
+bool add(beginner_tutorials::AddTwoInts::Request  &amp;req,
+         beginner_tutorials::AddTwoInts::Response &amp;res)
+//这个函数提供两个int值求和的服务，int值从request里面获取，而返回数据装入response内，这些数据类型都定义在srv文件内部，函数返回一个boolean值。
+{
+  res.sum = req.a + req.b;
+  ROS_INFO("request: x=%ld, y=%ld", (long int)req.a, (long int)req.b);
+  ROS_INFO("sending back response: [%ld]", (long int)res.sum);
+  return true;
+}
+
+int main(int argc, char **argv)
+{
+  ros::init(argc, argv, "add_two_ints_server");
+  ros::NodeHandle n;
+
+  ros::ServiceServer service = n.advertiseService("add_two_ints", add);
+  //这里，service已经建立起来，并在ROS内发布出来。
+  ROS_INFO("Ready to add two ints.");
+  ros::spin();
+
+  return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-编写客户端节点"><a href="#2-编写客户端节点" class="headerlink" title="2.编写客户端节点"></a>2.编写客户端节点</h3><p>打开工作空间中对应的功能包，在src目录下新建一个c++文件 add_two_ints_client.cpp</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include "ros/ros.h"
+#include "beginner_tutorials/AddTwoInts.h"
+#include &lt;cstdlib&gt;
+
+//在C里就是stdlib.h，在c++里就是cstdlib，里面封装了许多函数，例如malloc,free这些
+
+int main(int argc, char **argv)
+{
+  ros::init(argc, argv, "add_two_ints_client");
+  if (argc != 3)
+  {
+    ROS_INFO("usage: add_two_ints_client X Y");
+    return 1;
+  }
+
+  ros::NodeHandle n;
+  ros::ServiceClient client = n.serviceClient&lt;beginner_tutorials::AddTwoInts&gt;("add_two_ints");
+    //这段代码为add_two_ints service创建一个client。
+	//ros::ServiceClient 对象待会用来调用service。
+  beginner_tutorials::AddTwoInts srv;
+  srv.request.a = atoll(argv[1]);
+  srv.request.b = atoll(argv[2]);
+    /*这里，我们实例化一个由ROS编译系统自动生成的service类，并给其request成员赋值。
+	一个service类包含两个成员request和response。
+	同时也包括两个类定义Request和Response。*/
+  if (client.call(srv))
+  /*这段代码是在调用service。
+由于service的调用是模态过程（调用的时候占用进程阻止其他代码的执行），一旦调用完成，将返回调用结果。
+如果service调用成功，call()函数将返回true，srv.response里面的值将是合法的值。
+如果调用失败，call()函数将返回false，srv.response里面的值将是非法的。*/
+  {
+    ROS_INFO("Sum: %ld", (long int)srv.response.sum);
+  }
+  else
+  {
+    ROS_ERROR("Failed to call service add_two_ints");
+    return 1;
+  }
+
+  return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>（参考b站up主赵虚左【【Autolabor初级教程】ROS机器人入门】 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ci4y1L7ZZ/?share_source=copy_web&amp;vd_source=46305e689a1990fcb387e3066edbcdc8%EF%BC%89">https://www.bilibili.com/video/BV1Ci4y1L7ZZ/?share_source=copy_web&amp;vd_source=46305e689a1990fcb387e3066edbcdc8）</a></p>
+<h1 id="零碎点"><a href="#零碎点" class="headerlink" title="零碎点"></a>零碎点</h1><h1 id="1-int-main-int-argc，char-argv"><a href="#1-int-main-int-argc，char-argv" class="headerlink" title="1.int main(int argc，char* argv[ ])"></a>1.int main(int argc，char* argv[ ])</h1><p>（1）C 语言规定 main 函数的参数只能有两个，还规定 argc 必须是整型变量，argv 必须是指向字符串的指针数组。</p>
+<p>（2）argc 是命令行总的参数个数。</p>
+<p>（3）char *argv[ ] 是指针数组，数组中的每个元素都是 char * 类型，即数组中每个元素都会指向一个字符串。<br>————————————————<br>版权声明：本文为CSDN博主「devilzcl」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37205350/article/details/106048645">https://blog.csdn.net/qq_37205350/article/details/106048645</a></p>
+<h1 id="XTD安装"><a href="#XTD安装" class="headerlink" title="XTD安装"></a>XTD安装</h1><pre class="line-numbers language-none"><code class="language-none">git clone https://gitee.com/robin_shaun/XTDrone.git
+cd XTDrone
+git submodule update --init --recursive
+cp sensing/gimbal/gazebo_gimbal_controller_plugin.cpp ~/PX4-Autopilot/Tools/sitl_gazebo/src/
+cp sitl_config/init.d-posix/rcS ~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/
+cp sitl_config/worlds/* ~/PX4-Autopilot/Tools/sitl_gazebo/worlds/
+cp -r sitl_config/models/* ~/PX4-Autopilot/Tools/sitl_gazebo/models/ 
+cp -r sitl_config/launch/* ~/PX4-Autopilot/launch/
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="避坑"><a href="#避坑" class="headerlink" title="避坑"></a>避坑</h1><p>大部分问题是网络问题，一定要换国内源</p>
+<p>不要一直在一个终端运行上面的指令</p>
+<p>中间会遇到很多问题基本都可以百度到但是还是要准备好百度一整天的准备，每次执行完命令执行下source，</p>
+<p>有时候百度不到的问题可以看看报错，很多时候有可能是路径问题</p>
+<p>多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！多看官方文档！</p>
+<p>参考文献： <a target="_blank" rel="noopener" href="http://www.autolabor.com.cn/book/ROSTutorials/">Introduction · Autolabor-ROS机器人入门课程《ROS理论与实践》零基础教程</a> </p>
+<p> <a target="_blank" rel="noopener" href="http://wiki.ros.org/">Documentation - ROS Wiki</a> </p>
+<p> <a target="_blank" rel="noopener" href="https://gitee.com/robin_shaun/XTDrone/">XTDrone: 基于PX4、ROS和Gazebo的无人机通用仿真平台 (gitee.com)</a> </p>
+<p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_19469271/article/details/119963938">(64条消息) ROS+Gazebo+PX4仿真步骤_chen果冻的博客-CSDN博客</a> </p>
+<p> <a target="_blank" rel="noopener" href="https://mbot1.blog.csdn.net/article/details/106041494">(64条消息) PX4从放弃到精通（二）：ubuntu18.04配置px4编译环境及mavros环境_超维空间科技的博客-CSDN博客_px4 ubuntu</a> </p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/">http://example.com/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/ros/">
+                                    <span class="chip bg-color">ros</span>
+                                </a>
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">......</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/zhifu.jpeg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/weixin.jpeg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NzQ5Ny8zMzk2MQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/">
+                    <div class="card-image">
+                        
+                        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftvax2.sinaimg.cn%2Flarge%2F006yt1Omgy1gtr2d04l4yj30sg1464q3.jpg&refer=http%3A%2F%2Ftvax2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671628995&t=63d745c2ff6031c0993fdf1f11e20f28" class="responsive-img" alt="数据结构学习">
+                        
+                        <span class="card-title">数据结构学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据结构的实现
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/12/03/c-yu-yan-de-xue-xi/">
+                    <div class="card-image">
+                        
+                        <img src="https://ts1.cn.mm.bing.net/th/id/R-C.76ac1d3244384d8c4ab5ada1dac0c17e?rik=8ccSKHCer1z0OA&riu=http%3a%2f%2fp0.qhimg.com%2ft01978418bcc0ee353b.png&ehk=a9nkFtohDrNwBvcei4VO7E%2bYsPfh6UUWhcpBTkzf0u0%3d&risl=&pid=ImgRaw&r=0" class="responsive-img" alt="C语言学习">
+                        
+                        <span class="card-title">C语言学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            基于C primer plus学习
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/c/" class="post-category">
+                                    c
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 园崎魅音<br />'
+            + '文章作者: 园崎魅音<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="876941698"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">园崎魅音</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">108.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LookAt-MeNow" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2979565338@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2979565338" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2979565338" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>

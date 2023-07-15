@@ -1,0 +1,3183 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="数据结构学习, 园崎魅音">
+    <meta name="description" content="数据结构的实现">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>数据结构学习 | 园崎魅音</title>
+    <link rel="icon" type="image/jpeg" href="/888.jpeg">
+    
+    <style>
+        body{
+            background-image: url(https://pic1.zhimg.com/v2-fbf206692f5d7df61ec7ed117052247c_r.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="园崎魅音" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/345.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">园崎魅音</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/345.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">园崎魅音</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LookAt-MeNow" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LookAt-MeNow" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftvax2.sinaimg.cn%2Flarge%2F006yt1Omgy1gtr2d04l4yj30sg1464q3.jpg&refer=http%3A%2F%2Ftvax2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671628995&t=63d745c2ff6031c0993fdf1f11e20f28')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">数据结构学习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构与算法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-10-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-03-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10.6k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、线性表"><a href="#一、线性表" class="headerlink" title="一、线性表"></a>一、线性表</h2><h3 id="1-顺序储存结构的插入与删除"><a href="#1-顺序储存结构的插入与删除" class="headerlink" title="1.顺序储存结构的插入与删除"></a>1.顺序储存结构的插入与删除</h3><h4 id="1-获取元素"><a href="#1-获取元素" class="headerlink" title="(1)获取元素"></a>(1)获取元素</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+
+#include&lt;string&gt;
+
+using namespace std;
+
+class list{
+public:
+    int a[10]={1,2,3,4,5,6,7,8,9,10};
+    int length;
+    list(){length=sizeof(a)/4;}
+};
+//获取元素操作
+int GetNum(list t, int length, int *p){
+    //判断线表是否长度为0
+    if(length==0){
+        return 0;
+    }
+    int m;
+    cout &lt;&lt; "输入获取哪个元素" &lt;&lt; endl;
+    cin&gt;&gt;m;
+    //确保正确输入获取的元素下标
+    while(m&gt;length || m&lt;0){
+        cout &lt;&lt; "重新输入 " &lt;&lt;endl;
+        cin&gt;&gt;m;
+    }
+    length=m;
+    *p=t.a[length-1];
+    return *p;
+}
+int main(){
+    list t;
+    int q;
+    q=GetNum(t,t.length,&amp;q);
+    cout &lt;&lt; "这个数是" &lt;&lt;q&lt;&lt;endl;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-插入"><a href="#2-插入" class="headerlink" title="(2)插入"></a>(2)插入</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+
+using namespace std;
+
+#define MAXSIZE 100
+class list{
+private:
+    int data[MAXSIZE];
+    int length=0;
+public:
+    void inlist(int len);
+    void putlist(int len);
+    void onlist(int len);
+};
+int main()
+{
+    list T;
+    int len;
+    cout &lt;&lt;"请输入线性表的长度"&lt;&lt;endl;
+    cin&gt;&gt;len;
+    T.inlist(len);
+    T.putlist(len);
+    T.onlist(len);
+}
+inline void list::inlist(int len){
+    if(len&lt;1||len&gt;MAXSIZE){
+        cout &lt;&lt;"输入不规范"&lt;&lt;endl;
+    }else
+    {
+        cout &lt;&lt;"输入元素"&lt;&lt; endl;
+        for(int i=0;i&lt;len;i++){
+            cin&gt;&gt;data[i];
+        }
+        length=len;
+    }
+}
+inline void list::putlist(int len){
+    cout &lt;&lt; "输入的元素为" &lt;&lt;  endl;
+    for(int i=0;i&lt;len;i++){
+        cout &lt;&lt;data[i]&lt;&lt;endl;
+    }
+}
+inline void list::onlist(int len){
+    int n,point;
+    cout &lt;&lt;"插入的个数"&lt;&lt;endl;
+    cin &gt;&gt; n;
+    if(len+n&gt;=MAXSIZE &amp;&amp; n&gt;len+1){
+        cout &lt;&lt;"插入失败"&lt;&lt; endl;
+    }else
+    {
+        cout &lt;&lt;"插入成功"&lt;&lt;endl;
+        for(int i=0;i&lt;n;i++){
+            cout &lt;&lt;"插入的第"&lt;&lt;i+1&lt;&lt;"个数的位置"&lt;&lt;endl;
+            cin&gt;&gt;point;
+            cout &lt;&lt;"插入的数字是"&lt;&lt;endl;
+            for(int j=length-1;j&gt;=point-1;j--){
+                data[j+1]=data[j];
+            }    
+            cin&gt;&gt;data[point-1];
+            length++;
+            list::putlist(length);
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3-删除"><a href="#3-删除" class="headerlink" title="(3)删除"></a>(3)删除</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+
+using namespace std;
+
+#define MAXSIZE 100
+class list{
+private:
+    int data[MAXSIZE];
+    int length=0;
+public:
+    void inlist(int len);
+    void putlist(int len);
+    void onlist(int len);
+};
+int main()
+{
+    list T;
+    int len;
+    cout &lt;&lt;"请输入线性表的长度"&lt;&lt;endl;
+    cin&gt;&gt;len;
+    T.inlist(len);
+    T.putlist(len);
+    T.onlist(len);
+}
+inline void list::inlist(int len){
+    if(len&lt;1||len&gt;MAXSIZE){
+        cout &lt;&lt;"输入不规范"&lt;&lt;endl;
+    }else
+    {
+        cout &lt;&lt;"输入元素"&lt;&lt; endl;
+        for(int i=0;i&lt;len;i++){
+            cin&gt;&gt;data[i];
+        }
+        length=len;
+    }
+}
+inline void list::putlist(int len){
+    cout &lt;&lt; "输入的元素为" &lt;&lt;  endl;
+    for(int i=0;i&lt;len;i++){
+        cout &lt;&lt;data[i]&lt;&lt;endl;
+    }
+}
+inline void list::onlist(int len){
+    int n,point;
+    cout &lt;&lt;"删除的个数"&lt;&lt;endl;
+    cin &gt;&gt; n;
+    if(n&gt;=MAXSIZE || n&lt;0 ){
+        cout &lt;&lt;"删除失败"&lt;&lt; endl;
+    }else
+    {
+        cout &lt;&lt;"删除成功"&lt;&lt;endl;
+        for(int i=0;i&lt;n;i++){
+            cout &lt;&lt;"删除的第"&lt;&lt;i+1&lt;&lt;"个数的位置"&lt;&lt;endl;
+            cin&gt;&gt;point;
+            for(int j=point;j&lt;=length-1;j++){
+                data[j-1]=data[j];
+            }    
+            length--;
+            list::putlist(length);
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1666690310554.png" alt="优缺点"></p>
+<h3 id="2-链式储存结构"><a href="#2-链式储存结构" class="headerlink" title="2.链式储存结构"></a>2.链式储存结构</h3><p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667204968016.png" alt="头指针与头节点"></p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667205223108.png"></p>
+<h4 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h4><h5 id="（1）初始化赋值"><a href="#（1）初始化赋值" class="headerlink" title="（1）初始化赋值"></a>（1）初始化赋值</h5><p>头插法：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+typedef struct Node{
+    int date;
+    struct Node* next;
+}Node,*PNode;//Node 相当于struct Node , *PNode 相当于struct Node*
+//用PNode主要为了强调这是一个单链表，用Node*主要强调这是一个节点
+
+PNode ListNodeInit(){
+    Node* L;
+    L=(Node* )malloc(sizeof(Node));//申请头节点空间
+    L-&gt;next=NULL;
+    int a;
+    cout&lt;&lt;"请输入节点数字"&lt;&lt;endl;
+    cin&gt;&gt;a;
+    for(int i=0;i&lt;a;i++){
+        int t;
+        cin&gt;&gt;t;
+        Node* p;//创建节点
+        p=(Node* )malloc(sizeof(Node));
+        p-&gt;date=t;
+        p-&gt;next=L-&gt;next;
+        L-&gt;next=p;
+        int m;
+    }
+    return L;
+}
+void ListPrint(){
+    Node* O;
+    Node* Y=ListNodeInit();
+    O=Y-&gt;next;
+    while(O){
+        cout&lt;&lt;O-&gt;date&lt;&lt;" ";
+        O=O-&gt;next;
+    }
+}
+
+int main(){
+    ListPrint();
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>用头插法的遍历输出是逆序输出的，头插法是把每一个节点放在第一位，所以后面放在第一位的就会把之前的第一位挤到后面去</p>
+<p>通过调试数据可以看出链表结构如下</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667293723164.png" alt="L链表"></p>
+<p>输出结果如下</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667293885302.png"></p>
+<p>尾插法：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">PNode ListNodeInit(){
+    Node* L;
+    Node* r;//定义尾指针，每次都指向最后一个节点
+    L=(Node* )malloc(sizeof(Node));//申请头节点空间
+    L-&gt;next=NULL;
+    r=L;//尾指针指向头节点
+    int a;
+    cout&lt;&lt;"请输入节点数"&lt;&lt;endl;
+    cin&gt;&gt;a;
+    for(int i=0;i&lt;a;i++){
+        int t;
+        cin&gt;&gt;t;
+        Node* p;//创建节点
+        p=(Node* )malloc(sizeof(Node));
+        p-&gt;date=t;
+        r-&gt;next=p;//把新节点插入到r节点之后
+        r=p;//尾指针指向下一个节点
+    }
+    r-&gt;next=NULL;
+    return L;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667305383631.png" alt="图解"></p>
+<p>尾插的聊表结构如下：</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667305845976.png"></p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/1667305870232.png" alt="输出结果"></p>
+<h5 id="（2）查找"><a href="#（2）查找" class="headerlink" title="（2）查找"></a>（2）查找</h5><p>按位查找，返回第i个元素</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">// 按位查找,返回第i个数据
+Node *GetData_1(PNode L, int i)
+{
+    if (i &lt; 0)
+    {
+        return NULL;
+    }
+    Node *p;   // p指向当前指向的节点
+    int j = 0; // 计数,记录当前p指向的是第几个节点
+    p = L;     // p开始指向头节点
+    while (p != NULL &amp;&amp; j &lt; i)
+    {
+        p = p-&gt;next;
+        j++;
+    }
+    return p;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>按值查找，返回第i个数据</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Node *GetData_2(PNode L, int e)
+{
+    Node *p;   // p指向当前指向的节点
+    p = L-&gt;next;     // 从第一个数据开始查找,头节点是没有数据域的
+    while(p!=NULL &amp;&amp; p-&gt;date != e){//这里两个条件顺序不能变,不然会报错
+        p = p-&gt;next;
+    }
+    return p;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>查表长</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int GetListLen(PNode L){
+    Node* s = L;
+    int num=0;
+    while(s-&gt;next!=NULL){
+        s = s-&gt;next;
+        num++;
+    }
+    return num;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="（3）插入"><a href="#（3）插入" class="headerlink" title="（3）插入"></a>（3）插入</h5><p>指定节点的后插操作</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool Set_Behind(Node* p,int i){
+    if(p==NULL){//这里是防止在按位插入数据操作前的GetData()传入表尾的数据的NULL
+        return false;
+    }
+    Node* s = (Node*)malloc(sizeof(PNode));//开辟一块空间
+    s-&gt;date = i;
+    s-&gt;next = p-&gt;next;
+    p-&gt;next =s;
+    return true;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>按位插入数据</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool Set_Wei(PNode L,int i){
+    Node *p = GetData_1(L, i-1);//这里要传入i-1,因为插入数据的时候是前一个数据的next指向的
+    int t;
+    cout &lt;&lt;"插入的数据是:";
+    cin&gt;&gt;t; 
+    if(Set_Behind(p,t)){
+        return true;//如果插入成功就返回真
+    }else{
+        return false;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="（4）删除"><a href="#（4）删除" class="headerlink" title="（4）删除"></a>（4）删除</h5><p>指定节点p的删除</p>
+<p>这个操作的原理就是实际上就是把p后一个节点的数据搬到p节点，实现将p节点删除</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool ListDel_1(Node* p){
+    if(p==NULL){
+        return false;
+    }
+    Node* s = p-&gt;next;//让节点s指向p的下一个节点
+    p-&gt;date = p-&gt;next-&gt;date;//让p下一个节点的数据将p覆盖掉
+    p-&gt;next = s-&gt;next;//把p的指针域换成下一个节点的指针域
+    free(s);//释放s节点
+    return true;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该代码有点bug，p-&gt;date = p-&gt;next-&gt;date，如果是删除最后一个元素，那么最后指向的NULL是没有数据域的。</p>
+<p>按位删除节点</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool ListDel_2(PNode L,int i){
+    Node *p = GetData_1(L, i);//这里要传入i
+    if(ListDel_1(p)){
+        return true;//如果插入成功就返回真
+    }else{
+        return false;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>完整代码</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+typedef struct Node
+{
+    int date;
+    struct Node *next;
+} Node, *PNode; // Node 相当于struct Node , *PNode 相当于struct Node*
+// 用PNode主要为了强调这是一个单链表，用Node*主要强调这是一个节点
+
+// 尾插法创建链表
+PNode ListNodeInit()
+{
+    Node *L;
+    Node *r;                          // 定义尾指针，每次都指向最后一个节点
+    L = (Node *)malloc(sizeof(Node)); // 申请头节点空间
+    L-&gt;next = NULL;
+    r = L; // 尾指针指向头节点
+    int a;
+    cout &lt;&lt; "请输入节点数" &lt;&lt; endl;
+    cin &gt;&gt; a;
+    for (int i = 0; i &lt; a; i++)
+    {
+        int t;
+        cin &gt;&gt; t;
+        Node *p; // 创建节点
+        p = (Node *)malloc(sizeof(Node));
+        p-&gt;date = t;
+        r-&gt;next = p; // 把新节点插入到r节点之后
+        r = p;       // 尾指针指向下一个节点
+    }
+    r-&gt;next = NULL;
+    return L;
+}
+
+// 按位查找,返回第i个数据
+Node *GetData_1(PNode L, int i)
+{
+    if (i &lt; 0)
+    {
+        return NULL;
+    }
+    Node *p;   // p指向当前指向的节点
+    int j = 0; // 计数,记录当前p指向的是第几个节点
+    p = L;     // p开始指向头节点
+    while (p != NULL &amp;&amp; j &lt; i)
+    {
+        p = p-&gt;next;
+        j++;
+    }
+    return p;
+}
+//按值查找，返回第i个数据
+Node *GetData_2(PNode L, int e)
+{
+    Node *p;   // p指向当前指向的节点
+    p = L-&gt;next;     // 从第一个数据开始查找,头节点是没有数据域的
+    while(p != NULL &amp;&amp; p-&gt;date != e){
+        p = p-&gt;next;
+    }
+    return p;
+}
+//返回表长
+int GetListLen(PNode L){
+    Node* s = L;
+    int num=0;
+    while(s-&gt;next!=NULL){
+        s = s-&gt;next;
+        num++;
+    }
+    return num;
+}
+//指定节点的后插操作
+bool Set_Behind(Node* p,int t){
+    if(p==NULL){
+        return false;
+    }
+    Node* s = (Node*)malloc(sizeof(PNode));//开辟一块空间
+    s-&gt;date = t;
+    s-&gt;next = p-&gt;next;
+    p-&gt;next =s;
+    return true;
+}
+//按位插入数据
+bool Set_Wei(PNode L,int i){
+    Node *p = GetData_1(L, i-1);//这里要传入i-1,因为插入数据的时候是前一个数据的next指向的
+    int t;
+    cout &lt;&lt;"插入的数据是:";
+    cin&gt;&gt;t; 
+    if(Set_Behind(p,t)){
+        return true;//如果插入成功就返回真
+    }else{
+        return false;
+    }
+}
+//指定节点的删除
+bool ListDel_1(Node* p){
+    if(p==NULL){
+        return false;
+    }
+    Node* s = p-&gt;next;//让节点s指向p的下一个节点
+    p-&gt;date = p-&gt;next-&gt;date;//让p下一个节点的数据将p覆盖掉
+    p-&gt;next = s-&gt;next;//把p的指针域换成下一个节点的指针域
+    free(s);//释放s节点
+    return true;
+}
+//按位删除数据
+bool ListDel_2(PNode L,int i){
+    Node *p = GetData_1(L, i);//这里要传入i
+    if(ListDel_1(p)){
+        return true;//如果插入成功就返回真
+    }else{
+        return false;
+    }
+}
+
+// 遍历链表
+void ListPrint(PNode L)
+{
+    Node *s;
+    s = L-&gt;next; // 让s指向第一个元素
+    while (s != NULL)
+    {
+        cout &lt;&lt; s-&gt;date &lt;&lt; " ";
+        s = s-&gt;next;
+    }
+}
+
+int main()
+{
+    PNode L = ListNodeInit();
+    cout &lt;&lt; "------------------------------" &lt;&lt; endl;
+    cout&lt;&lt;"遍历这个表"&lt;&lt;endl;
+    ListPrint(L);
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "------------------------------" &lt;&lt; endl;
+    int len = GetListLen(L);
+    cout &lt;&lt;"这个表长为:"&lt;&lt;len&lt;&lt;endl;
+    cout &lt;&lt; "------------------------------" &lt;&lt; endl;
+    int i;
+    cout &lt;&lt; "请输入要查找的位数:";
+    cin &gt;&gt; i;
+    Node *t1 = GetData_1(L, i);
+    cout &lt;&lt; "第" &lt;&lt; i &lt;&lt; "个节点的数据是" &lt;&lt; t1-&gt;date &lt;&lt; endl;
+    cout &lt;&lt; "------------------------------" &lt;&lt; endl;
+    int e;
+    cout &lt;&lt; "请输入要查找的数:";
+    cin &gt;&gt; e;
+    Node *t2 = GetData_2(L, e);
+    if(t2!=NULL){
+        cout &lt;&lt;"找到了数据为"&lt;&lt;e&lt;&lt;"的元素"&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;"没有找到值为"&lt;&lt;e&lt;&lt;"的元素"&lt;&lt;endl;
+    }
+    cout &lt;&lt; "------------------------------" &lt;&lt; endl;
+    cout &lt;&lt; "请输入要插入的位数:";
+    cin &gt;&gt; i;
+    bool ret = Set_Wei(L, i);
+    if(ret){
+        cout &lt;&lt; "插入成功"&lt;&lt; endl;
+    }else{
+        cout &lt;&lt; "插入失败"&lt;&lt; endl;
+    }
+    cout&lt;&lt;"插入后遍历这个表"&lt;&lt;endl;
+    ListPrint(L);
+    cout &lt;&lt; "------------------------------" &lt;&lt; endl;
+    cout &lt;&lt; "请输入要删除的位数:";
+    cin &gt;&gt; i;
+    bool ret2 = ListDel_2(L,i);
+    if(ret){
+        cout &lt;&lt; "删除成功"&lt;&lt; endl;
+    }else{
+        cout &lt;&lt; "删除失败"&lt;&lt; endl;
+    }
+    cout&lt;&lt;"删除后遍历这个表"&lt;&lt;endl;
+    ListPrint(L);
+    cout &lt;&lt; "------------------------------" &lt;&lt; endl;
+
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/image-20221226174029163.png"></p>
+<h4 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h4><p>双链表的核心操作与单链表基本无异，双链表多了一个前指针，指向节点的前一个节点，更方便了某些操作</p>
+<h5 id="1-初始化赋值"><a href="#1-初始化赋值" class="headerlink" title="(1)初始化赋值"></a>(1)初始化赋值</h5><p>初始化链表</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool InitDList(DPList&amp; L){
+    if(L!=NULL){
+    L = (DNode* )malloc(sizeof(DPList));//开辟头节点
+    L-&gt;prior = NULL;
+    L-&gt;next = NULL;
+    }else{
+        return false;
+    }
+    return true;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>尾插赋值</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">DPList SetDList(DPList&amp; L){
+    InitDList(L);//初始一个空表 
+    int t;
+    DNode* r;//创建尾指针
+    r = L;
+    cout &lt;&lt;"请输入节点数:";
+    cin&gt;&gt;t;
+    cout &lt;&lt;"请输入数据"&lt;&lt;endl;
+    for(int i=0;i&lt;t;i++){
+        int m;
+        cin&gt;&gt;m;
+        DNode* p = (DNode*)malloc(sizeof(DPList));
+        p-&gt;data = m;//把数据给节点p
+        r-&gt;next = p;//将r的next指向p
+        p-&gt;prior =r;//将p的前指针指向r
+        r = p;//尾指针指向下一个节点
+    }
+    r-&gt;next = NULL;
+    return L;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>遍历链表</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void printDList(DPList t){
+    DNode* s;
+    s = t-&gt;next;
+    while (s != NULL)
+    {
+        cout &lt;&lt;s-&gt;data&lt;&lt;" ";
+        s = s-&gt;next;
+        /* code */
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-插入-1"><a href="#2-插入-1" class="headerlink" title="(2)插入"></a>(2)插入</h5><p>跟单链表操作差不多，在单链表先写了查找的函数，这里就直接写按位查找的插入操作了</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool DListInsert(DPList&amp; L,int i,int e){
+    int m = DListLen(L);//计算链表长度
+    if(i&lt;0 || i&gt;m){
+        return false;//判断传入位置是否合适
+    }
+    DNode* p;//显示p当前指向的节点
+    int j = 0;//计数
+    p = L;//p从头节点开始，头节点是第0个数据
+    while(p!=NULL &amp;&amp; j&lt;i-1){//这里是i-1，因为后插操作使用的是前节点的next指针操作的
+        p = p-&gt;next;
+        j++;
+    }
+    //-------------------------------------以上是按位查找操作
+    if(p==NULL){
+        return false;
+    }
+    DNode* s = (DNode*)malloc(sizeof(DPList));//开辟一个节点用于插入
+    s-&gt;data = e;//把数据给s节点
+    p-&gt;next-&gt;prior = s;//p下一个节点的前指针指向s
+    s-&gt;next = p-&gt;next;//将p下一个节点给s下一个节点
+    s-&gt;prior = p;//s的前指针指向p
+    p-&gt;next = s; //p的下一个节点改为s
+    return true;
+    //-------------------------------------后插操作
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面两个操作可以跟单链表里一下分别用两个函数实现，便于代码的维护和复用</p>
+<h5 id="3-删除-1"><a href="#3-删除-1" class="headerlink" title="(3)删除"></a>(3)删除</h5><p>删除指点节点</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//按位删除
+bool DListDel(DPList&amp; L,int i){
+    int m = DListLen(L);//计算链表长度
+    if(i&lt;0 || i&gt;m){
+        return false;//判断传入位置是否合适
+    }
+    DNode* p;//显示p当前指向的节点
+    int j = 0;//计数
+    p = L;//p从头节点开始，头节点是第0个数据
+    while(p!=NULL &amp;&amp; j&lt;i-1){//这里是i-1，因为后插操作使用的是前节点的next指针操作的
+        p = p-&gt;next;
+        j++;
+    }
+    //-------------------------------------以上是按位查找操作
+    if(p==NULL){
+        return false;
+    }
+    DNode* s = p-&gt;next;//找到p的下一个节点
+    if(s == NULL){
+        return false;//如果下一个节点是NULL返回false
+    }
+    p-&gt;next = s-&gt;next;//把s下一个节点给p
+    if(s-&gt;next!=NULL){//判断s下一个节点是否是空
+        s-&gt;next-&gt;prior = p;//将s下一个节点的前指针指向p
+    }
+    free(s);//删除s
+    return true;
+    //-------------------------------------后插操作
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>完整代码</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+typedef struct Node
+{
+    int data;
+    struct Node* prior;//前节点
+    struct Node* next;//后节点
+    /* data */
+}DNode,*DPList;
+//初始化双链表
+bool InitDList(DPList&amp; L){
+    if(L!=NULL){
+    L = (DNode* )malloc(sizeof(DPList));//开辟头节点
+    L-&gt;prior = NULL;
+    L-&gt;next = NULL;
+    }else{
+        return false;
+    }
+    return true;
+}
+//建立双链表
+DPList SetDList(DPList&amp; L){
+    InitDList(L);//初始一个空表 
+    int t;
+    DNode* r;//创建尾指针
+    r = L;
+    cout &lt;&lt;"请输入节点数:";
+    cin&gt;&gt;t;
+    cout &lt;&lt;"请输入数据"&lt;&lt;endl;
+    for(int i=0;i&lt;t;i++){
+        int m;
+        cin&gt;&gt;m;
+        DNode* p = (DNode*)malloc(sizeof(DPList));
+        p-&gt;data = m;//把数据给节点p
+        r-&gt;next = p;//将r的next指向p
+        p-&gt;prior =r;//将p的前指针指向r
+        r = p;//尾指针指向下一个节点
+    }
+    r-&gt;next = NULL;
+    return L;
+}
+//遍历链表
+void printDList(DPList t){
+    DNode* s;
+    s = t-&gt;next;
+    while (s != NULL)
+    {
+        cout &lt;&lt;s-&gt;data&lt;&lt;" ";
+        s = s-&gt;next;
+        /* code */
+    }
+}
+//计算链表长度
+int DListLen(DPList L){
+    int num = 0;
+    if(L==NULL){
+        return num;
+    }else{
+        DNode* s;
+        s = L;
+        while (s-&gt;next!=NULL)
+        {
+            s = s-&gt;next;
+            num++;
+        } 
+    }
+    return num;
+}
+//按位插入
+bool DListInsert(DPList&amp; L,int i,int e){
+    int m = DListLen(L);//计算链表长度
+    if(i&lt;0 || i&gt;m){
+        return false;//判断传入位置是否合适
+    }
+    DNode* p;//显示p当前指向的节点
+    int j = 0;//计数
+    p = L;//p从头节点开始，头节点是第0个数据
+    while(p!=NULL &amp;&amp; j&lt;i-1){//这里是i-1，因为后插操作使用的是前节点的next指针操作的
+        p = p-&gt;next;
+        j++;
+    }
+    //-------------------------------------以上是按位查找操作
+    if(p==NULL){
+        return false;
+    }
+    DNode* s = (DNode*)malloc(sizeof(DPList));//开辟一个节点用于插入
+    s-&gt;data = e;//把数据给s节点
+    p-&gt;next-&gt;prior = s;//p下一个节点的前指针指向s
+    s-&gt;next = p-&gt;next;//将p下一个节点给s下一个节点
+    s-&gt;prior = p;//s的前指针指向p
+    p-&gt;next = s; //p的下一个节点改为s
+    return true;
+    //-------------------------------------后插操作
+}
+//按位删除
+bool DListDel(DPList&amp; L,int i){
+    int m = DListLen(L);//计算链表长度
+    if(i&lt;0 || i&gt;m){
+        return false;//判断传入位置是否合适
+    }
+    DNode* p;//显示p当前指向的节点
+    int j = 0;//计数
+    p = L;//p从头节点开始，头节点是第0个数据
+    while(p!=NULL &amp;&amp; j&lt;i-1){//这里是i-1，因为后插操作使用的是前节点的next指针操作的
+        p = p-&gt;next;
+        j++;
+    }
+    //-------------------------------------以上是按位查找操作
+    if(p==NULL){
+        return false;
+    }
+    DNode* s = p-&gt;next;//找到p的下一个节点
+    if(s == NULL){
+        return false;//如果下一个节点是NULL返回false
+    }
+    p-&gt;next = s-&gt;next;//把s下一个节点给p
+    if(s-&gt;next!=NULL){//判断s下一个节点是否是空
+        s-&gt;next-&gt;prior = p;//将s下一个节点的前指针指向p
+    }
+    free(s);//删除s
+    return true;
+    //-------------------------------------后插操作
+}
+int main(){
+    DPList L;
+    L = SetDList(L);
+    cout&lt;&lt;"----------------------------"&lt;&lt;endl;
+    cout&lt;&lt;"插入前"&lt;&lt;endl;
+    printDList(L);
+    cout &lt;&lt;endl;
+    cout&lt;&lt;"----------------------------"&lt;&lt;endl;
+    cout &lt;&lt;"请分别输入插入的位置和数据:";
+    int i;
+    int e;
+    cin&gt;&gt;i;
+    cin&gt;&gt;e;
+    DListInsert(L,i,e);
+    cout&lt;&lt;"插入后"&lt;&lt;endl;
+    printDList(L);
+    cout &lt;&lt;endl;
+    cout&lt;&lt;"----------------------------"&lt;&lt;endl;
+    cout &lt;&lt;"请输入删除的位置:";
+    cin&gt;&gt;i;
+    DListDel(L,i);
+    cout&lt;&lt;"删除后"&lt;&lt;endl;
+    printDList(L);
+    cout &lt;&lt;endl;
+    cout&lt;&lt;"----------------------------"&lt;&lt;endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h4><p>循环链表有循环单链表和循环双链表，本质都是一样的，不过循环链表中最后一个节点的指向不在是NULL而是头节点，这也就意味着在循环链表操作中不存在NULL的判断</p>
+<h4 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h4><p>静态链表实质上就是由数组实现的链表</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/image-20221227160819117.png" alt="原理图"></p>
+<p>数据被存放在一块连续的空间内，定义方式</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#define MaxSize 10
+typedef struct{
+	int data;
+	int next;
+}SList[MaxSize];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里的next保存的是下一个数据所在的位置</p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/image-20221227161215809.png"></p>
+<h2 id="二、栈与队列"><a href="#二、栈与队列" class="headerlink" title="二、栈与队列"></a>二、栈与队列</h2><h3 id="1-栈"><a href="#1-栈" class="headerlink" title="1.栈"></a>1.栈</h3><h4 id="1-栈的顺序储存"><a href="#1-栈的顺序储存" class="headerlink" title="(1)栈的顺序储存"></a>(1)栈的顺序储存</h4><h5 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h5><p>定义顺序栈</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct{
+  int data[MaxSize];//静态数组存放元素
+  int top;//栈顶指针
+}SStack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>初始化栈</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">SStack InitSStack(){
+    SStack SS;
+    SS.top=-1;//栈顶指针指向-1
+    return SS;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>判断栈是否为空</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool If_empty(SStack SS){
+    return SS.top==-1;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>判断是否满</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool If_full(SStack SS){
+    return SS.top==MaxSize-1;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>进栈</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool Push(SStack&amp; SS,int x){
+    if(SS.top==MaxSize-1){
+        cout &lt;&lt;"入栈失败"&lt;&lt;endl;
+        return false;
+    }
+    SS.data[++SS.top] = x;
+    return true;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>出栈</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int pop(SStack&amp; SS){
+    if(If_empty(SS)){
+        cout&lt;&lt;"出栈失败"&lt;&lt;endl;
+        return false;
+    }
+    int item;
+    item  = SS.data[SS.top];
+    SS.top--;
+    return item;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+#define MaxSize 10
+//定义顺序栈
+typedef struct{
+    int data[MaxSize];//静态数组存放元素
+    int top;//栈顶指针
+}SStack;
+
+//初始化栈
+SStack InitSStack(){
+    SStack SS;
+    SS.top=-1;//栈顶指针指向-1
+    return SS;
+}
+//判断栈是否为空
+bool If_empty(SStack SS){
+    return SS.top==-1;
+}
+//判断栈是否已满
+bool If_full(SStack SS){
+    return SS.top==MaxSize-1;
+}
+//进栈
+bool Push(SStack&amp; SS,int x){
+    if(SS.top==MaxSize-1){
+        cout &lt;&lt;"入栈失败"&lt;&lt;endl;
+        return false;
+    }
+    SS.data[++SS.top] = x;
+    return true;
+}
+//出栈并返回值
+int pop(SStack&amp; SS){
+    if(If_empty(SS)){
+        cout&lt;&lt;"出栈失败"&lt;&lt;endl;
+        return false;
+    }
+    int item;
+    item  = SS.data[SS.top];
+    SS.top--;
+    return item;
+}
+int main(){
+    SStack SS=InitSStack();
+    for(int i=0;i&lt;10;i++){
+        Push(SS,i);
+    }
+    int item;
+    for(int i=0;i&lt;10;i++){
+        item=pop(SS);
+        cout &lt;&lt;item&lt;&lt;" ";
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-栈的链式储存"><a href="#2-栈的链式储存" class="headerlink" title="(2)栈的链式储存"></a>(2)栈的链式储存</h4><h5 id="功能实现-1"><a href="#功能实现-1" class="headerlink" title="功能实现"></a>功能实现</h5><p>定义链式节点</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct ListNode
+{
+    int data;
+    ListNode* next;
+}ListNode;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>定义链式栈类</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class ListStack{
+private:
+    ListNode* top;
+    int size;//队列长度
+public:
+    ListStack();//构造函数初始化队列
+    void push(int x);//入队操作
+    bool If_empty();//判断队列是否为空
+    bool pop();//出队操作
+    int GetTop();//获取栈顶元素
+    void print(ListStack L);//通过出队和获取栈顶元素实现遍历
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>函数实现</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ListStack::ListStack(){
+    top = (ListNode*)malloc(sizeof(ListNode));
+    //为top开辟空间，不开辟会报错
+    top-&gt;next = NULL;//不带头节点
+    size = 0;
+}
+
+void ListStack::push(int x){
+    ListNode* p = (ListNode*)malloc(sizeof(ListNode));//开辟一个节点
+    p-&gt;data =x;
+    p-&gt;next = top-&gt;next;
+    top-&gt;next = p;
+    size++;
+}
+
+bool ListStack::If_empty(){
+    return top-&gt;next==NULL;
+}
+
+bool ListStack::pop(){
+    if(ListStack::If_empty()){
+        return false;//队空返回false
+    }
+    ListNode* s = top-&gt;next;
+    top-&gt;next = s-&gt;next;
+    free(s);
+    size--;
+    return true;
+}
+
+int ListStack::GetTop(){
+    return top-&gt;next-&gt;data;
+}
+
+void ListStack::print(ListStack L){
+    int t = L.size;
+    int item;
+    for(int i=0;i&lt;t;i++){
+        item = L.GetTop();
+        cout &lt;&lt;item&lt;&lt;" ";
+        L.pop();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+//定义链式节点
+typedef struct ListNode
+{
+    int data;
+    ListNode* next;
+}ListNode;
+//定义链式队列类
+class ListStack{
+private:
+    ListNode* top;
+    int size;//队列长度
+public:
+    ListStack();//构造函数初始化队列
+    void push(int x);//入队操作
+    bool If_empty();//判断队列是否为空
+    bool pop();//出队操作
+    int GetTop();//获取栈顶元素
+    void print(ListStack L);//通过出队和获取栈顶元素实现遍历
+};
+ListStack::ListStack(){
+    top = (ListNode*)malloc(sizeof(ListNode));
+    //为top开辟空间，不开辟会报错
+    top-&gt;next = NULL;//不带头节点
+    size = 0;
+}
+
+void ListStack::push(int x){
+    ListNode* p = (ListNode*)malloc(sizeof(ListNode));//开辟一个节点
+    p-&gt;data =x;
+    p-&gt;next = top-&gt;next;
+    top-&gt;next = p;
+    size++;
+}
+
+bool ListStack::If_empty(){
+    return top-&gt;next==NULL;
+}
+
+bool ListStack::pop(){
+    if(ListStack::If_empty()){
+        return false;//队空返回false
+    }
+    ListNode* s = top-&gt;next;
+    top-&gt;next = s-&gt;next;
+    free(s);
+    size--;
+    return true;
+}
+
+int ListStack::GetTop(){
+    return top-&gt;next-&gt;data;
+}
+
+void ListStack::print(ListStack L){
+    int t = L.size;
+    int item;
+    for(int i=0;i&lt;t;i++){
+        item = L.GetTop();
+        cout &lt;&lt;item&lt;&lt;" ";
+        L.pop();
+    }
+}
+int main(){
+    ListStack L;
+    L.push(1);
+    L.push(2);
+    L.push(3);
+    L.push(4);
+    L.push(5);
+    L.print(L);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3-栈在括号匹配中的应用"><a href="#3-栈在括号匹配中的应用" class="headerlink" title="(3)栈在括号匹配中的应用"></a>(3)栈在括号匹配中的应用</h4><p>在程序中的括号匹配可以利用栈来实现</p>
+<h5 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool BraceMatch(char* str,int len){
+    SStack SS = InitSStack();//初始化栈
+    for(int i=0;i&lt;len;i++){
+        if(str[i]=='(' || str[i]=='[' || str[i]=='{'){
+            Push(SS,str[i]);//扫描到左括号入栈
+        }else{
+            if(If_empty(SS))
+                return false;//如果没有扫描到左括号并且栈为空返回false
+            //这个时候左括号扫描完了，可以出栈左括号了
+            char item = pop(SS);//用item接受出栈的值进行匹配
+            if(str[i]==')' &amp;&amp; item!='('){
+                return false;//括号不匹配
+            }
+            if(str[i]==']' &amp;&amp; item!='['){
+                return false;//括号不匹配
+            }
+            if(str[i]=='}' &amp;&amp; item!='{'){
+                return false;//括号不匹配
+            }
+        }
+    }
+    return If_empty(SS);//如果全部成功出栈返回true
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="完整代码-2"><a href="#完整代码-2" class="headerlink" title="完整代码"></a>完整代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+#define MaxSize 10
+//定义顺序栈
+typedef struct{
+    char data[MaxSize];//静态数组存放元素
+    int top;//栈顶指针
+}SStack;
+
+//初始化栈
+SStack InitSStack(){
+    SStack SS;
+    SS.top=-1;//栈顶指针指向-1
+    return SS;
+}
+//判断栈是否为空
+bool If_empty(SStack SS){
+    return SS.top==-1;
+}
+//判断栈是否已满
+bool If_full(SStack SS){
+    return SS.top==MaxSize-1;
+}
+//进栈
+bool Push(SStack&amp; SS,char x){
+    if(SS.top==MaxSize-1){
+        cout &lt;&lt;"入栈失败"&lt;&lt;endl;
+        return false;
+    }
+    SS.data[++SS.top] = x;
+    return true;
+}
+//出栈并返回值
+char pop(SStack&amp; SS){
+    if(If_empty(SS)){
+        cout&lt;&lt;"出栈失败"&lt;&lt;endl;
+        return false;
+    }
+    char item;
+    item  = SS.data[SS.top];
+    SS.top--;
+    return item;
+}
+
+bool BraceMatch(char* str,int len){
+    SStack SS = InitSStack();//初始化栈
+    for(int i=0;i&lt;len;i++){
+        if(str[i]=='(' || str[i]=='[' || str[i]=='{'){
+            Push(SS,str[i]);//扫描到左括号入栈
+        }else{
+            if(If_empty(SS))
+                return false;//如果没有扫描到左括号并且栈为空返回false
+            //这个时候左括号扫描完了，可以出栈左括号了
+            char item = pop(SS);//用item接受出栈的值进行匹配
+            if(str[i]==')' &amp;&amp; item!='('){
+                return false;//括号不匹配
+            }
+            if(str[i]==']' &amp;&amp; item!='['){
+                return false;//括号不匹配
+            }
+            if(str[i]=='}' &amp;&amp; item!='{'){
+                return false;//括号不匹配
+            }
+        }
+    }
+    return If_empty(SS);//如果全部成功出栈返回true
+}
+
+int main(){
+    char* str;
+    int len = 6;
+    for(int i = 0;i&lt;len;i++){
+        cin&gt;&gt;str[i];
+    }
+    if(BraceMatch(str,len)){
+        cout &lt;&lt;"匹配成功";
+    }else{
+        cout &lt;&lt;"匹配失败";
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/image-20221229151254532.png"></p>
+<h4 id="4-栈在表达式求值中的应用"><a href="#4-栈在表达式求值中的应用" class="headerlink" title="(4)栈在表达式求值中的应用"></a>(4)栈在表达式求值中的应用</h4><h5 id="计算中缀表达式"><a href="#计算中缀表达式" class="headerlink" title="计算中缀表达式"></a>计算中缀表达式</h5><p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/image-20221229154354234.png"></p>
+<p><img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/image-20221229162405298.png" alt="算法思路"></p>
+<h6 id="功能实现-2"><a href="#功能实现-2" class="headerlink" title="功能实现"></a>功能实现</h6><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void ListStack::compute(ListStack L1,ListStack L2){
+    char a;//运算符栈传入的是运算的ascll码对应的，用char接收自动转化
+    T b,c,d;
+    a = L1.pop();
+    b = L2.pop();
+    c = L2.pop();
+    if(a=='*'){
+        d = c*b;//这里的c b位置不能改变，因为出栈的顺序是固定的
+    }else if(a=='/'){
+        d = c/b;
+    }else if(a=='+'){
+        d = c+b;
+    }else if(a=='-'){
+        d = c-d;
+    }else{
+        //cout &lt;&lt;"erro"&lt;&lt;endl;
+    }
+    L2.push(d);//将运算后的值重新压入栈中
+}
+//计算中缀表达式
+//思路初始化两个栈，一个用来放操作数，一个用来放运算符
+//要是遇到了操作数压入操作数栈
+//要是遇到运算符压入运算符栈(弹出运算的时候也会弹出两个操作数进行计算，并将结果放回操作数栈)用compute函数实现
+double ListStack::Cal(char str[100]){
+    int len = 0;
+    for(int i = 0;str[i]!='\0';i++){
+        len++;//计算表达式长度
+    }   
+    ListStack L1;
+    ListStack L2;
+    //(1+2)*3-(2+2)/4
+    for(int i =0;i&lt;=len;i++){
+        if('0'&lt;=str[i] &amp;&amp; str[i]&lt;='9'){//判断是不是数字
+            L2.push(str[i]-48);//因为char传入时转成ascll,减去48就是原来的值
+            continue;//存入一个后直接开始下一轮循环
+        }//这是当表达式的开头不是括号的时候   
+        if(str[i]=='(' || L1.If_empty()){//如果开头是括号就将(压入栈，如果不是，那么执行了上面的if，下一个也肯定是运算符
+            L1.push(str[i]);//这里不是存数字直接存就可以了
+            continue;
+        }
+        if(str[i]==')'){//如果是)则要开始计算括号里的,)是不需要入栈的，只是一个判断的作用
+            char item = L1.GetTop();
+            //这个地方我开始写的时候是while(item!='(')，这样就写成一个死循环了，因为现在的item就是开始的值静态的，这样写循环里要加一句item = L1.GetTop();重新获取写的栈顶值
+            while(item!='('){//如果栈里不是两个连续的( (,这里用while不用if是因为可能括号里不止一个运算符  列入((1+2*2/2)*3)-(2+2)/4
+                this-&gt;compute(L1,L2);//计算
+                item = L1.GetTop();
+            }
+            L1.pop();//将栈中的(出栈
+            continue;
+        }
+        if(str[i]=='*'||str[i]=='/'){
+            T item2 = L1.GetTop();//看上一个运算符是否已经是*或/，如果是则先运算上一个* /  例如((1+2*2/2)*3)-(2+2)/4
+            if(item2 == '/' || item2 == '*'){
+                this-&gt;compute(L1,L2);
+            }
+            L1.push(str[i]);//在把这个运算符压入栈
+            continue;
+        }
+        if(str[i]=='+' || str[i]=='-'){
+            T item3 = L1.GetTop();
+            if(item3 !='('){//如果栈最上面不是(则直接运算  列如  (1+(2-3)+4)/4
+                this-&gt;compute(L1,L2);
+            }
+            L1.push(str[i]);//如果是则直接进栈
+            continue;
+        }
+        while(!L1.If_empty()){//如果开头不是(,运算到最后栈不为空则继续运算
+            this-&gt;compute(L1,L2); //例如1+2-(1*2)
+        }
+    }
+    T num;
+    num = L2.GetTop();//获取运算值
+    return num;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>测试代码</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void test(){
+    ListStack L;
+    char str[100];
+    cout &lt;&lt;"请输入计算的中缀式:";
+    cin&gt;&gt;str;
+    int num = L.Cal(str);
+    cout &lt;&lt;num; 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-队列"><a href="#2-队列" class="headerlink" title="2.队列"></a>2.队列</h3><h4 id="1-队列的顺序储存"><a href="#1-队列的顺序储存" class="headerlink" title="(1)队列的顺序储存"></a>(1)队列的顺序储存</h4><h5 id="功能实现-3"><a href="#功能实现-3" class="headerlink" title="功能实现"></a>功能实现</h5><p>队列的定义</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct{
+    int data[MaxSize];//用静态数组存放队列,一块连续的的储存空间
+    int front,rear;//队头指针和队尾指针,队尾指针是指向下一个要插入元素的位置,而不是最后一个元素
+    int size;//记录队列长度
+}SQueue;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>初始化一个队列</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">SQueue InitSQueue(){
+    SQueue SQ;
+    SQ.front=SQ.rear=0;//开始的时候队头和队尾指针都指向,起始位置
+    SQ.size=0;
+    return SQ;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>判断队列是否为空</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool If_empty(SQueue SQ){
+    if(SQ.front==SQ.rear&amp;&amp;SQ.size==0){//当两个指针指向同一块位置时判断为空且长度为0
+        return true;
+    }else{
+        return false;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>判断队列是否已满</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//判断队列是否已满
+bool If_full(SQueue SQ){
+    if(SQ.size==MaxSize){
+        return true;
+    }else{
+        return false;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>入队操作</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool In_queue(SQueue&amp; SQ,int e){
+    bool ret = If_full(SQ);
+    if(ret){
+        cout&lt;&lt;"这个队列已满,入队失败"&lt;&lt;endl;
+        return false;
+    }
+    SQ.data[SQ.rear]=e;//将数据入队
+    SQ.rear=(SQ.rear+1)%MaxSize;//实现循环队列
+    SQ.size++;//队列长度加1
+    return true;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>SQ.rear=(SQ.rear+1)%MaxSize;这一句要模上Maxsize之后当rear达到10的时候就会回到0，实现循环队列</p>
+<p>出队操作</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int Out_queue(SQueue&amp; SQ,int&amp; x){
+    if(If_empty(SQ)){
+        cout &lt;&lt;"出队失败"&lt;&lt;endl;//判读队列是否为空
+        return 0;
+    }
+    x=SQ.data[SQ.front];
+    SQ.front=(SQ.front+1)%MaxSize;
+    SQ.size--;
+    return x;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>因为队列不能够遍历，所以用出队的返回值可以模拟遍历</p>
+<h5 id="完整代码-3"><a href="#完整代码-3" class="headerlink" title="完整代码"></a>完整代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//顺序存储实现的队列
+#include &lt;iostream&gt;
+using namespace std;
+#define MaxSize 10
+//队列的定义
+typedef struct{
+    int data[MaxSize];//用静态数组存放队列,一块连续的的储存空间
+    int front,rear;//队头指针和队尾指针,队尾指针是指向下一个要插入元素的位置,而不是最后一个元素
+    int size;//记录队列长度
+}SQueue;
+
+//初始化一个顺序队列
+SQueue InitSQueue(){
+    SQueue SQ;
+    SQ.front=SQ.rear=0;//开始的时候队头和队尾指针都指向,起始位置
+    SQ.size=0;
+    return SQ;
+}
+//判断队列是否为空
+bool If_empty(SQueue SQ){
+    if(SQ.front==SQ.rear&amp;&amp;SQ.size==0){//当两个指针指向同一块位置时判断为空
+        return true;
+    }else{
+        return false;
+    }
+}
+//判断队列是否已满
+bool If_full(SQueue SQ){
+    if(SQ.size==MaxSize){
+        return true;
+    }else{
+        return false;
+    }
+}
+//入队操作
+bool In_queue(SQueue&amp; SQ,int e){
+    bool ret = If_full(SQ);
+    if(ret){
+        cout&lt;&lt;"这个队列已满,入队失败"&lt;&lt;endl;
+        return false;
+    }
+    SQ.data[SQ.rear]=e;//将数据入队
+    SQ.rear=(SQ.rear+1)%MaxSize;//实现循环队列
+    SQ.size++;//队列长度加1
+    return true;
+}
+//出队操作，并返回出队的值
+int Out_queue(SQueue&amp; SQ,int&amp; x){
+    if(If_empty(SQ)){
+        cout &lt;&lt;"出队失败"&lt;&lt;endl;//判读队列是否为空
+        return 0;
+    }
+    x=SQ.data[SQ.front];
+    SQ.front=(SQ.front+1)%MaxSize;
+    SQ.size--;
+    return x;
+}
+int main(){
+    int m;
+    SQueue SQ = InitSQueue();
+    for(int i = 0;i&lt;10;i++){
+        In_queue(SQ,i);
+    }
+    for(int i = 0;i&lt;10;i++){
+        Out_queue(SQ,m);
+        cout &lt;&lt;m&lt;&lt;" ";
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-队列的链式储存"><a href="#2-队列的链式储存" class="headerlink" title="(2)队列的链式储存"></a>(2)队列的链式储存</h4><h5 id="功能实现-4"><a href="#功能实现-4" class="headerlink" title="功能实现"></a>功能实现</h5><p>队列定义</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct ListNode
+{
+    int data;
+    ListNode* next;
+}ListNode;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>队列类建立</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class ListQueue{
+private:
+    ListNode* front;//队头指针
+    ListNode* rear;//队尾指针
+    int size;//队列长度
+public:
+    ListQueue();//构造函数初始化队列
+    ~ListQueue();//析构函数销毁队列
+    void In_Queue(int x);//入队操作
+    bool If_empty();//判断队列是否为空
+    bool Out_Queue(int&amp; x);//出队操作
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>函数实现</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ListQueue::ListQueue(){
+    front = rear =(ListNode*)malloc(sizeof(ListNode));//队头和队尾指针都指向头节点
+    front-&gt;next=NULL;
+    size=0;
+}
+
+void ListQueue::In_Queue(int x){
+    ListNode* s = (ListNode*)malloc(sizeof(ListNode));
+    s-&gt;data = x;
+    s-&gt;next =NULL;
+    rear-&gt;next =s;//让rear的next指针域指向s
+    rear = s;//将s改为尾指针
+    size++;
+}
+
+bool ListQueue::If_empty(){
+    if(this-&gt;front==this-&gt;rear){
+        cout &lt;&lt;"这个队列是空的"&lt;&lt;endl;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool ListQueue::Out_Queue(int&amp; x){
+    if(this-&gt;If_empty()){
+        cout &lt;&lt;"出队失败"&lt;&lt;endl;
+        return false;
+    }
+    ListNode* p = front-&gt;next;//用p指向这次要出队的节点
+    x  = p-&gt;data;//用x接收要出队节点的数据
+    front-&gt;next = p-&gt;next;//修改头节点指向
+    if(rear == p){//如果要删除的是最后一个节点
+        front = rear;
+    }
+    free(p);//删除节点
+    size--;
+    return true;
+}
+
+ListQueue::~ListQueue(){
+    if(front!=rear){
+        ListNode* p = front-&gt;next;//用p指向这次要出队的节点
+        front-&gt;next = p-&gt;next;//修改头节点指向
+        if(rear == p){//如果要删除的是最后一个节点
+            front = rear;
+        }
+        free(p);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="完整代码-4"><a href="#完整代码-4" class="headerlink" title="完整代码"></a>完整代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+//定义链式节点
+typedef struct ListNode
+{
+    int data;
+    ListNode* next;
+}ListNode;
+//定义链式队列类
+class ListQueue{
+private:
+    ListNode* front;//队头指针
+    ListNode* rear;//队尾指针
+    int size;//队列长度
+public:
+    ListQueue();//构造函数初始化队列
+    ~ListQueue();//析构函数销毁队列
+    void In_Queue(int x);//入队操作
+    bool If_empty();//判断队列是否为空
+    bool Out_Queue(int&amp; x);//出队操作
+};
+
+ListQueue::ListQueue(){
+    front = rear =(ListNode*)malloc(sizeof(ListNode));//队头和队尾指针都指向头节点
+    front-&gt;next=NULL;
+    size=0;
+}
+
+void ListQueue::In_Queue(int x){
+    ListNode* s = (ListNode*)malloc(sizeof(ListNode));
+    s-&gt;data = x;
+    s-&gt;next =NULL;
+    rear-&gt;next =s;//让rear的next指针域指向s
+    rear = s;//将s改为尾指针
+    size++;
+}
+
+bool ListQueue::If_empty(){
+    if(this-&gt;front==this-&gt;rear){
+        cout &lt;&lt;"这个队列是空的"&lt;&lt;endl;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool ListQueue::Out_Queue(int&amp; x){
+    if(this-&gt;If_empty()){
+        cout &lt;&lt;"出队失败"&lt;&lt;endl;
+        return false;
+    }
+    ListNode* p = front-&gt;next;//用p指向这次要出队的节点
+    x  = p-&gt;data;//用x接收要出队节点的数据
+    front-&gt;next = p-&gt;next;//修改头节点指向
+    if(rear == p){//如果要删除的是最后一个节点
+        front = rear;
+    }
+    free(p);//删除节点
+    size--;
+    return true;
+}
+
+ListQueue::~ListQueue(){
+    if(front!=rear){
+        ListNode* p = front-&gt;next;//用p指向这次要出队的节点
+        front-&gt;next = p-&gt;next;//修改头节点指向
+        if(rear == p){//如果要删除的是最后一个节点
+            front = rear;
+        }
+        free(p);
+    }
+}
+int main(){
+    ListQueue L;
+    for(int i =0;i&lt;10;i++){
+        L.In_Queue(i);
+    }
+    int m;
+    for(int i =0;i&lt;5;i++){
+        L.Out_Queue(m);
+        cout &lt;&lt;m&lt;&lt;" ";
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、串"><a href="#三、串" class="headerlink" title="三、串"></a>三、串</h2><p>串，即字符串(String），是由零个或多个字符组成的有限序列。<img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/gif.latexs%253Da_%7B1%7D%252Ca_%7B2%7D%252C...gif" alt="格式"><br>其中，s是串名，引号（单/双引号都可）括起来的字符序列是串的值；<img src="/2022/10/19/shu-ju-jie-gou-yu-suan-fa/gif.gif" alt="a_{i}">可以是字母、数字或其他字符；字符下标从1开始，串中字符的个数n称为串的长度。n=0时的串称为空串（用∅表示)。</p>
+<p>基本操作实现就不做了，这里主要是两种匹配算法</p>
+<h3 id="朴素匹配算法"><a href="#朴素匹配算法" class="headerlink" title="朴素匹配算法"></a>朴素匹配算法</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//朴素匹配算法
+#include &lt;iostream&gt;
+using namespace std;
+
+int test(){
+    char a[10],b[10];
+    cin&gt;&gt;a;
+    cin&gt;&gt;b;
+    int i =0;int j=0;
+    while(a[i]!='\0' &amp;&amp; b[j]!='\0'){
+        if(a[i]==b[j]){
+            i++;
+            j++;
+        }else{
+            i=i-j+1;
+            j=0;
+        }
+    }
+    if(b[j]=='\0'){//如果子串指向了\0，返回匹配的位置
+        return i-j;
+    }else{//如果没有找到，指向的是主串的\0运行else
+        return -1;
+    }
+}
+int main(){
+    int m=test();
+    if(m==-1){
+        cout &lt;&lt;"匹配失败";
+    }else{
+        cout &lt;&lt;"匹配的位置是:"&lt;&lt;m;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>算是暴力求解</p>
+<h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><hr>
+<h2 id="四、树"><a href="#四、树" class="headerlink" title="四、树"></a>四、树</h2><p>主要讨论二叉树</p>
+<h3 id="顺序储存"><a href="#顺序储存" class="headerlink" title="顺序储存"></a>顺序储存</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">//顺序存储结构
+#include&lt;iostream&gt;
+using namespace std;
+#define Max 100
+#define ElemType int
+typedef ElemType BiTree[Max];//定义二叉树
+
+class Mytree{
+private:
+    BiTree tree;
+    int size = 0;
+public:
+    Mytree(){}
+    void InitBiTree();//初始化一个树
+    void printBiTree();//遍历树(层次遍历)
+    ElemType FindParent(ElemType e);//查找父节点
+    ElemType LeftChild(ElemType e);//查找左孩子
+    ElemType RightChild(ElemType e);//查找有孩子
+    ElemType Gettree(ElemType e);//获取节点值
+    bool EmptyTree();//判断是否是空树
+};
+
+void Mytree::InitBiTree(){
+    ElemType node;
+    cout&lt;&lt;"请按层次从左向右输入节点,空节点用0表示,按1010停止输入"&lt;&lt;endl;
+    int i = 1;
+    while(cin&gt;&gt;node){
+        if(node == 1010){
+            break;
+        }
+        tree[i] = node;
+        i++;
+        size++;
+    }
+
+}
+void Mytree::printBiTree(){
+    //层次遍历
+    for(int i =1;i&lt;=size;i++){
+        cout&lt;&lt;tree[i]&lt;&lt;" ";
+    }
+    cout&lt;&lt;endl;
+}
+ElemType Mytree::FindParent(ElemType e){
+    if(EmptyTree()) cout&lt;&lt;"这是个空树"&lt;&lt;endl;
+    if(e == 1) cout&lt;&lt;"根节点没有父节点"&lt;&lt;endl;
+    if(tree[e] == 0) { cout&lt;&lt;"不存在这个节点"; return -1;}
+    for(int i =2;i&lt;=size;i++){
+        if(i == e){
+            return tree[i/2];
+        }
+    }
+    return -1;
+}
+
+ElemType Mytree::LeftChild(ElemType e){
+    if(EmptyTree()) cout&lt;&lt;"这是个空树"&lt;&lt;endl;
+    if(tree[e] == 0) { cout&lt;&lt;"不存在这个节点"; return -1;}
+    for(int i =2;i&lt;=size;i++){
+        if(i == e){
+            if(i*2&lt;size &amp;&amp; tree[i*2]!=0){
+                return tree[i*2];
+            }else{
+                cout&lt;&lt;"当前节点没有左孩子"&lt;&lt;endl;
+            }
+        }
+    }
+    return -1;
+}   
+
+ElemType Mytree::RightChild(ElemType e){
+    if(EmptyTree()) cout&lt;&lt;"这是个空树"&lt;&lt;endl;
+    if(tree[e] == 0) { cout&lt;&lt;"不存在这个节点"; return -1;}
+    for(int i =2;i&lt;=size;i++){
+        if(i == e){
+            if(i*2+1&lt;size &amp;&amp; tree[i*2+1]!=0){
+                return tree[i*2+1];
+            }else{
+                cout&lt;&lt;"当前节点没有右孩子"&lt;&lt;endl;
+            }
+        }
+    }
+    return -1;
+}
+bool Mytree::EmptyTree(){
+    if(size == 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+ElemType Mytree::Gettree(ElemType e){
+    return tree[e];
+}
+int main(){
+    Mytree a;
+    int tmp;
+    a.InitBiTree();
+    a.printBiTree();
+    cout&lt;&lt;"-----------------"&lt;&lt;endl;
+    cout&lt;&lt;"请输入想要查询的节点"&lt;&lt;endl;
+    cin&gt;&gt;tmp;
+    cout&lt;&lt;"这个节点的的值是："&lt;&lt;a.Gettree(tmp)&lt;&lt;endl;
+    cout&lt;&lt;"这个节点的父节点："&lt;&lt;a.FindParent(tmp)&lt;&lt;endl;
+    cout&lt;&lt;"这个节点的左孩子："&lt;&lt;a.LeftChild(tmp)&lt;&lt;endl;
+    cout&lt;&lt;"这个节点的右孩子："&lt;&lt;a.RightChild(tmp)&lt;&lt;endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这种方式适合存储完全二叉树，不然的话会浪费大量空间</p>
+<h3 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+#define ElemType int
+typedef struct BiTreeNode//定义结构体
+{
+    ElemType  data; //数据域
+    BiTreeNode *lChild;//左孩子
+    BiTreeNode *rChlid;//右孩子
+} BiTreeNode, *BiTree;
+//先序创建二叉树
+void CreateBiTree(BiTree &amp;T){
+    ElemType ch;
+
+    cin &gt;&gt; ch;
+
+    if (ch == -1)
+        T = NULL;
+    else
+    {
+        T = new BiTreeNode;
+        T-&gt;data = ch;
+        CreateBiTree(T-&gt;lChild);
+        CreateBiTree(T-&gt;rChlid);
+    }
+}
+//中序遍历
+void GetMid(BiTree T){
+    if(T){
+        GetMid(T-&gt;lChild);
+        cout&lt;&lt;T-&gt;data&lt;&lt;" ";
+        GetMid(T-&gt;rChlid);
+    }
+}
+//先序遍历
+void GetFrist(BiTree T){
+    if(T){
+        cout&lt;&lt;T-&gt;data&lt;&lt;" ";
+        GetMid(T-&gt;lChild);
+        GetMid(T-&gt;rChlid);
+    }
+}
+//后序遍历
+void GetLast(BiTree T){
+    if(T){
+        GetMid(T-&gt;lChild);
+        GetMid(T-&gt;rChlid);
+        cout&lt;&lt;T-&gt;data&lt;&lt;" ";
+    }
+}
+int main(void)
+{
+    BiTree T;
+    cout&lt;&lt;"请输入先序遍历顺序下各个结点的值,-1表示没有结点:"&lt;&lt;endl;
+    CreateBiTree(T);
+    GetMid(T);
+    cout&lt;&lt;endl;
+    cout&lt;&lt;"---------------"&lt;&lt;endl;
+    GetFrist(T);
+    cout&lt;&lt;endl;
+    cout&lt;&lt;"---------------"&lt;&lt;endl;
+    GetLast(T);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>二叉树的链式存储递归用的比较多</p>
+<h3 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+typedef struct HuFuNode
+{
+	int weight;
+	int parent, LTree, RTree;
+}HuFuNode, *PHuFuNode;
+
+void Select(PHuFuNode HuFuNode, int n, int &amp;s1, int &amp;s2)    
+{
+    for(int i = 1; i &lt; n; i++){         
+        if(HuFuNode[i].parent == 0){     
+            s1 = i;					
+            break;                          
+        }
+    }
+
+    for(int i = 1; i &lt; n; i++){         
+            if(HuFuNode[i].parent == 0 &amp;&amp; HuFuNode[s1].weight &gt; HuFuNode[i].weight)
+                s1 = i;
+    }
+
+    for(int j = 1; j &lt; n; j++){        
+        if(HuFuNode[j].parent == 0 &amp;&amp; j != s1){
+            s2 = j;
+            break;
+        }
+    }
+
+    for(int j = 1; j &lt; n; j++){         
+        if(HuFuNode[j].parent == 0 &amp;&amp; HuFuNode[s2].weight &gt; HuFuNode[j].weight &amp;&amp; j != s1)
+            s2 = j;
+    }
+}
+
+void initHuFuNode(PHuFuNode &amp;H, int n)
+{
+	if(n &lt;= 1) return;
+	int m = 2*n - 1;            //数组共2n - 1个元素
+	H = new HuFuNode[m + 1];	//0号单元未用，H[m]表示根节点
+    for(int i = 1; i &lt;= m; i++){
+        H[i].parent = 0;
+        H[i].LTree = 0;
+        H[i].RTree = 0;
+    }
+	for(int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; H[i].weight;
+    cout &lt;&lt; endl;
+    for(int i = n + 1; i &lt;= m; i++)         
+    {
+        int s1, s2;
+        Select(H, i, s1, s2);
+        H[s1].parent = i;
+        H[s2].parent = i;   
+        H[i].LTree = s1;
+        H[i].RTree = s2;
+        H[i].weight = H[s1].weight + H[s2].weight;
+    }
+    for(int i =1 ;i&lt;=m;i++){
+        cout&lt;&lt;H[i].weight&lt;&lt;" ";
+    }
+}
+
+int main()
+{
+    PHuFuNode HuFuNode;
+    int n = 0;
+    cin &gt;&gt; n;
+    initHuFuNode(HuFuNode, n);
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;
+#define Elemtype int
+#define max 100
+using namespace std;
+
+//哈曼树定义
+typedef struct HuffCode{
+    Elemtype weight;//权重
+    int lchild;
+    int rchild;
+    int parent;//定义左右孩子，双亲节点
+}codeNode,Huffmancode[max];
+
+
+typedef char** cd;
+//第一个参数是传入数组，第二个值是数组遍历的终点值，用s1,s2返回两个最小值
+void select(Huffmancode HC,int n,int&amp; s1,int&amp; s2){
+    for(int i = 1;i&lt;n;i++){
+        if(HC[i].parent==0){
+            s1 = i;
+            break;
+        }
+    }
+
+    for(int i = 1;i&lt;n;i++){
+        if(HC[i].parent==0 &amp;&amp; HC[s1].weight&gt;HC[i].weight){
+            s1 = i;
+        }
+    }
+    for(int j = 1;j&lt;n;j++){
+        if(HC[j].parent==0 &amp;&amp; j!=s1){
+            s2 = j;
+            break;
+        }
+    }
+
+    for(int j = 1;j&lt;n;j++){
+        if(HC[j].parent==0 &amp;&amp; HC[s2].weight&gt;HC[j].weight &amp;&amp; j!=s1){
+            s2 = j;
+        }
+    }
+}
+
+//哈夫曼树的构建
+void Creat_Huff(Huffmancode&amp; HC,int n){//n为节点数量
+    int m = 2*n-1;//需要m大小的数组存数据
+    int i,s1,s2;//s1,s2用来返回最小的两个值
+    for(i=1;i&lt;=n;i++){//初始化
+        HC[i].parent = 0;
+        HC[i].lchild = 0;
+        HC[i].rchild = 0;
+        cin&gt;&gt;HC[i].weight;
+    }
+    //处理后面的节点
+    for(i=n+1;i&lt;=m;i++){
+        HC[i].parent = 0;
+        HC[i].lchild = 0;
+        HC[i].rchild = 0;
+        HC[i].weight = 0;
+    }
+    //选出数组中最小的两个树，构建哈夫曼树
+    for(i=n+1;i&lt;=m;i++){
+        select(HC,i,s1,s2);
+        HC[i].weight = HC[s1].weight+HC[s2].weight;
+        HC[i].lchild = s1;
+        HC[i].rchild = s2;
+        HC[s1].parent = i;
+        HC[s2].parent = i;
+    }
+    cout&lt;&lt;"n"&lt;&lt;"     "&lt;&lt;"w"&lt;&lt;"      "&lt;&lt;"p"&lt;&lt;"      "&lt;&lt;"l"&lt;&lt;"       "&lt;&lt;"r"&lt;&lt;endl;
+    for(int i = 1;i&lt;=m;i++){
+        cout&lt;&lt;i&lt;&lt;"     "&lt;&lt;HC[i].weight&lt;&lt;"      "&lt;&lt;HC[i].parent&lt;&lt;"     "&lt;&lt;HC[i].lchild&lt;&lt;"      "&lt;&lt;HC[i].rchild&lt;&lt;endl;
+        cout&lt;&lt;left;
+    }
+
+}
+
+//----------------------------------------------------以上是哈夫曼树的实现在上一节已经实现
+
+//哈夫曼编码实现
+void Creat_code(Huffmancode&amp; HC,cd&amp; code,int n){
+    code = new char*[n+1]; //分配n个字符编码的头指针矢量
+    char* a = new char[n];//分配临时变量用来存编码
+    a[n-1] = '\0';//编码结束符
+    for(int i =1;i&lt;=n;i++){//逐个字符求哈夫曼编码
+        int start = n-1;//开始存放的位置，因为n-1位放的是\0，起始设置在\0
+        int c = i;//要找的节点c
+        int f = HC[i].parent;//设置双亲节点的初始值
+        while(f!=0){//从叶子节点开始回溯，寻找双亲节点为0的位置，也就是根节点
+            --start;//初始strar指向\0
+            if(HC[f].lchild == c){
+                a[start]='0';//双亲节点的左孩子为c则设置为0
+            }else{
+                a[start]='1';
+            }
+            c = f;//将这个双亲节点变为孩子节点
+            f = HC[f].parent;//下一个要找的双亲节点位置
+        }
+        code[i] = new char [n-start];
+        strcpy(code[i],&amp;a[start]);
+    }
+    delete a;
+}
+
+
+int main(){
+    Huffmancode HC;//创建哈夫曼树
+    int n;
+    cin&gt;&gt;n;
+    cd code;
+    Creat_Huff(HC,n);
+    Creat_code(HC,code, n);
+    for(int i =1;i&lt;=n;i++){
+        cout&lt;&lt;code[i]&lt;&lt;" ";
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="五、图"><a href="#五、图" class="headerlink" title="五、图"></a>五、图</h2><h3 id="邻接矩阵存储"><a href="#邻接矩阵存储" class="headerlink" title="邻接矩阵存储"></a>邻接矩阵存储</h3><p>实现步骤</p>
+<ol>
+<li>输入节点数，和边数</li>
+<li>输入节点信息，存入一个数组中</li>
+<li>初始化邻接矩阵，如果是图初始化为0，如果是网，初始化无穷大</li>
+<li>依次输入每条边依附的两个节点，如果有权值，还要输入权值</li>
+</ol>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;
+/* 1. 输入节点数，和边数
+2. 输入节点信息，存入一个数组中
+3. 初始化邻接矩阵，如果是图初始化为0，如果是网，初始化无穷大
+4. 依次输入每条边依附的两个节点，如果有权值，还要输入权值 */
+//两个数组一个用来存顶点表，一个用来存邻接矩阵
+using namespace std;
+#define min 0 //初始化值
+#define MAXNum 100
+typedef char vre;//顶点的数据类型
+typedef int arc;//边的权值
+
+typedef struct{
+    vre v[MAXNum];//创建顶点表
+    arc a[MAXNum][MAXNum];//创建邻接矩阵
+    int spot,side;//顶点数和边数
+}AMGraph;
+
+int LocateVex(AMGraph G,int v1){
+    for(int i =0;i&lt;G.spot;i++){
+        if(G.v[i] == v1){
+            return i;
+        }
+    }
+    return 0;
+}
+//创建无向网
+void Creat_UDN(AMGraph&amp; G){
+    char v1,v2;
+    int w;
+    cout&lt;&lt;"分别输入节点和边的数量"&lt;&lt;endl;
+    cin&gt;&gt;G.spot&gt;&gt;G.side;//输入边和点
+    cout&lt;&lt;"输入节点信息"&lt;&lt;endl;
+    for(int i =0;i&lt;G.spot;i++){
+        cin&gt;&gt;G.v[i];//输入点的信息
+    }
+    for(int i =0;i&lt;G.spot;i++){
+        for(int j =0;j&lt;G.spot;j++){
+            G.a[i][j] = min;//设置边的权值
+        }
+    }//初始化边
+
+    cout&lt;&lt;"输入每条边依附的节点以及权值"&lt;&lt;endl;
+    for(int k =0;k&lt;G.side;k++){    
+        cin&gt;&gt;v1&gt;&gt;v2&gt;&gt;w;
+        int i = LocateVex(G,v1);
+        int j = LocateVex(G,v2);
+        G.a[i][j] = w;
+        //cout&lt;&lt;G.a[i][j]&lt;&lt;" ";
+        G.a[j][i] = G.a[i][j]  ;
+        //cout&lt;&lt;G.a[j][i]&lt;&lt;endl;
+    }
+    cout&lt;&lt;"图的邻接矩阵为:"&lt;&lt;endl;
+    for (int i = 0; i &lt; G.spot; i++)
+    {
+        for(int j=0;j&lt;G.spot;j++){
+            cout&lt;&lt;G.a[i][j]&lt;&lt;" ";
+        }
+        cout&lt;&lt;endl;
+    }
+    
+}
+
+int main(){
+    AMGraph G;
+    Creat_UDN(G);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="邻接表存储"><a href="#邻接表存储" class="headerlink" title="邻接表存储"></a>邻接表存储</h3>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/">http://example.com/2022/10/19/shu-ju-jie-gou-yu-suan-fa/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构与算法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">......</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/zhifu.jpeg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/weixin.jpeg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NzQ5Ny8zMzk2MQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/10/19/xtdrone-fang-zhen-ping-tai/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpeg" class="responsive-img" alt="XTDrone仿真平台">
+                        
+                        <span class="card-title">XTDrone仿真平台</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            仿真
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ros/" class="post-category">
+                                    ros
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ros/">
+                        <span class="chip bg-color">ros</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F/">
+                        <span class="chip bg-color">无人机仿真</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpeg" class="responsive-img" alt="无人机仿真搭建">
+                        
+                        <span class="card-title">无人机仿真搭建</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            .
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ros%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                    ros仿真
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/ros/">
+                        <span class="chip bg-color">ros</span>
+                    </a>
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 园崎魅音<br />'
+            + '文章作者: 园崎魅音<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="876941698"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">园崎魅音</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">108.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LookAt-MeNow" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2979565338@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2979565338" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2979565338" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
