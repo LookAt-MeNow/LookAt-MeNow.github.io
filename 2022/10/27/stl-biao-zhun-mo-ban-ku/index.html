@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(https://pic1.zhimg.com/v2-fbf206692f5d7df61ec7ed117052247c_r.jpg);
+            background-image: url(https://img1.imgtp.com/2023/07/22/nQlEZiK0.jpg);
             background-repeat:no-repeat;
             background-size: 100% 100%;
             background-attachment:fixed;
@@ -389,14 +389,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-26
+                    2023-09-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.1k
+                    17.3k
                 </div>
                 
 
@@ -3417,7 +3417,8 @@ int main() {
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221225165938121.png" alt="运行结果"></p>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a><strong>priority_queue</strong></h3><p>这是用的其实还是queue这个容器，这个在算法题里经常用来解决一些哈夫曼树的问题</p>
+<h2 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h2><p>这部分是在刷题过程中遇到的</p>
+<h3 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a><strong>priority_queue</strong></h3><p>这是用的其实还是queue这个容器，这个在算法题里经常用来解决一些哈夫曼树的问题</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int main()
@@ -3445,6 +3446,22 @@ int main()
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>用这个容器实现起来很简单，创建的时候如果直接用<strong>priority_queue&lt;int.&gt;a</strong>这样就是默认的vector&lt;int.&gt;，而且将插入的元素从大到小排序的，greater就是指定从小到大排序的阿，符合我们创建哈夫曼树的要求，主要用于解决一些需要用到哈夫曼树的贪心问题</p>
+<h3 id="string-npos"><a href="#string-npos" class="headerlink" title="string::npos"></a>string::npos</h3><p>可以用于表示string的结束位置</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+int main(){
+    string str = "123sadfa";
+    if(str.find("sdf") == string::npos) cout&lt;&lt;"not found"&lt;&lt;endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="std-unordered-set"><a href="#std-unordered-set" class="headerlink" title="std::unordered_set"></a>std::unordered_set</h3><p>unordered_set 容器，可直译为“无序 set 容器”，即 unordered_set 容器和 set 容器很像，唯一的区别就在于 set 容器会自行对存储的数据进行排序，而 unordered_set 容器不会。</p>
+<p><strong>2.特性</strong></p>
+<ol>
+<li>不再以键值对的形式存储数据，而是直接存储数据的值。</li>
+<li>容器内部存储的各个元素的值都互不相等，且不能被修改。</li>
+<li>不会对内部存储的数据进行排序（这和该容器底层采用哈希表结构存储数据有关）。</li>
+</ol>
+<h3 id="std-unordered-map"><a href="#std-unordered-map" class="headerlink" title="std::unordered_map"></a>std::unordered_map</h3><p>相当于无序的map容器</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>基本上每个容器的使用都差不多，可以看成是不同的数据结构</p>
 <p><img src="/2022/10/27/stl-biao-zhun-mo-ban-ku/image-20221225171608159.png" alt="各个容器"></p>
 
@@ -3949,7 +3966,7 @@ int main()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">123.1k</span>
+                        class="white-color">123.3k</span>
             
             
             
