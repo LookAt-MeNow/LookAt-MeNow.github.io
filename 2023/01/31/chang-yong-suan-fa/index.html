@@ -389,14 +389,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-21
+                    2023-10-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    5.3k
                 </div>
                 
 
@@ -789,7 +789,19 @@ int main(){
     return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><h3 id="排列问题"><a href="#排列问题" class="headerlink" title="排列问题"></a>排列问题</h3><h4 id="全排列"><a href="#全排列" class="headerlink" title="全排列"></a>全排列</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/permutations/description/">46. 全排列 - 力扣（LeetCode）</a></p>
+<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void backtracking(条件){
+	if(){
+		//结束判断
+	}
+	for(){//遍历子问题
+		处理节点;
+        backtracking(路径，选择列表); // 递归
+        回溯，撤销处理结果
+		
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="排列问题"><a href="#排列问题" class="headerlink" title="排列问题"></a>排列问题</h3><h4 id="全排列"><a href="#全排列" class="headerlink" title="全排列"></a>全排列</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/permutations/description/">46. 全排列 - 力扣（LeetCode）</a></p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution {
 public:
     vector&lt;vector&lt;int&gt;&gt;ans;	//返回
@@ -814,6 +826,106 @@ public:
         return ans;
     }
 };<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">permute</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> ans <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+    <span class="token keyword">var</span> path <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+    cnt <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">bool</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">var</span> backtracking <span class="token keyword">func</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> cnt <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">bool</span><span class="token punctuation">)</span>
+    backtracking <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> cnt <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            temp <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token function">copy</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> path<span class="token punctuation">)</span>
+            ans <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> temp<span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+                <span class="token keyword">continue</span>
+            <span class="token punctuation">}</span>
+            cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+            path <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token function">backtracking</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> cnt<span class="token punctuation">)</span>
+            path <span class="token operator">=</span> path<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+            cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">backtracking</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> cnt<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> ans
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="组合问题"><a href="#组合问题" class="headerlink" title="组合问题"></a>组合问题</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combinations/description/">77. 组合 - 力扣（LeetCode）</a></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt;ans;
+    vector&lt;int&gt;path;
+    vector&lt;vector&lt;int&gt;&gt; combine(int n, int k) {
+        backtracking(n,k,1);
+        return ans;
+    }
+    void backtracking(int n,int k,int index){
+        if(path.size() == k){
+            ans.push_back(path);
+            return;
+        }
+        for(int t = index;t&lt;=n;t++){
+            path.push_back(t);
+            backtracking(n,k,t+1);
+            path.pop_back();
+        }
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">combine</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> k <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> ans <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+    <span class="token keyword">var</span> path <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+    <span class="token keyword">var</span> backtracking <span class="token keyword">func</span><span class="token punctuation">(</span>n <span class="token builtin">int</span> <span class="token punctuation">,</span>k <span class="token builtin">int</span><span class="token punctuation">,</span>index <span class="token builtin">int</span><span class="token punctuation">)</span>
+    backtracking <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>n <span class="token builtin">int</span> <span class="token punctuation">,</span>k <span class="token builtin">int</span><span class="token punctuation">,</span>index <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">==</span> k <span class="token punctuation">{</span>
+            temp <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">,</span><span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token function">copy</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span>path<span class="token punctuation">)</span>
+            ans <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span>temp<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> t <span class="token operator">:=</span> index<span class="token punctuation">;</span>t<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>t<span class="token operator">++</span> <span class="token punctuation">{</span>
+            path <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>t<span class="token punctuation">)</span>
+            <span class="token function">backtracking</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>k<span class="token punctuation">,</span>t<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+            path <span class="token operator">=</span> path<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">backtracking</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>k<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> ans
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/">17. 电话号码的字母组合 - 力扣（LeetCode）</a></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution {
+public:
+    string m[10] = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"}; 
+    vector&lt;string&gt;ans;
+    string path;
+    void backtracking(string digits,int index){
+        if(path.size() == digits.size()){
+            ans.push_back(path);
+            return;
+        }
+        int t = digits[index] - '0';
+        string temp = m[t];
+        for(int i = 0;i&lt;temp.size();i++){
+            path.push_back(temp[i]);
+            backtracking(digits,index+1);
+            path.pop_back();
+        }
+    }
+    vector&lt;string&gt; letterCombinations(string digits) {
+        if(digits.size() == 0){
+            return {};
+        }
+        backtracking(digits,0);
+        return ans;
+    }   
+    
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1837,7 +1949,7 @@ for (int right = 0;right&lt;len;right++) {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">124.8k</span>
+                        class="white-color">131.4k</span>
             
             
             

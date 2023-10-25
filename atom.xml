@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-17T12:33:21.483Z</updated>
+  <updated>2023-10-25T14:19:45.555Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,113 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webserver</title>
+    <link href="http://example.com/2023/10/27/webserver/"/>
+    <id>http://example.com/2023/10/27/webserver/</id>
+    <published>2023-10-27T05:44:40.000Z</published>
+    <updated>2023-10-25T14:19:45.555Z</updated>
+    
+    
+    
+    
+    <category term="c++" scheme="http://example.com/categories/c/"/>
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+    <category term="c++" scheme="http://example.com/tags/c/"/>
+    
+    <category term="socket" scheme="http://example.com/tags/socket/"/>
+    
+    <category term="http" scheme="http://example.com/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker</title>
+    <link href="http://example.com/2023/10/25/docker/"/>
+    <id>http://example.com/2023/10/25/docker/</id>
+    <published>2023-10-25T11:34:59.000Z</published>
+    <updated>2023-10-25T14:17:11.333Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、安装&quot;&gt;&lt;a href=&quot;#一、安装&quot; class=&quot;headerlink&quot; title=&quot;一、安装&quot;&gt;&lt;/a&gt;一、安装&lt;/h2&gt;&lt;p&gt;查看内核&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="liunx" scheme="http://example.com/categories/liunx/"/>
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>8位2进制CPU设计和实现</title>
+    <link href="http://example.com/2023/09/22/8-wei-2-jin-zhi-cpu-she-ji-he-shi-xian/"/>
+    <id>http://example.com/2023/09/22/8-wei-2-jin-zhi-cpu-she-ji-he-shi-xian/</id>
+    <published>2023-09-22T13:03:14.000Z</published>
+    <updated>2023-10-25T14:24:27.822Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;h3 id=&quot;半加器&quot;&gt;&lt;a href=&quot;#半加器&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计组" scheme="http://example.com/categories/%E8%AE%A1%E7%BB%84/"/>
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GIN聊天室</title>
+    <link href="http://example.com/2023/09/12/gin-liao-tian-shi/"/>
+    <id>http://example.com/2023/09/12/gin-liao-tian-shi/</id>
+    <published>2023-09-12T05:43:28.000Z</published>
+    <updated>2023-10-25T14:19:10.364Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="go" scheme="http://example.com/categories/go/"/>
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+    <category term="go" scheme="http://example.com/tags/go/"/>
+    
+    <category term="gin" scheme="http://example.com/tags/gin/"/>
+    
+    <category term="gorm" scheme="http://example.com/tags/gorm/"/>
+    
+  </entry>
   
   <entry>
     <title>ros小车搭建</title>
@@ -70,6 +177,39 @@
     <category term="C++" scheme="http://example.com/tags/C/"/>
     
     <category term="opencv" scheme="http://example.com/tags/opencv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chat by c</title>
+    <link href="http://example.com/2023/05/22/c-yu-yan-liao-tian-shi/"/>
+    <id>http://example.com/2023/05/22/c-yu-yan-liao-tian-shi/</id>
+    <published>2023-05-22T14:34:54.000Z</published>
+    <updated>2023-10-25T15:18:55.356Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在linux环境下使用c配合mysql设计的聊天室&lt;/p&gt;
+&lt;p&gt;实现功能：&lt;/p&gt;
+&lt;p&gt;1.通过客户端实现用户的注册以及登录。</summary>
+        
+      
+    
+    
+    
+    <category term="c" scheme="http://example.com/categories/c/"/>
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+    <category term="socket" scheme="http://example.com/tags/socket/"/>
+    
+    <category term="c" scheme="http://example.com/tags/c/"/>
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
     
   </entry>
   
@@ -196,7 +336,7 @@
     <link href="http://example.com/2023/01/31/chang-yong-suan-fa/"/>
     <id>http://example.com/2023/01/31/chang-yong-suan-fa/</id>
     <published>2023-01-31T04:20:14.000Z</published>
-    <updated>2023-10-21T10:39:15.246Z</updated>
+    <updated>2023-10-23T05:42:18.696Z</updated>
     
     
       
@@ -434,32 +574,6 @@
     <category term="ros" scheme="http://example.com/tags/ros/"/>
     
     <category term="linux" scheme="http://example.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言学习</title>
-    <link href="http://example.com/2021/12/03/c-yu-yan-de-xue-xi/"/>
-    <id>http://example.com/2021/12/03/c-yu-yan-de-xue-xi/</id>
-    <published>2021-12-03T08:25:00.000Z</published>
-    <updated>2023-02-20T11:30:01.632Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在C语言中最好使用#define 或者 const 以付符号代表数字常量&lt;/p&gt;
-&lt;p&gt;scanf</summary>
-        
-      
-    
-    
-    
-    <category term="c" scheme="http://example.com/categories/c/"/>
-    
-    
-    <category term="C" scheme="http://example.com/tags/C/"/>
     
   </entry>
   
