@@ -389,14 +389,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-25
+                    2023-10-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    807
+                    1.8k
                 </div>
                 
 
@@ -430,7 +430,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token parameter variable">-y</span> <span class="token function">install</span> docker-ce-18.03.1.ce  <span class="token comment">#如有需要可更改安装版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token parameter variable">-y</span> <span class="token function">install</span> docker-ce <span class="token comment">#如有需要可更改安装版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl start docke
@@ -538,6 +538,7 @@ systemctl <span class="token builtin class-name">enable</span> <span class="toke
 </tr>
 </tbody></table>
 <p>在执行docker run命令的时候使用 -v 数据卷:容器内目录完成数据卷挂载，<strong>如果已经创建了容器，就不能进行数据卷挂载</strong></p>
+<p><strong>案例实现</strong></p>
 <p>创建一个数据卷</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> nginx <span class="token parameter variable">-p</span> <span class="token number">8080</span>:80 <span class="token parameter variable">-v</span> html:/usr/share/nginx/html nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -545,7 +546,171 @@ systemctl <span class="token builtin class-name">enable</span> <span class="toke
 <p>Mountpoint是宿主机的物理地址</p>
 <p><img src="/2023/10/25/docker/image-20231025220225221.png"></p>
 <p>此时操作这个宿主机这个目录会同步到容器<code>/usr/share/nginx/html</code>这个目录下</p>
-<h2 id="四、本地目录挂载"><a href="#四、本地目录挂载" class="headerlink" title="四、本地目录挂载"></a>四、本地目录挂载</h2>
+<h2 id="四、本地目录挂载"><a href="#四、本地目录挂载" class="headerlink" title="四、本地目录挂载"></a>四、本地目录挂载</h2><p><img src="/2023/10/25/docker/image-20231026110541577.png"></p>
+<p>查看容器详情</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> inspect 容器名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>mysql容器在创建的时候会自动的创建一个匿名卷，但是名称过于臃肿，所以最好自己创建一个卷。</p>
+<p>本地挂载与数据卷挂载几乎一致，有一点区别</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> nginx <span class="token parameter variable">-p</span> <span class="token number">8080</span>:80 <span class="token parameter variable">-v</span> html:/usr/share/nginx/html nginx	<span class="token comment">#数据卷挂载</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> nginx <span class="token parameter variable">-p</span> <span class="token number">8080</span>:80 <span class="token parameter variable">-v</span> /root/mysql:/usr/share/nginx/html nginx	<span class="token comment">#本地挂载</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>主要 区别就在于 -v 的参数，如果直接写html，则就是挂载在<code>/var/lib/docker/volumes</code>的目录下</p>
+<p>如是是/root/mysql则是挂载在自己所有指定的目录下</p>
+<p><strong>案例实现</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#创建一个挂载目录</span>
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /root/mysql
+<span class="token comment">#移动到容器的挂载目录</span>
+<span class="token builtin class-name">cd</span> /root/mysql
+<span class="token comment">#创建数据、配置、初始化脚本三个挂载目录</span>
+<span class="token function">mkdir</span> data
+<span class="token function">mkdir</span> conf
+<span class="token function">mkdir</span> init
+<span class="token comment">#创建容器并挂载</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> mysql <span class="token parameter variable">-p</span> <span class="token number">3306</span>:3306 <span class="token parameter variable">-e</span> <span class="token assign-left variable">TZ</span><span class="token operator">=</span>Asia/Shanghai <span class="token parameter variable">-v</span> /root/mysql/data:/var/lib/mysql <span class="token parameter variable">-v</span> /root/mysql/init:/docker-entrypoint-initdb.d <span class="token parameter variable">-v</span> /root/mysql/conf:/etc/mysql/co
+nf.d mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在创建容器一步如果报错</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Error response from daemon: missing signature key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>更改docker的版本<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39825717/article/details/132605314">解决方案</a></p>
+<h2 id="五、自定义镜像"><a href="#五、自定义镜像" class="headerlink" title="五、自定义镜像"></a>五、自定义镜像</h2><p><img src="/2023/10/25/docker/image-20231026115556004.png" alt="image-20231026115556004"></p>
+<p><img src="/2023/10/25/docker/image-20231026115619308.png"></p>
+<p>构建镜像</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-t</span> myImage:1.0 <span class="token builtin class-name">.</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><code>-t</code> 是给镜像起名，格式依然是repository:tag的格式，不指定tag时默认是lastest</li>
+<li><code>.</code> 是指定Dockerfile所在目录，如果就在当前目录，则指定位”.”</li>
+</ul>
+<p><strong>部署go工程</strong></p>
+<p><img src="/2023/10/25/docker/image-20231026205611750.png"></p>
+<p>编写源程序，在当前目录创建Dockerfile</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> Dockerfile
+<span class="token comment">#依赖镜像（母镜像），可以先使用docker search命令搜索</span>
+FROM golang:latest
+
+<span class="token comment">#Docker工作目录</span>
+WORKDIR <span class="token variable">$GOPATH</span>/src/go-docker
+
+<span class="token comment">#将当前目录添加到Docker</span>
+ADD <span class="token builtin class-name">.</span> <span class="token variable">$GOPATH</span>/src/go-docker
+
+<span class="token comment">#在Docker工作目录下执行命令</span>
+RUN go build main.go
+
+<span class="token comment">#暴露端口</span>
+EXPOSE <span class="token number">9090</span>
+
+<span class="token comment">#编译后在根目录下生成而非./core目录下，最终运行Docker的初始命令</span>
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"./main"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>构建镜像</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-t</span> go-docker <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2023/10/25/docker/image-20231026205826615.png"></p>
+<p>由于使用是国内的云服务器无法访问github，这里就运行失败了。</p>
+<p>新建一个简单的测试</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">cd</span> <span class="token builtin class-name">test</span>
+<span class="token function">vi</span> test.go<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+   <span class="token string">"log"</span>
+   <span class="token string">"net/http"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   http<span class="token punctuation">.</span><span class="token function">HandleFunc</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>w http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> r <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      w<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">"Hello Docker"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"go docker project is running..."</span><span class="token punctuation">)</span>
+   http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">":9090"</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> Dockerfile
+<span class="token comment">#依赖镜像（母镜像），可以先使用docker search命令搜索</span>
+FROM golang:latest
+
+<span class="token comment">#Docker工作目录</span>
+WORKDIR <span class="token variable">$GOPATH</span>/src/go-docker
+
+<span class="token comment">#将当前目录添加到Docker</span>
+ADD <span class="token builtin class-name">.</span> <span class="token variable">$GOPATH</span>/src/go-docker
+
+<span class="token comment">#在Docker工作目录下执行命令</span>
+RUN go build test.go
+
+<span class="token comment">#暴露端口</span>
+EXPOSE <span class="token number">9090</span>
+
+<span class="token comment">#编译后在根目录下生成而非./core目录下，最终运行Docker的初始命令</span>
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"./test"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2023/10/25/docker/image-20231026211246754.png" alt="成功创建"></p>
+<p>运行容器</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> <span class="token builtin class-name">test</span> <span class="token parameter variable">-p</span> <span class="token number">9090</span>:9090 go-docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>测试访问</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> http://127.0.0.1:9090<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出hello docker即成功</p>
+<h2 id="六、容器网络"><a href="#六、容器网络" class="headerlink" title="六、容器网络"></a>六、容器网络</h2><p>默认情况下，所有容器都以bridge方式连接到Docker的一个虚拟网桥</p>
+<p><img src="/2023/10/25/docker/image-20231026211745394.png"></p>
+<p>如果直接通过IP通信，由于容器是虚拟的网桥，所以每次运行容器的时候改容器的IP可能发生改变</p>
+<p><img src="/2023/10/25/docker/image-20231026211944663.png"></p>
+<p>使用自定网络的容器可以通过容器名相互访问</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>docker network create</td>
+<td>创建一个网络</td>
+</tr>
+<tr>
+<td>docker network ls</td>
+<td>查看所有网络</td>
+</tr>
+<tr>
+<td>docker network rm</td>
+<td>删除指定的网络</td>
+</tr>
+<tr>
+<td>docker network prune</td>
+<td>清楚没有使用的网络</td>
+</tr>
+<tr>
+<td>docker network connect</td>
+<td>使指定的容器加入某个网络</td>
+</tr>
+<tr>
+<td>docker network disconnect</td>
+<td>使指定的容器离开某个网络</td>
+</tr>
+<tr>
+<td>docker network inspect</td>
+<td>查看网络详细信息</td>
+</tr>
+</tbody></table>
+<hr>
+<p>DockerCompose</p>
+<p>Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。</p>
+<p>Compose 使用的三个步骤：</p>
+<ul>
+<li>使用 Dockerfile 定义应用程序的环境。</li>
+<li>使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。</li>
+<li>最后，执行 docker-compose up 命令来启动并运行整个应用程序。</li>
+</ul>
+<p><img src="/2023/10/25/docker/image-20231026214755261.png"></p>
+<p>yml文件的格式与docker run中的命令基本相对应</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-compose.html">细节详情</a></p>
+
                 
             </div>
             <hr/>
@@ -1047,7 +1212,7 @@ systemctl <span class="token builtin class-name">enable</span> <span class="toke
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">131.4k</span>
+                        class="white-color">132.4k</span>
             
             
             
