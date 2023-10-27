@@ -124,6 +124,33 @@
   </entry>
   
   <entry>
+    <title>C++11线程池</title>
+    <link href="http://example.com/2023/08/11/c-11-xian-cheng-chi/"/>
+    <id>http://example.com/2023/08/11/c-11-xian-cheng-chi/</id>
+    <published>2023-08-11T08:52:42.000Z</published>
+    <updated>2023-10-27T15:03:52.034Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、线程库&quot;&gt;&lt;a href=&quot;#一、线程库&quot; class=&quot;headerlink&quot; title=&quot;一、线程库&quot;&gt;&lt;/a&gt;一、线程库&lt;/h2&gt;&lt;p&gt;进程：运行中的程序&lt;/p&gt;
+&lt;p&gt;线程：进程中的进程&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;std::thread</summary>
+        
+      
+    
+    
+    
+    <category term="c++" scheme="http://example.com/categories/c/"/>
+    
+    
+    <category term="c++" scheme="http://example.com/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ros小车搭建</title>
     <link href="http://example.com/2023/07/13/ros-xiao-che-da-jian/"/>
     <id>http://example.com/2023/07/13/ros-xiao-che-da-jian/</id>
@@ -545,35 +572,6 @@
     <category term="C++" scheme="http://example.com/tags/C/"/>
     
     <category term="数据结构与算法" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>无人机仿真搭建</title>
-    <link href="http://example.com/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/"/>
-    <id>http://example.com/2022/05/09/ubuntu18-xia-wu-ren-ji-fang-zhen/</id>
-    <published>2022-05-09T08:25:00.000Z</published>
-    <updated>2023-03-01T14:53:17.277Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;基于ubuntu18无人机仿真环境搭建&quot;&gt;&lt;a href=&quot;#基于ubuntu18无人机仿真环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基于ubuntu18无人机仿真环境搭建&quot;&gt;&lt;/a&gt;基于ubuntu18无人机仿真环境搭建&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="ros仿真" scheme="http://example.com/categories/ros%E4%BB%BF%E7%9C%9F/"/>
-    
-    
-    <category term="C++" scheme="http://example.com/tags/C/"/>
-    
-    <category term="ros" scheme="http://example.com/tags/ros/"/>
-    
-    <category term="linux" scheme="http://example.com/tags/linux/"/>
     
   </entry>
   
